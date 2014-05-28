@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.exportWizards">
+      <category
+            name="MASONHelper"
+            id="MASONHelperDocumentation">
+      </category>
+      <wizard
+            name="MASON Helper Documentation"
+            icon="icons/sample.gif"
+            category="MASONHelperDocumentation"
+            class="it.isislab.masonhelperdocumentation.mason.wizards.MASONDocumentationWizard"
+            id="it.isislab.masonhelperdocumentation.mason.wizards.MASONDocumentationWizard">
+      </wizard>
+   </extension>
+
+</plugin>
