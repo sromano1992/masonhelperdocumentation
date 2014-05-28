@@ -1,5 +1,7 @@
 package it.isislab.masonhelperdocumentation.mason.wizards;
 
+import java.util.ArrayList;
+
 import it.isislab.masonhelperdocumentation.ODD.ODD;
 import it.isislab.masonhelperdocumentation.ODD.Submodel;
 import it.isislab.masonhelperdocumentation.ODD.Submodel_s;
@@ -43,18 +45,21 @@ public class P_SubmodelsPage extends WizardPage {
 		composite.setLayout(new GridLayout(2, false));
 		
 		Submodel_s submodel_s = ODD.getSubmodel_s();
+		ArrayList<Submodel> toRemove = new ArrayList<Submodel>();
 		for (Submodel submodel : submodel_s.getSubmodel_s()){
-			
-			Label lblSubmodelName = new Label(composite, SWT.NONE);
-			lblSubmodelName.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-			lblSubmodelName.setText(submodel.getName());
-			
-			Text text = new Text(composite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.CANCEL | SWT.MULTI);
-			text.setEditable(false);
-			GridData gd_text = new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1);
-			gd_text.heightHint = 81;
-			text.setLayoutData(gd_text);
-			text.setText(submodel.getDescription());
+			if (!submodel.getDescription().equals("")){
+				
+				Label lblSubmodelName = new Label(composite, SWT.NONE);
+				lblSubmodelName.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+				lblSubmodelName.setText(submodel.getName());
+				
+				Text text = new Text(composite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.CANCEL | SWT.MULTI);
+				text.setEditable(false);
+				GridData gd_text = new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1);
+				gd_text.heightHint = 81;
+				text.setLayoutData(gd_text);
+				text.setText(submodel.getDescription());
+			}
 		}
 		
 		scrolledComposite.setContent(composite);
