@@ -25,120 +25,140 @@ public class DesignConcepts  implements Serializable{
 	private static Logger log = Logger.getLogger("global");
 	
 	public String getAutoBasicPrinciples() {
+		if (autoBasicPrinciples == null)	return "";
 		return autoBasicPrinciples;
 	}
 	public void setAutoBasicPrinciples(String autoBasicPrinciples) {
 		this.autoBasicPrinciples = autoBasicPrinciples;
 	}
 	public String getUserBasicPrinciples() {
+		if (userBasicPrinciples == null)	return "";
 		return userBasicPrinciples;
 	}
 	public void setUserBasicPrinciples(String userBasicPrinciples) {
 		this.userBasicPrinciples = userBasicPrinciples;
 	}
 	public String getAutoEmergence() {
+		if (autoEmergence == null)	return "";
 		return autoEmergence;
 	}
 	public void setAutoEmergence(String autoEmergence) {
 		this.autoEmergence = autoEmergence;
 	}
 	public String getUserEmergence() {
+		if (userEmergence == null)	return "";
 		return userEmergence;
 	}
 	public void setUserEmergence(String userEmergence) {
 		this.userEmergence = userEmergence;
 	}
 	public String getAutoAdaption() {
+		if (autoAdaption == null)	return "";
 		return autoAdaption;
 	}
 	public void setAutoAdaption(String autoAdaption) {
 		this.autoAdaption = autoAdaption;
 	}
 	public String getUserAdaption() {
+		if (userAdaption == null)	return "";
 		return userAdaption;
 	}
 	public void setUserAdaption(String userAdaption) {
 		this.userAdaption = userAdaption;
 	}
 	public String getAutoObjectives() {
+		if (autoObjectives == null)	return "";
 		return autoObjectives;
 	}
 	public void setAutoObjectives(String autoObjectives) {
 		this.autoObjectives = autoObjectives;
 	}
 	public String getUserObjectives() {
+		if (userObjectives == null)	return "";
 		return userObjectives;
 	}
 	public void setUserObjectives(String userObjectives) {
 		this.userObjectives = userObjectives;
 	}
 	public String getAutoLearning() {
+		if (autoLearning == null)	return "";
 		return autoLearning;
 	}
 	public void setAutoLearning(String autoLearning) {
 		this.autoLearning = autoLearning;
 	}
 	public String getAutoSensing() {
+		if (autoSensing == null)	return "";
 		return autoSensing;
 	}
 	public void setAutoSensing(String autoSensing) {
 		this.autoSensing = autoSensing;
 	}
 	public String getUserSensing() {
+		if (userSensing == null)	return "";
 		return userSensing;
 	}
 	public void setUserSensing(String userSensing) {
 		this.userSensing = userSensing;
 	}
 	public String getAutoInteraction() {
+		if (autoInteraction == null)	return "";
 		return autoInteraction;
 	}
 	public void setAutoInteraction(String autoInteraction) {
 		this.autoInteraction = autoInteraction;
 	}
 	public String getUserInteraction() {
+		if (userInteraction == null)	return "";
 		return userInteraction;
 	}
 	public void setUserInteraction(String userInteraction) {
 		this.userInteraction = userInteraction;
 	}
 	public String getAutoStochasticity() {
+		if (autoStochasticity == null)	return "";
 		return autoStochasticity;
 	}
 	public void setAutoStochasticity(String autoStochasticity) {
 		this.autoStochasticity = autoStochasticity;
 	}
 	public String getUserStochasticity() {
+		if (userStochasticity == null)	return "";
 		return userStochasticity;
 	}
 	public void setUserStochasticity(String userStochasticity) {
 		this.userStochasticity = userStochasticity;
 	}
 	public String getAutoCollectives() {
+		if (autoCollectives == null)	return "";
 		return autoCollectives;
 	}
 	public void setAutoCollectives(String autoCollectives) {
 		this.autoCollectives = autoCollectives;
 	}
 	public String getUserCollectives() {
+		if (userCollectives == null)	return "";
 		return userCollectives;
 	}
 	public void setUserCollectives(String userCollectives) {
 		this.userCollectives = userCollectives;
 	}
 	public String getAutoObservation() {
+		if (autoObservation == null)	return "";
 		return autoObservation;
 	}
 	public void setAutoObservation(String autoObservation) {
 		this.autoObservation = autoObservation;
 	}
 	public String getUserObservation() {
+		if (userObservation == null)	return "";
 		return userObservation;
 	}
 	public void setUserObservation(String userObservation) {
 		this.userObservation = userObservation;
 	}
 	public String getAutoPrediction() {
+		if (autoPrediction == null)	return "";
 		return autoPrediction;
 	}
 	public void setAutoPrediction(String autoPrediction) {
@@ -148,12 +168,14 @@ public class DesignConcepts  implements Serializable{
 		this.userLearning = userLearning;
 	}
 	public String getUserPrediction() {
+		if (userPrediction == null)	return "";
 		return userPrediction;
 	}
 	public void setUserPrediction(String userPrediction) {
 		this.userPrediction = userPrediction;
 	}
 	public String getUserLearning() {
+		if (userLearning == null)	return "";
 		return userLearning;
 	}	
 	public String toString(){
