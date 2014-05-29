@@ -32,12 +32,12 @@ import org.eclipse.swt.custom.ScrolledComposite;
  */
 public class G_GridsCellPage extends WizardPage{
 	
-	private static Logger log = Logger.getLogger("global");
+	private static Logger log = Logger.getLogger("global"); //$NON-NLS-1$
 	private SimStateAnalizer simStateAnalizer;
 	private Text text;
 	private ArrayList<Text> fieldUserDescription;
 	private ArrayList<Label> fieldAutomaticDescription;
-	private String pageDescription = "Here information about grids:";
+	private String pageDescription = "Here information about grids:"; //$NON-NLS-1$
 	
 	/**
 	 * Constructor for Page3.
@@ -45,9 +45,9 @@ public class G_GridsCellPage extends WizardPage{
 	 * @param javaProject
 	 */
 	public G_GridsCellPage() {
-		super("wizardPage");
+		super("wizardPage"); //$NON-NLS-1$
 		simStateAnalizer = GlobalUtility.getSimStateAnalizer();
-		setTitle("2/7 - Entities, state variables, and scales\n" + simStateAnalizer.getClassName());
+		setTitle("2/7 - Entities, state variables, and scales\n" + simStateAnalizer.getClassName()); //$NON-NLS-1$
 		setDescription(pageDescription);
 		fieldUserDescription = new ArrayList<Text>();
 		fieldAutomaticDescription = new ArrayList<Label>();
@@ -89,9 +89,9 @@ public class G_GridsCellPage extends WizardPage{
 				GridData gd_lblEndGrid = new GridData(SWT.CENTER, SWT.CENTER, false, false, 2, 1);
 				gd_lblEndGrid.widthHint = 500;
 				lblEndGrid.setLayoutData(gd_lblEndGrid);
-				lblEndGrid.setText("end grid");
+				lblEndGrid.setText("end grid"); //$NON-NLS-1$
 				
-				lblGridname.setText(grids.get(i).getVariableType() + " " + grids.get(i).getVariableName());		
+				lblGridname.setText(grids.get(i).getVariableType() + " " + grids.get(i).getVariableName());		 //$NON-NLS-1$
 				List<Expression> constructorInput = GlobalUtility.getConstructorVariableInput(simStateAnalizer.getCompilationUnit(), grids.get(i));
 				setConstructorText(lblInitializerDetector, constructorInput, grids.get(i));		
 				
@@ -111,8 +111,8 @@ public class G_GridsCellPage extends WizardPage{
 		else if (grids.size() == 0){	//SimState should not have Grids
 			Label lblGridname = new Label(composite, SWT.NONE);
 			lblGridname.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-			lblGridname.setText(GlobalUtility.getProjectAnalizer().getSimStateCU().getElementName() + " doesn't contains variables"
-					+ "of type:\n" + simStateAnalizer.getFieldsString() + ".");
+			lblGridname.setText(GlobalUtility.getProjectAnalizer().getSimStateCU().getElementName() + " doesn't contains variables" //$NON-NLS-1$
+					+ "of type:\n" + simStateAnalizer.getFieldsString() + "."); //$NON-NLS-1$ //$NON-NLS-2$
 		}
 		setControl(container);
 		scrolledComposite.setContent(composite);
@@ -130,45 +130,45 @@ public class G_GridsCellPage extends WizardPage{
 		if (constructorInput == null)	return;
 		if (constructorInput.size() == 2){
 			//2 parameters: width-heigth
-			lblInitializerDetector.setText("The width value of " + field.getVariableName() + " is: "+ constructorInput.get(0) + ";\n"
-									+ "the height value of " + field.getVariableName() + " is: " + constructorInput.get(1) + ".");
+			lblInitializerDetector.setText(Messages.GridsCell_WidthValue + field.getVariableName() + Messages.GridsCell_widthIs+ constructorInput.get(0) + ";\n" //$NON-NLS-3$
+									+ Messages.GridsCell_HeigthValue + field.getVariableName() + Messages.GridsCell_heigthIs + constructorInput.get(1) + "."); //$NON-NLS-3$
 			Parameter p = GlobalUtility.getParameterFromString(constructorInput.get(0).toString(), simStateAnalizer.getCompilationUnit());
 			Parameter p1 = GlobalUtility.getParameterFromString(constructorInput.get(1).toString(), simStateAnalizer.getCompilationUnit());
 			if (p != null){	
-				lblInitializerDetector.setText(lblInitializerDetector.getText() + "\n"
-					+ "Value of " + p.getVariableName() +" is: " + p.getInitializer() +".");
+				lblInitializerDetector.setText(lblInitializerDetector.getText() + "\n" //$NON-NLS-1$
+					+ Messages.GridsCell_ValueOf + p.getVariableName() +Messages.GridsCell_widthIs  + p.getInitializer() +"."); //$NON-NLS-2$ //$NON-NLS-3$
 				//add to group
 				addToGroup(p);
 			}
 			if (p1 != null)	{
-				lblInitializerDetector.setText(lblInitializerDetector.getText() + "\n"
-					+ "Value of " + p1.getVariableName() +" is: " + p1.getInitializer() +".");
+				lblInitializerDetector.setText(lblInitializerDetector.getText() + "\n" //$NON-NLS-1$
+					+  Messages.GridsCell_ValueOf + p1.getVariableName() + Messages.GridsCell_widthIs + p1.getInitializer() +"."); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				//add to group
 				addToGroup(p1);
 			}
 		}
 		else if (constructorInput.size() == 3){
-			lblInitializerDetector.setText("The width value of " + field.getVariableName() + " is: "+ constructorInput.get(0) + ";\n"
-					+ "the height value of " + field.getVariableName() + " is: " + constructorInput.get(1) + ".\n"
-					+ "The initial value of " + field.getVariableName() + " is: "+ constructorInput.get(2) + ".");
+			lblInitializerDetector.setText(Messages.GridsCell_WidthValue + field.getVariableName() + " is: "+ constructorInput.get(0) + ";\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+					+ Messages.GridsCell_HeigthValue + field.getVariableName() + Messages.GridsCell_widthIs + constructorInput.get(1) + ".\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+					+ Messages.GridsCell_ValueOf + field.getVariableName() + Messages.GridsCell_widthIs+ constructorInput.get(2) + "."); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 			Parameter p = GlobalUtility.getParameterFromString(constructorInput.get(0).toString(), simStateAnalizer.getCompilationUnit());
 			Parameter p1 = GlobalUtility.getParameterFromString(constructorInput.get(1).toString(), simStateAnalizer.getCompilationUnit());
 			Parameter p2 = GlobalUtility.getParameterFromString(constructorInput.get(2).toString(), simStateAnalizer.getCompilationUnit());
 			if (p != null){	
-				lblInitializerDetector.setText(lblInitializerDetector.getText() + "\n"
-					+ "Value of " + p.getVariableName() +" is: " + p.getInitializer() +".");
+				lblInitializerDetector.setText(lblInitializerDetector.getText() + "\n" //$NON-NLS-1$
+					+  Messages.GridsCell_ValueOf + p.getVariableName() +Messages.GridsCell_widthIs + p.getInitializer() +"."); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				//add to group
 				addToGroup(p);
 			}
 			if (p1 != null){	
-				lblInitializerDetector.setText(lblInitializerDetector.getText() + "\n"
-					+ "Value of " + p1.getVariableName() +" is: " + p1.getInitializer() +".");
+				lblInitializerDetector.setText(lblInitializerDetector.getText() + "\n" //$NON-NLS-1$
+					+  Messages.GridsCell_ValueOf + p1.getVariableName() +Messages.GridsCell_widthIs + p1.getInitializer() +"."); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				//add to group
 				addToGroup(p1);
 			}
 			if (p2 != null){	
-				lblInitializerDetector.setText(lblInitializerDetector.getText() + "\n"
-					+ "Value of " + p2.getVariableName() +" is: " + p2.getInitializer() +".");
+				lblInitializerDetector.setText(lblInitializerDetector.getText() + "\n" //$NON-NLS-1$
+					+  Messages.GridsCell_ValueOf + p2.getVariableName() +Messages.GridsCell_widthIs + p2.getInitializer() +"."); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 				//add to group
 				addToGroup(p2);
 			}			
@@ -180,8 +180,8 @@ public class G_GridsCellPage extends WizardPage{
 	 * @param p
 	 */
 	private void addToGroup(Parameter p) {
-		if (!(p.getJavadoc().contains("@ingroup entities")))
-			GlobalUtility.setJavadocToField(simStateAnalizer.getRoot(), p.getField(), p.getJavadoc() + " @ingroup entities");
+		if (!(p.getJavadoc().contains("@ingroup entities"))) //$NON-NLS-1$
+			GlobalUtility.setJavadocToField(simStateAnalizer.getRoot(), p.getField(), p.getJavadoc() + " @ingroup entities"); //$NON-NLS-1$
 		if (!simStateAnalizer.alreadyVisited(p))	simStateAnalizer.getVisitedParameters().add(p);		
 	}
 
@@ -201,8 +201,8 @@ public class G_GridsCellPage extends WizardPage{
 		for (int i=0; i<fields.size(); i++){
 			String userComment = fieldUserDescription.get(i).getText();
 			String autogeneratedComment = fieldAutomaticDescription.get(i).getText();
-			String commentValue = "@ingroup entities\n *\n";
-			commentValue = commentValue + userComment + "\n";
+			String commentValue = "@ingroup entities\n *\n"; //$NON-NLS-1$
+			commentValue = commentValue + userComment + "\n"; //$NON-NLS-1$
 			commentValue = commentValue + autogeneratedComment;
 			ODD.addVariableToEntity(simStateAnalizer.getClassName(), new Variable(fields.get(i).getVariableName(), userComment, autogeneratedComment, fields.get(i).getInitializer()));
 			GlobalUtility.setJavadocToField(simStateAnalizer.getRoot(), fields.get(i).getField(), commentValue);
@@ -210,7 +210,7 @@ public class G_GridsCellPage extends WizardPage{
 		}
 
 		//((MASONDocumentationWizard) super.getWizard()).addPage(new Page4_old());
-		log.info("Comment added to grids...");
+		log.info("Comment added to grids..."); //$NON-NLS-1$
 		H_EnvironmentPage nextPage= new H_EnvironmentPage();
 		((MASONDocumentationWizard) super.getWizard()).addPage(nextPage); 
 		return nextPage; 

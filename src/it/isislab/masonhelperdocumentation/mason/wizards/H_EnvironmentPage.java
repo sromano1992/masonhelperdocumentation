@@ -97,7 +97,7 @@ public class H_EnvironmentPage extends WizardPage{
 			new Label(composite, SWT.NONE);		
 			Label lblInitializerDetector = new Label(composite, SWT.NONE);
 			lblInitializerDetector.setText("");
-			if (p.getInitializer()!="")	lblInitializerDetector.setText("Initial value of " + p.getVariableName() + " is: \n" + p.getInitializer());
+			if (p.getInitializer()!="")	lblInitializerDetector.setText(Messages.OtherVar_1 + p.getVariableName() + Messages.Initializer_2 + p.getInitializer());
 			
 			//getting old user input if exist//
 			Entity entity = ODD.getEntity(simStateAnalizer.getClassName());

@@ -38,57 +38,57 @@ public class CodeVisitor extends ASTVisitor{
 
 	@Override
 	public boolean visit(IfStatement node) {
-		information_s += "If " + node.getExpression() + " ";
+		information_s += Messages.StartMethodVisitor_If1 + node.getExpression() + " "; //$NON-NLS-2$
 		return super.visit(node);
 	}
 	
 	public void endVisit(IfStatement node){
-		information_s += "End if.\n";
+		information_s += Messages.StartMethodVisitor_EndIf;
 	}
 
 	public boolean visit(ForStatement f){
-		information_s += "There is a for loop that while " + f.getExpression() + " ";
+		information_s += Messages.StartMethodVisitor_While1 + f.getExpression() + " "; //$NON-NLS-2$
 		return super.visit(f);
 	}
 
 	public void endVisit(ForStatement node){
-		information_s += "End for.\n";
+		information_s += Messages.StartMethodVisitor_EndFor; //$NON-NLS-2$;
 	}
 	
 	public boolean visit (DoStatement d){
-		information_s += "While " + d.getExpression() + " ";
+		information_s += Messages.StartMethodVisitor_Do1 + d.getExpression() + " "; //$NON-NLS-2$
 		return super.visit(d);
 	}
 
 	public void endVisit(DoStatement node){
-		information_s += "After this do-while statement:\n";
+		information_s += Messages.StartMethodVisitor_DoWhileEnd;
 	}
 	
 	public boolean visit(SwitchStatement s){
-		information_s += "There is a switch on " + s.getExpression() + " ";
+		information_s += Messages.StartMethodVisitor_SwitchInfo + s.getExpression() + " "; //$NON-NLS-2$
 		return super.visit(s);
 	}
 
 	public void endVisit(SwitchStatement node){
-		information_s += "After this switch-statement:\n";
+		information_s += Messages.StartMethodVisitor_EndSwitch;
 	}
 	
 	public boolean visit(TypeDeclaration t){
-		information_s += "New type declaration: " + t.getName();
+		information_s += Messages.StartMethodVisitor_TypeDeclaration + t.getName();
 		return super.visit(t);
 	}
 
 	public void endVisit(TypeDeclaration node){
-		information_s += "After this type declaration:\n";
+		information_s += Messages.StartMethodVisitor_EndTypeDeclaration;
 	}
 	
 	public boolean visit(Assignment node){
-		information_s += "There is an assignment for " + node.getLeftHandSide() + " to value " + node.getRightHandSide() + " ";
+		information_s += Messages.StartMethodVisitor_Assignment + node.getLeftHandSide() + Messages.StartMethodVisitor_Assignemnt1 + node.getRightHandSide() + " "; //$NON-NLS-3$
 		return super.visit(node);
 	}
 
 	public void endVisit(Assignment node){
-		information_s += "After this assignment:\n";
+		information_s += Messages.StartMethodVisitor_EndAssignent;
 	}
 	
 	public boolean visit(MethodInvocation node) {
@@ -107,11 +107,11 @@ public class CodeVisitor extends ASTVisitor{
     }
 
 	public void endVisit(MethodInvocation node){
-		information_s += "After invocation of " + node.getName() + " method:\n";
+		information_s += Messages.StartMethodVisitor_EndInvocation + node.getName() + Messages.StartMethodVisitor_EndInvocation1;
 	}
-
+	
 	public String getInformation_s() {
-		return information_s + " this method terminates.";
+		return information_s + Messages.StartMethodVisitor_EndMethod;
 	}
 	
 }

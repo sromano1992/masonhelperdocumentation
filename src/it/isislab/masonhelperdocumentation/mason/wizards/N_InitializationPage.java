@@ -50,10 +50,21 @@ public class N_InitializationPage extends WizardPage {
 		textUserInitialization.setLocation(0, 164);
 		textUserInitialization.setSize(564, 108);
 	
-		textAutoInitialization.setText(ODD.getInitialization().getAutoInitialization());
+		String autoInitialization = clearInitialization();
+		textAutoInitialization.setText(autoInitialization);
 		if (ODD.getInitialization() != null)
 			if (ODD.getInitialization().getUserInitialization() != null)
-				textUserInitialization.setText(ODD.getInitialization().getUserInitialization().replace("<br>", ""));
+				textUserInitialization.setText(ODD.getInitialization().getUserInitialization());
+	}
+
+	private String clearInitialization() {
+		String autoInitialization = ODD.getInitialization().getAutoInitialization();
+		autoInitialization = autoInitialization.replace("<br>", "");
+		autoInitialization = autoInitialization.replace("</h1>", "");
+		autoInitialization = autoInitialization.replace("<h1>", "");
+		autoInitialization = autoInitialization.replace("<h2>", "");
+		autoInitialization = autoInitialization.replace("</h2>", "");
+		return autoInitialization;
 	}
 
 	public IWizardPage getNextPage(){ 
