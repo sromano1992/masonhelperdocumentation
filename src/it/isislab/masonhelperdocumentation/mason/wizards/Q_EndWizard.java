@@ -1,5 +1,6 @@
 package it.isislab.masonhelperdocumentation.mason.wizards;
 
+import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +24,7 @@ public class Q_EndWizard extends WizardPage {
 	private Text shelltext;
 	private String pageDescription = "Click Generate button to generate documentation.";
 	private ProgressBar progressBar;
+	private Button btnShowOutput;
 	private static Logger log = Logger.getLogger("global");
 	
 	/**
@@ -44,6 +46,7 @@ public class Q_EndWizard extends WizardPage {
 		setControl(container);
 		
 		shelltext = new Text(container, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.CANCEL | SWT.CENTER | SWT.MULTI);
+		shelltext.setText("Show Output");
 		shelltext.setEditable(false);
 		shelltext.setBounds(10, 77, 554, 171);
 		shelltext.setVisible(false);
@@ -63,6 +66,10 @@ public class Q_EndWizard extends WizardPage {
 		});
 		btnGenerate.setBounds(10, 0, 75, 25);
 		btnGenerate.setText("Generate");
+		
+		btnShowOutput = new Button(container, SWT.CHECK);
+		btnShowOutput.setBounds(103, 9, 93, 16);
+		btnShowOutput.setText("Show Output");
 	}
 
 	private void doxygenRun() {
@@ -95,6 +102,16 @@ public class Q_EndWizard extends WizardPage {
 					log.severe("doxygenError: " + s);
 				}
 			} catch (IOException e) {
+				e.printStackTrace();
+			}
+		}
+		//show html
+		if (btnShowOutput.getSelection()){
+			String htmlPath = ConfigFile.getValue("output") + File.separator + "html";
+			try {
+				Desktop.getDesktop().open(new File(htmlPath));
+			} catch (IOException e) {
+				log.severe("Failure opening output directory: " + htmlPath); 
 				e.printStackTrace();
 			}
 		}

@@ -35,6 +35,8 @@ public class Submodel  implements Serializable{
 	}
 	
 	public String toString(){
-		return "<h1>" + getName() + "</h1>\n" + getDescription() + "\n";
+		if (!getDescription().equals(""))
+			return "<h1>" + getName() + "</h1>\n" + getDescription() + "\n";
+		return "";
 	}
 }

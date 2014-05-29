@@ -45,7 +45,6 @@ public class P_SubmodelsPage extends WizardPage {
 		composite.setLayout(new GridLayout(2, false));
 		
 		Submodel_s submodel_s = ODD.getSubmodel_s();
-		ArrayList<Submodel> toRemove = new ArrayList<Submodel>();
 		for (Submodel submodel : submodel_s.getSubmodel_s()){
 			if (!submodel.getDescription().equals("")){
 				
