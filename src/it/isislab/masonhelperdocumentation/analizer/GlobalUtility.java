@@ -367,8 +367,11 @@ public class GlobalUtility {
 	 */
 	public static String getStepMethodInformation(Method step){
 		StepMethodVisitor sv = new StepMethodVisitor(getAgentAnalizer().getCompilationUnit());
-		step.getMethod().accept(sv);
-		return sv.getInformation_s();
+		if (step != null){
+			step.getMethod().accept(sv);
+			return sv.getInformation_s();
+		}
+		return "";
 	}
 	
 	public static String getObjectLocationInfo(Method m) {

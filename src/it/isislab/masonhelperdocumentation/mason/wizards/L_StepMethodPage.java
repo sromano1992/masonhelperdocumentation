@@ -95,7 +95,8 @@ public class L_StepMethodPage extends WizardPage{
 		gd_textUserDescription.heightHint = 65;
 		textUserDescription.setLayoutData(gd_textUserDescription);
 		
-		textMethodBody.setText(textMethodBody.getText() +  step.getMethod());		
+		if (step != null)
+			textMethodBody.setText(textMethodBody.getText() +  step.getMethod());		
 
 		//getting old user input if exist//
 		ProcessOverviewElement p = ODD.getProcessOverviewAndScheduling().getProcessOverviewElement(agentAnalizer.getClassName() + "step");

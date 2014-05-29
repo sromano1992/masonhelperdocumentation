@@ -116,7 +116,7 @@ public class I_StartInformationPage extends WizardPage{
 		//now first to analyze step method for each agent
 		//we reset variable "actualAgent" to start from first agent.
 		GlobalUtility.resetActualAgent();
-		if (GlobalUtility.getNumAgent_s() > 0){
+		if (GlobalUtility.getNumAgent_s() > 0 && GlobalUtility.getStepMethod() != null){
 			L_StepMethodPage nextPage = new L_StepMethodPage();
 			((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);
 			return nextPage;
