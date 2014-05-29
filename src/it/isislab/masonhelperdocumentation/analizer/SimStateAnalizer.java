@@ -151,14 +151,15 @@ public class SimStateAnalizer implements Analizer{
 						imageImport = imageImport + "\\image html " + s + "\n";
 				}
 			}
-			String group_sDefinition_s =  "@defgroup SimulationModel Simulation Model\n *" + ODD.getStandardDefinition +"\n" + imageImport + "\n"
-										+ "@defgroup purpose Purpose \n *" + ODD.getPurpose().getModelPurpose() + "\n@ingroup SimulationModel\n"
-										+ "@defgroup entities Entities, state variables, and scales\n@ingroup SimulationModel\n"
-										+ "@defgroup process Process, overview and schedule\n@ingroup SimulationModel\n"
-										+ "@defgroup design Design Concepts\n *" + ODD.getDesignConcepts().toString() +"\n@ingroup SimulationModel\n"
-										+ "@defgroup initialization Initialization\n *" + ODD.getInitialization().toString() + "\n@ingroup SimulationModel\n"
-										+ "@defgroup input Input data\n *" +ODD.getInputData() + "\n@ingroup SimulationModel\n"
-										+ "@defgroup submodels Submodels\n *" + ODD.getSubmodel_s().toString() +"\n@ingroup SimulationModel\n";
+			String group_sDefinition_s =   "@defgroup SimulationModel Simulation Model \n *" + ODD.getStandardDefinition +"\n" + imageImport + "\n"
+					+ "@defgroup purpose Purpose \n *" + ODD.getPurpose().getModelPurpose() + "\n@ingroup SimulationModel\n"
+					+ "@defgroup entities Entities, state variables, and scales\n@ingroup SimulationModel\n"
+					+ "@defgroup process Process, overview and schedule\n@ingroup SimulationModel\n"
+					+ "@defgroup design Design Concepts\n *" + ODD.getDesignConcepts().toString() +"\n@ingroup SimulationModel\n"
+					+ "@defgroup initialization Initialization\n *" + ODD.getInitialization().toString() + "\n@ingroup SimulationModel\n"
+					+ "@defgroup input Input data\n *" +ODD.getInputData() + "\n@ingroup SimulationModel\n"
+					+ "@defgroup submodels Submodels\n *" + ODD.getSubmodel_s().toString() +"\n@ingroup SimulationModel\n";
+
 			setModelDescription(group_sDefinition_s);
 			String code = compilationUnit.toString();
 			byte[] myBytes = code.getBytes();
