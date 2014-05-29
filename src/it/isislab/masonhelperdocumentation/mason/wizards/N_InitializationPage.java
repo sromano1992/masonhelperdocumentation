@@ -53,7 +53,7 @@ public class N_InitializationPage extends WizardPage {
 		textAutoInitialization.setText(ODD.getInitialization().getAutoInitialization());
 		if (ODD.getInitialization() != null)
 			if (ODD.getInitialization().getUserInitialization() != null)
-				textUserInitialization.setText(ODD.getInitialization().getUserInitialization());
+				textUserInitialization.setText(ODD.getInitialization().getUserInitialization().replace("<br>", ""));
 	}
 
 	public IWizardPage getNextPage(){ 

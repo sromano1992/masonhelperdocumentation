@@ -13,14 +13,14 @@ public class Initialization  implements Serializable{
 	private String autoInitialization, userInitialization;
 
 	public String getAutoInitialization() {
-		String autoInitialization = "At time t=0:\n";
+		String autoInitialization = "<h1>At time t=0:</h1>\n";
 		Entitie_s entitie_s = ODD.getEntitie_s();
 		for (Entity e: entitie_s.getEntitie_s()){
 			ArrayList<Variable> variable_s = e.getVariable_s();		
 			if (variable_s.size() != 0){
-				autoInitialization += "Entity '" + e.getName() + "':\n";
+				autoInitialization += "<h2>Entity " + e.getName() + "</h2>\n";
 				for (Variable v :variable_s)
-					autoInitialization += "variable '" + v.getName() + "' has initial value = " + v.getInitialValue() + ";\n";
+					autoInitialization += "variable '" + v.getName() + "' has initial value = " + v.getInitialValue() + ";<br>";
 				}
 		}
 		return autoInitialization;
