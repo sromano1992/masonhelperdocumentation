@@ -1,5 +1,6 @@
 package it.isislab.masonhelperdocumentation.ODD;
 
+import it.isislab.masonhelperdocumentation.analizer.GlobalUtility;
 import it.isislab.masonhelperdocumentation.mason.control.ConfigFile;
 
 import java.io.FileInputStream;
@@ -30,7 +31,7 @@ public class ODD implements Serializable{
 	public static String inputData;
 	private static Logger log = Logger.getLogger("global");
 	public static String getStandardDefinition = "The model description follows the ODD (Overview, 	Design concepts, Details) protocol (Grimm et al., 2006, this work).";
-
+	private static boolean differentsColors = true;
 
 	public static Purpose getPurpose(){
 		if (purpose == null)
@@ -199,7 +200,13 @@ public class ODD implements Serializable{
 	 * @return
 	 */
 	public static String getInputData(){
-		if (inputData == null)	return "";
-		return inputData;
+		if (differentsColors){
+			if (inputData == null)	return "";
+			return GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, inputData);
+		}
+		else{
+			if (inputData == null)	return "";
+			return inputData;
+		}
 	}
 }

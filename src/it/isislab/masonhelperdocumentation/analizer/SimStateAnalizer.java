@@ -152,7 +152,7 @@ public class SimStateAnalizer implements Analizer{
 				}
 			}
 			String group_sDefinition_s =   "@defgroup SimulationModel Simulation Model \n *" + ODD.getStandardDefinition +"\n" + imageImport + "\n"
-					+ "@defgroup purpose Purpose \n *" + ODD.getPurpose().getModelPurpose() + "\n@ingroup SimulationModel\n"
+					+ "@defgroup purpose Purpose \n *" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, ODD.getPurpose().getModelPurpose()) + "\n@ingroup SimulationModel\n"
 					+ "@defgroup entities Entities, state variables, and scales\n@ingroup SimulationModel\n"
 					+ "@defgroup process Process, overview and schedule\n@ingroup SimulationModel\n"
 					+ "@defgroup design Design Concepts\n *" + ODD.getDesignConcepts().toString() +"\n@ingroup SimulationModel\n"

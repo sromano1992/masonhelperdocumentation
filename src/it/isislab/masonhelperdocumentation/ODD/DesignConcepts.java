@@ -1,5 +1,7 @@
 package it.isislab.masonhelperdocumentation.ODD;
 
+import it.isislab.masonhelperdocumentation.analizer.GlobalUtility;
+
 import java.io.Serializable;
 import java.util.logging.Logger;
 
@@ -21,6 +23,7 @@ public class DesignConcepts  implements Serializable{
 	private String autoStochasticity, userStochasticity;
 	private String autoCollectives, userCollectives;
 	private String autoObservation, userObservation;
+	private static boolean differentsColor = true;
 	public static String serializedName = "designConcept_s.ser";
 	private static Logger log = Logger.getLogger("global");
 	
@@ -179,29 +182,57 @@ public class DesignConcepts  implements Serializable{
 		return userLearning;
 	}	
 	public String toString(){
-		String toReturn = "<h1>Basic principles</h1>\n";
-		toReturn += getAutoBasicPrinciples() + "\n" + getUserBasicPrinciples();
-		toReturn += "<h1>Emergence</h1>\n";
-		toReturn += getAutoEmergence() + "\n" + getUserEmergence();
-		toReturn += "<h1>Adaption</h1>\n";
-		toReturn += getAutoAdaption() + "\n" + getUserAdaption();
-		toReturn += "<h1>Objectives</h1>\n";
-		toReturn += getAutoObjectives() + "\n" + getUserObjectives();
-		toReturn += "<h1>Learning</h1>\n";
-		toReturn += getAutoLearning() + "\n" + getUserLearning();
-		toReturn += "<h1>Prediction</h1>\n";
-		toReturn += getAutoPrediction() + "\n" + getUserPrediction();
-		toReturn += "<h1>Sensing</h1>\n";
-		toReturn += getAutoSensing() + "\n" + getUserSensing();
-		toReturn += "<h1>Interaction</h1>\n";
-		toReturn += getAutoInteraction() + "\n" + getUserInteraction();
-		toReturn += "<h1>Stochasticity</h1>\n";
-		toReturn += getAutoStochasticity() + "\n" + getUserStochasticity();
-		toReturn += "<h1>Collectives</h1>\n";
-		toReturn += getAutoCollectives() + "\n" + getUserCollectives();
-		toReturn += "<h1>Observation</h1>\n";
-		toReturn += getAutoObservation() + "\n" + getUserObservation();
-		log.info("Returning string: " + toReturn);
-		return toReturn;
+		if (differentsColor ){
+			String toReturn = "<h1>Basic principles</h1>\n";
+			toReturn += GlobalUtility.surroundWithSpan(GlobalUtility.autoOutputColor, getAutoBasicPrinciples()) + "\n" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, getUserBasicPrinciples());
+			toReturn += "<h1>Emergence</h1>\n";
+			toReturn += GlobalUtility.surroundWithSpan(GlobalUtility.autoOutputColor, getAutoEmergence()) + "\n" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, getUserEmergence());
+			toReturn += "<h1>Adaption</h1>\n";
+			toReturn += GlobalUtility.surroundWithSpan(GlobalUtility.autoOutputColor, getAutoAdaption()) + "\n" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, getUserAdaption());
+			toReturn += "<h1>Objectives</h1>\n";
+			toReturn += GlobalUtility.surroundWithSpan(GlobalUtility.autoOutputColor, getAutoObjectives()) + "\n" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, getUserObjectives());
+			toReturn += "<h1>Learning</h1>\n";
+			toReturn += GlobalUtility.surroundWithSpan(GlobalUtility.autoOutputColor, getAutoLearning()) + "\n" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, getUserLearning());
+			toReturn += "<h1>Prediction</h1>\n";
+			toReturn += GlobalUtility.surroundWithSpan(GlobalUtility.autoOutputColor, getAutoPrediction()) + "\n" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, getUserPrediction());
+			toReturn += "<h1>Sensing</h1>\n";
+			toReturn += GlobalUtility.surroundWithSpan(GlobalUtility.autoOutputColor, getAutoSensing()) + "\n" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, getUserSensing());
+			toReturn += "<h1>Interaction</h1>\n";
+			toReturn += GlobalUtility.surroundWithSpan(GlobalUtility.autoOutputColor, getAutoInteraction()) + "\n" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, getUserInteraction());
+			toReturn += "<h1>Stochasticity</h1>\n";
+			toReturn += GlobalUtility.surroundWithSpan(GlobalUtility.autoOutputColor, getAutoStochasticity()) + "\n" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, getUserStochasticity());
+			toReturn += "<h1>Collectives</h1>\n";
+			toReturn += GlobalUtility.surroundWithSpan(GlobalUtility.autoOutputColor, getAutoCollectives()) + "\n" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, getUserCollectives());
+			toReturn += "<h1>Observation</h1>\n";
+			toReturn += GlobalUtility.surroundWithSpan(GlobalUtility.autoOutputColor, getAutoObservation()) + "\n" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, getUserObservation());
+			log.info("Returning string: " + toReturn);
+			return toReturn;
+		}
+		else{
+			String toReturn = "<h1>Basic principles</h1>\n";
+			toReturn += getAutoBasicPrinciples() + "\n" + getUserBasicPrinciples();
+			toReturn += "<h1>Emergence</h1>\n";
+			toReturn += getAutoEmergence() + "\n" + getUserEmergence();
+			toReturn += "<h1>Adaption</h1>\n";
+			toReturn += getAutoAdaption() + "\n" + getUserAdaption();
+			toReturn += "<h1>Objectives</h1>\n";
+			toReturn += getAutoObjectives() + "\n" + getUserObjectives();
+			toReturn += "<h1>Learning</h1>\n";
+			toReturn += getAutoLearning() + "\n" + getUserLearning();
+			toReturn += "<h1>Prediction</h1>\n";
+			toReturn += getAutoPrediction() + "\n" + getUserPrediction();
+			toReturn += "<h1>Sensing</h1>\n";
+			toReturn += getAutoSensing() + "\n" + getUserSensing();
+			toReturn += "<h1>Interaction</h1>\n";
+			toReturn += getAutoInteraction() + "\n" + getUserInteraction();
+			toReturn += "<h1>Stochasticity</h1>\n";
+			toReturn += getAutoStochasticity() + "\n" + getUserStochasticity();
+			toReturn += "<h1>Collectives</h1>\n";
+			toReturn += getAutoCollectives() + "\n" + getUserCollectives();
+			toReturn += "<h1>Observation</h1>\n";
+			toReturn += getAutoObservation() + "\n" + getUserObservation();
+			log.info("Returning string: " + toReturn);
+			return toReturn;
+		}
 	}
 }

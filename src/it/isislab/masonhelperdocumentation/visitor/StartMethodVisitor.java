@@ -41,7 +41,7 @@ public class StartMethodVisitor extends ASTVisitor {
 	}
 
 	public boolean visit(MethodInvocation node) {
-        information_s += Messages.StartMethodVisitor_InvokeMethod + node.getName() +".\n"; //$NON-NLS-2$
+        information_s += Messages.Visitor_InvokeMethod + node.getName() +".\n"; //$NON-NLS-2$
         if (node.getName().toString().equals("scheduleRepeating")) //$NON-NLS-1$
         	generateScheduleInformations(node); 
         else if (node.getName().toString().equals("setObjectLocation")) //$NON-NLS-1$
@@ -61,10 +61,10 @@ public class StartMethodVisitor extends ASTVisitor {
         else if (node.getName().toString().equals("getAllObjects")) //$NON-NLS-1$
         	generateGetAllObjectsInformations(node);
         else{	//add submodel for last ODD phase ("submodels")
-        	information_s = information_s + Messages.StartMethodVisitor_SeeSubmodel;
+        	information_s = information_s + Messages.Visitor_SeeSubmodel;
         	Submodel toAdd = new Submodel(node.getName().toString(), cu);
         	ODD.addSubmodel(toAdd);
-        	log.info(Messages.StartMethodVisitor_SubmodelFound + node.getName() +"'.");        	 //$NON-NLS-2$
+        	log.info(Messages.Visitor_SubmodelFound + node.getName() +"'.");        	 //$NON-NLS-2$
         }
         return super.visit(node);
 	}
@@ -72,37 +72,37 @@ public class StartMethodVisitor extends ASTVisitor {
 	private void generateAddEdgeInformations(MethodInvocation node) {
 		List<Expression> argument_s = node.arguments();
 		if (argument_s.size() == 3){
-			information_s += Messages.StartMethodVisitor_AddEdgeInformation +node.getExpression() +Messages.StartMethodVisitor_AddEdgeInfo1 + argument_s.get(0) +Messages.StartMethodVisitor_AddEdgeInfo2 + argument_s.get(1) +Messages.StartMethodVisitor_AddEdgeInfo3;
+			information_s += Messages.Visitor_AddEdgeInformation +node.getExpression() +Messages.Visitor_AddEdgeInfo1 + argument_s.get(0) +Messages.Visitor_AddEdgeInfo2 + argument_s.get(1) +Messages.Visitor_AddEdgeInfo3;
 		}
 		if (argument_s.size() == 1){
-			information_s += Messages.StartMethodVisitor_AddEdgeInfo4 + argument_s.get(0) + Messages.StartMethodVisitor_AddEdgeInfo5 + node.getExpression() + "'.\n"; //$NON-NLS-3$
+			information_s += Messages.Visitor_AddEdgeInfo4 + argument_s.get(0) + Messages.Visitor_AddEdgeInfo5 + node.getExpression() + "'.\n"; //$NON-NLS-3$
 		}
 	}
 
 	private void generateNextIntInformations() {
-		information_s += Messages.StartMethodVisitor_IntRandom;		
+		information_s += Messages.Visitor_IntRandom;		
 	}
 
 	private void generateGetObjectLocationInformations(MethodInvocation node) {
-		information_s += Messages.StartMethodVisitor_GetObj1 + node.getExpression() +Messages.StartMethodVisitor_GetObj2; 		
+		information_s += Messages.Visitor_GetObj1 + node.getExpression() +Messages.Visitor_GetObj2; 		
 	}
 
 	private void generateGetAllObjectsInformations(MethodInvocation node) {
-		information_s += Messages.StartMethodVisitor_AllObj1 + node.getExpression() +"'.\n"; //$NON-NLS-2$
+		information_s += Messages.Visitor_AllObj1 + node.getExpression() +"'.\n"; //$NON-NLS-2$
 	}
 
 	private void generateAddNodeInformations(MethodInvocation node) {
-		information_s += Messages.StartMethodVisitor_AddNode1 + node.getExpression() + ".\n";		 //$NON-NLS-2$
+		information_s += Messages.Visitor_AddNode1 + node.getExpression() + ".\n";		 //$NON-NLS-2$
 	}
 
 	private void generateNextDoubleInformations() {
-		information_s += Messages.StartMethodVisitor_RadomDouble1;		
+		information_s += Messages.Visitor_RadomDouble1;		
 	}
 
 	private void generateMultiplyInformations(MethodInvocation node) {
 		List<Expression> argument_s = node.arguments();
 		if (argument_s.size() == 1)
-			information_s = information_s + Messages.StartMethodVisitor_MutlipliesInfo1 + node.getExpression() +Messages.StartMethodVisitor_MutliplesInfo2 + argument_s.get(0) +"'.\n"; //$NON-NLS-3$
+			information_s = information_s + Messages.Visitor_MutlipliesInfo1 + node.getExpression() +Messages.Visitor_MutliplesInfo2 + argument_s.get(0) +"'.\n"; //$NON-NLS-3$
 	}
 
 	/**
@@ -112,12 +112,12 @@ public class StartMethodVisitor extends ASTVisitor {
 	private void generateSetObjectLocationInformations(MethodInvocation node) {
 		List<Expression> argument_s = node.arguments();
 		if (argument_s.size() == 3){	//schedule.repeating(3 parameters)
-			information_s = information_s + Messages.StartMethodVisitor_SetObjLoc1 + argument_s.get(0) + Messages.StartMethodVisitor_SetObjLoc2 + node.getExpression() + "': \n" //$NON-NLS-3$
-								+ Messages.StartMethodVisitor_SetObjLoc3 + argument_s.get(1) + ";\n" //$NON-NLS-2$
-								+ Messages.StartMethodVisitor_SetObjLoc4 + argument_s.get(2) + ".\n\n"; //$NON-NLS-2$
+			information_s = information_s + Messages.Visitor_SetObjLoc1 + argument_s.get(0) + Messages.Visitor_SetObjLoc2 + node.getExpression() + "': \n" //$NON-NLS-3$
+								+ Messages.Visitor_SetObjLoc3 + argument_s.get(1) + ";\n" //$NON-NLS-2$
+								+ Messages.Visitor_SetObjLoc4 + argument_s.get(2) + ".\n\n"; //$NON-NLS-2$
 		}
 		else if (argument_s.size() == 2){
-			information_s = information_s + Messages.StartMethodVisitor_SetObjLoc1 + argument_s.get(0) + Messages.StartMethodVisitor_SetObjLoc2 + node.getExpression() + "':\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
+			information_s = information_s + Messages.Visitor_SetObjLoc1 + argument_s.get(0) + Messages.Visitor_SetObjLoc2 + node.getExpression() + "':\n" //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$
 					+ "In position: " + argument_s.get(1) + ";\n"; //$NON-NLS-1$ //$NON-NLS-2$
 		}
 	}
@@ -129,80 +129,80 @@ public class StartMethodVisitor extends ASTVisitor {
 	private void generateScheduleInformations(MethodInvocation node) {
 		List<Expression> argument_s = node.arguments();
 		if (argument_s.size() == 4){	//schedule.repeating(4 parameters here)
-			information_s = information_s + Messages.StartMethodVisitor_Schedule1;
-			information_s = information_s + Messages.StartMethodVisitor_Schedule2 + argument_s.get(0) +";\n" //$NON-NLS-2$
-								+ Messages.StartMethodVisitor_Schedule3 + argument_s.get(1) + ";\n" //$NON-NLS-2$
-								+ Messages.StartMethodVisitor_Schedule4 + argument_s.get(2) + ";\n" //$NON-NLS-2$
-								+ Messages.StartMethodVisitor_Schedule5 + argument_s.get(3) + ".\n\n"; //$NON-NLS-2$
+			information_s = information_s + Messages.Visitor_Schedule1;
+			information_s = information_s + Messages.Visitor_Schedule2 + argument_s.get(0) +";\n" //$NON-NLS-2$
+								+ Messages.Visitor_Schedule3 + argument_s.get(1) + ";\n" //$NON-NLS-2$
+								+ Messages.Visitor_Schedule4 + argument_s.get(2) + ";\n" //$NON-NLS-2$
+								+ Messages.Visitor_Schedule5 + argument_s.get(3) + ".\n\n"; //$NON-NLS-2$
 		}
 		
 	}
 
 	@Override
 	public boolean visit(IfStatement node) {
-		information_s += Messages.StartMethodVisitor_If1 + node.getExpression() + " "; //$NON-NLS-2$
+		information_s += Messages.Visitor_If1 + node.getExpression() + " "; //$NON-NLS-2$
 		return super.visit(node);
 	}
 	
 	public void endVisit(IfStatement node){
-		information_s += Messages.StartMethodVisitor_EndIf;
+		information_s += Messages.Visitor_EndIf;
 	}
 
 	public boolean visit(WhileStatement f){
-		information_s += Messages.StartMethodVisitor_While1 + f.getExpression() + " "; //$NON-NLS-2$
+		information_s += Messages.Visitor_While1 + f.getExpression() + " "; //$NON-NLS-2$
 		return super.visit(f);
 	}
 
 	public boolean visit(ForStatement f){
-		information_s += Messages.StartMethodVisitor_While1 + f.getExpression() + " "; //$NON-NLS-2$
+		information_s += Messages.Visitor_While1 + f.getExpression() + " "; //$NON-NLS-2$
 		return super.visit(f);
 	}
 	
 	public void endVisit(ForStatement node){
-		information_s += Messages.StartMethodVisitor_EndFor; //$NON-NLS-2$;
+		information_s += Messages.Visitor_EndFor; //$NON-NLS-2$;
 	}
 	
 	public boolean visit (DoStatement d){
-		information_s += Messages.StartMethodVisitor_Do1 + d.getExpression() + " "; //$NON-NLS-2$
+		information_s += Messages.Visitor_Do1 + d.getExpression() + " "; //$NON-NLS-2$
 		return super.visit(d);
 	}
 
 	public void endVisit(DoStatement node){
-		information_s += Messages.StartMethodVisitor_DoWhileEnd;
+		information_s += Messages.Visitor_DoWhileEnd;
 	}
 	
 	public boolean visit(SwitchStatement s){
-		information_s += Messages.StartMethodVisitor_SwitchInfo + s.getExpression() + " "; //$NON-NLS-2$
+		information_s += Messages.Visitor_SwitchInfo + s.getExpression() + " "; //$NON-NLS-2$
 		return super.visit(s);
 	}
 
 	public void endVisit(SwitchStatement node){
-		information_s += Messages.StartMethodVisitor_EndSwitch;
+		information_s += Messages.Visitor_EndSwitch;
 	}
 	
 	public boolean visit(TypeDeclaration t){
-		information_s += Messages.StartMethodVisitor_TypeDeclaration + t.getName();
+		information_s += Messages.Visitor_TypeDeclaration + t.getName();
 		return super.visit(t);
 	}
 
 	public void endVisit(TypeDeclaration node){
-		information_s += Messages.StartMethodVisitor_EndTypeDeclaration;
+		information_s += Messages.Visitor_EndTypeDeclaration;
 	}
 	
 	public boolean visit(Assignment node){
-		information_s += Messages.StartMethodVisitor_Assignment + node.getLeftHandSide() + Messages.StartMethodVisitor_Assignemnt1 + node.getRightHandSide() + " "; //$NON-NLS-3$
+		information_s += Messages.Visitor_Assignment + node.getLeftHandSide() + Messages.Visitor_Assignemnt1 + node.getRightHandSide() + " "; //$NON-NLS-3$
 		return super.visit(node);
 	}
 
 	public void endVisit(Assignment node){
-		information_s += Messages.StartMethodVisitor_EndAssignent;
+		information_s += Messages.Visitor_EndAssignent;
 	}
 
 	public void endVisit(MethodInvocation node){
-		information_s += Messages.StartMethodVisitor_EndInvocation + node.getName() + Messages.StartMethodVisitor_EndInvocation1;
+		information_s += Messages.Visitor_EndInvocation + node.getName() + Messages.Visitor_EndInvocation1;
 	}
 	
 	public String getInformation_s() {
-		return information_s + Messages.StartMethodVisitor_EndMethod;
+		return information_s + Messages.Visitor_EndMethod;
 	}
 }

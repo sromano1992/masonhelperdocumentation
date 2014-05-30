@@ -1,5 +1,7 @@
 package it.isislab.masonhelperdocumentation.ODD;
 
+import it.isislab.masonhelperdocumentation.analizer.GlobalUtility;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -11,6 +13,7 @@ public class Initialization  implements Serializable{
 	 * Will be return a concatenation of variables initial value.
 	 */
 	private String autoInitialization, userInitialization;
+	private static boolean differentsColor = true;
 
 	public String getAutoInitialization() {
 		String autoInitialization = "<h1>At time t=0:</h1>\n";
@@ -39,6 +42,17 @@ public class Initialization  implements Serializable{
 	}
 	
 	public String toString(){
-		return getAutoInitialization() + "\n" + userInitialization;
+		if (differentsColor){
+			String toReturn = GlobalUtility.surroundWithSpan(GlobalUtility.autoOutputColor, getAutoInitialization()) + "\n";
+			if (userInitialization != null || !userInitialization.equals(""))
+				return toReturn + "<h2>Other</h2><br>" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, userInitialization);
+			return toReturn;
+		}
+		else{
+			String toReturn = getAutoInitialization() + "\n";
+			if (userInitialization != null || !userInitialization.equals(""))
+				return toReturn + "<h2>Other</h2><br>" + userInitialization;
+			return toReturn;
+		}
 	}
 }

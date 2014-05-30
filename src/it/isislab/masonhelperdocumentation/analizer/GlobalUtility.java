@@ -2,54 +2,36 @@ package it.isislab.masonhelperdocumentation.analizer;
 
 import it.isislab.masonhelperdocumentation.ODD.ODD;
 import it.isislab.masonhelperdocumentation.mason.control.ConfigFile;
-import it.isislab.masonhelperdocumentation.visitor.CodeVisitor;
 import it.isislab.masonhelperdocumentation.visitor.FieldInitializerVisitor;
 import it.isislab.masonhelperdocumentation.visitor.StartMethodVisitor;
 import it.isislab.masonhelperdocumentation.visitor.StepMethodVisitor;
 
-import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.ObjectOutputStream.PutField;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map.Entry;
 import java.util.logging.Logger;
 
-import org.eclipse.core.resources.IResource;
-import org.eclipse.core.runtime.IPath;
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaProject;
-import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.ASTNode;
 import org.eclipse.jdt.core.dom.ASTParser;
 import org.eclipse.jdt.core.dom.ASTVisitor;
-import org.eclipse.jdt.core.dom.Assignment;
 import org.eclipse.jdt.core.dom.Block;
 import org.eclipse.jdt.core.dom.CompilationUnit;
-import org.eclipse.jdt.core.dom.DoStatement;
 import org.eclipse.jdt.core.dom.Expression;
 import org.eclipse.jdt.core.dom.FieldDeclaration;
-import org.eclipse.jdt.core.dom.ForStatement;
-import org.eclipse.jdt.core.dom.IMethodBinding;
-import org.eclipse.jdt.core.dom.ITypeBinding;
-import org.eclipse.jdt.core.dom.IfStatement;
 import org.eclipse.jdt.core.dom.Javadoc;
 import org.eclipse.jdt.core.dom.MethodDeclaration;
 import org.eclipse.jdt.core.dom.MethodInvocation;
-import org.eclipse.jdt.core.dom.Statement;
-import org.eclipse.jdt.core.dom.SwitchStatement;
 import org.eclipse.jdt.core.dom.TagElement;
 import org.eclipse.jdt.core.dom.TextElement;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
-import org.eclipse.jdt.core.dom.WhileStatement;
-import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
 
 /**
  * This class contains "global" variable
@@ -64,6 +46,8 @@ public class GlobalUtility {
 	private static GUIStateAnalizer guiStateAnalizer;
 	private static ArrayList<AgentAnalizer> agent_sAnalizer;
 	public static int actualAgent = 0;
+	public static Integer[] userOutputColor = {32,1,205};	//default blue
+	public static Integer[] autoOutputColor = {0,0,0};	//default black
 	
 	public GlobalUtility(IJavaProject javaProject){
 		GlobalUtility.setJavaProject(javaProject);
@@ -573,18 +557,20 @@ public class GlobalUtility {
 		return null;		
 	}
 	
-	public static boolean containsSameWords(String first, String second){
-		int tolerance = 5;
-		int differences = 0;
-		String[] wordsInFirst = first.split("[^a-zA-Z']+");
-		String[] wordsInSecond = second.split("[^a-zA-Z']+");
-		for (int i=0; i<wordsInFirst.length; i++){
-			if (wordsInSecond.length <= i)	return false;
-			if (!(wordsInFirst[i].equals(wordsInSecond[i]))){
-				differences++;
-			}
-		}
-		return differences<tolerance;
+	/**
+	 * Surround input string with \htmlonly 'span' \endhtmlonly.
+	 * Doxygen will interpretate this as html. This is to set
+	 * color of text (auto/user). 
+	 * @param colorRGB
+	 * @param toSorround
+	 * @return
+	 */
+	public static String surroundWithSpan(Integer[] colorRGB, String toSorround){
+		if (colorRGB.length != 3)	return toSorround;
+		String toReturn = "\\htmlonly<span style='color:" + "rgb(" + colorRGB[0] + "," + colorRGB[1] + "," + colorRGB[2] + ");'>"
+						+ toSorround + "</span>\\endhtmlonly<br>";
+		log.info(toReturn);
+		return toReturn;
 	}
 
 }

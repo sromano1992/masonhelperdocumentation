@@ -5,8 +5,10 @@ import it.isislab.masonhelperdocumentation.analizer.ProjectAnalizer;
 import it.isislab.masonhelperdocumentation.mason.control.ConfigFile;
 import it.isislab.masonhelperdocumentation.mason.wizards.MASONDocumentationWizard;
 
+import java.awt.Color;
 import java.util.logging.Logger;
 
+import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
 
 import org.eclipse.jface.wizard.IWizardPage;
@@ -15,6 +17,7 @@ import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Button;
@@ -22,6 +25,8 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.wb.swt.SWTResourceManager;
+import org.eclipse.swt.custom.ScrolledComposite;
+import org.eclipse.swt.widgets.Canvas;
 
 /**
  * 
@@ -33,11 +38,7 @@ public class B_ProjectInformationPage extends WizardPage{
 	private static Logger log = Logger.getLogger("global");
 	private Label lblDoxygenPath;
 	private Button buttonBrowse;
-	private Label labelSimState;
-	private Label labelAgent;
-	private Label labelGUIState;
 	private ProjectAnalizer projectAnalizer;
-	private Label labelProjectFound;
 	private Label lblImagePath;
 	private Text textImgPath;
 	private Button btnImgBrowse;
@@ -46,6 +47,20 @@ public class B_ProjectInformationPage extends WizardPage{
 	private Label labelGraphvizPath;
 	private Text textGraphvizPath;
 	private Button buttonGraphvizBrowser;
+	private ScrolledComposite scrolledComposite;
+	private Composite composite;
+	private Label lblProjectFound;
+	private Label lblGuiState;
+	private Label lblSimState;
+	private Label lblAgent;
+	private Label label_Message;
+	private Composite composite_1;
+	private Button btnAutoColor;
+	private Label lblAtuoColor;
+	private Label labelUserColor;
+	private Button btnUserColor;
+	private Label lblViewAutoColor;
+	private Label lblViewUserColor;
 	
 
 	/**
@@ -184,50 +199,145 @@ public class B_ProjectInformationPage extends WizardPage{
 		btnOutputBrowse.setText("Browse...");
 		text.setText(ConfigFile.getValue("output"));
 		new Label(container, SWT.NONE);
+		
+		composite_1 = new Composite(container, SWT.NONE);
+		composite_1.setLayout(new GridLayout(3, false));
+		GridData gd_composite_1 = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
+		gd_composite_1.widthHint = 401;
+		gd_composite_1.heightHint = 60;
+		composite_1.setLayoutData(gd_composite_1);
+		
+		lblAtuoColor = new Label(composite_1, SWT.NONE);
+		lblAtuoColor.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+		lblAtuoColor.setText("Auto-generated info color:");
+
+		
+		final RGB autoRGB = new RGB(32, 1, 205);	//default blue
+		if (!ConfigFile.getValue("R_Value_auto").equals("") && !ConfigFile.getValue("G_Value_auto").equals("") && !ConfigFile.getValue("B_Value_auto").equals("")){
+			autoRGB.red = Integer.parseInt(ConfigFile.getValue("R_Value_auto"));
+			autoRGB.green = Integer.parseInt(ConfigFile.getValue("G_Value_auto"));
+			autoRGB.blue = Integer.parseInt(ConfigFile.getValue("B_Value_auto"));		
+			GlobalUtility.autoOutputColor[0] = autoRGB.red;
+			GlobalUtility.autoOutputColor[1] = autoRGB.green;
+			GlobalUtility.autoOutputColor[2] = autoRGB.blue;
+		}
+		btnAutoColor = new Button(composite_1, SWT.NONE);
+		btnAutoColor.setText("Choose");
+		lblViewAutoColor = new Label(composite_1, SWT.NONE);
+		lblViewAutoColor.setForeground(SWTResourceManager.getColor(autoRGB));
+		lblViewAutoColor.setText("AAAAA");
+		lblViewAutoColor.setBackground(SWTResourceManager.getColor(autoRGB));
+		btnAutoColor.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Color c = JColorChooser.showDialog(null, "Choose a Color", null);
+			      if (c != null){
+			    	  autoRGB.red = c.getRed();
+			    	  autoRGB.green = c.getGreen();
+			    	  autoRGB.blue = c.getBlue();
+			  		  lblViewAutoColor.setForeground(SWTResourceManager.getColor(autoRGB));
+					  lblViewAutoColor.setBackground(SWTResourceManager.getColor(autoRGB));
+					  GlobalUtility.autoOutputColor[0] = c.getRed();
+					  GlobalUtility.autoOutputColor[1] = c.getGreen();
+					  GlobalUtility.autoOutputColor[2] = c.getBlue();
+					  ConfigFile.setProperty("R_Value_auto", c.getRed()+"");
+					  ConfigFile.setProperty("G_Value_auto", c.getGreen()+"");
+					  ConfigFile.setProperty("B_Value_auto", c.getBlue()+"");
+			      }
+			    }
+			});
+		
+		
+		labelUserColor = new Label(composite_1, SWT.RIGHT);
+		labelUserColor.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+		labelUserColor.setText("User info color:");
+		
+		final RGB userRGB = new RGB(0, 0, 0);	//default black
+		if (!ConfigFile.getValue("R_Value_user").equals("") && !ConfigFile.getValue("G_Value_user").equals("") && !ConfigFile.getValue("B_Value_user").equals("")){
+			userRGB.red = Integer.parseInt(ConfigFile.getValue("R_Value_user"));
+			userRGB.green = Integer.parseInt(ConfigFile.getValue("G_Value_user"));
+			userRGB.blue = Integer.parseInt(ConfigFile.getValue("B_Value_user"));
+			GlobalUtility.userOutputColor[0] = userRGB.red;
+			GlobalUtility.userOutputColor[1] = userRGB.green;
+			GlobalUtility.userOutputColor[2] = userRGB.blue;
+		}
+		btnUserColor = new Button(composite_1, SWT.NONE);
+		lblViewUserColor = new Label(composite_1, SWT.NONE);
+		lblViewUserColor.setText("AAAAA");
+		lblViewUserColor.setForeground(SWTResourceManager.getColor(userRGB));
+		lblViewUserColor.setBackground(SWTResourceManager.getColor(userRGB));
+		btnUserColor.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				Color c = JColorChooser.showDialog(null, "Choose a Color", null);
+			      if (c != null){
+			    	  userRGB.red = c.getRed();
+			    	  userRGB.green = c.getGreen();
+			    	  userRGB.blue = c.getBlue();
+			    	  lblViewUserColor.setForeground(SWTResourceManager.getColor(userRGB));
+			    	  lblViewUserColor.setBackground(SWTResourceManager.getColor(userRGB));
+					  GlobalUtility.userOutputColor[0] = c.getRed();
+					  GlobalUtility.userOutputColor[1] = c.getGreen();
+					  GlobalUtility.userOutputColor[2] = c.getBlue();
+					  ConfigFile.setProperty("R_Value_user", c.getRed()+"");
+					  ConfigFile.setProperty("G_Value_user", c.getGreen()+"");
+					  ConfigFile.setProperty("B_Value_user", c.getBlue()+"");
+			      }
+			}
+		});
+		btnUserColor.setText("Choose");
+		
+		
 		new Label(container, SWT.NONE);
 		new Label(container, SWT.NONE);
 		
-		labelProjectFound = new Label(container, SWT.NONE);
-		Label label_Message = new Label(container, SWT.NONE);
+		label_Message = new Label(container, SWT.NONE);
+		label_Message.setText("");
+		new Label(container, SWT.NONE);
+		new Label(container, SWT.NONE);
+		
+		scrolledComposite = new ScrolledComposite(container, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		GridData gd_scrolledComposite = new GridData(SWT.LEFT, SWT.CENTER, false, false, 1, 1);
+		gd_scrolledComposite.heightHint = 75;
+		gd_scrolledComposite.widthHint = 384;
+		scrolledComposite.setLayoutData(gd_scrolledComposite);
+		scrolledComposite.setExpandHorizontal(true);
+		scrolledComposite.setExpandVertical(true);
+		
+		composite = new Composite(scrolledComposite, SWT.NONE);
+		composite.setLayout(new GridLayout(1, false));
+		
+		if (projectAnalizer.isMasonProject()){
+			setProjectLabel();
+		}
+		scrolledComposite.setContent(composite);
+		scrolledComposite.setMinSize(composite.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 		new Label(container, SWT.NONE);
 		setControl(container);
-		new Label(container, SWT.NONE);
-		
-		labelSimState = new Label(container, SWT.NONE);
-		new Label(container, SWT.NONE);
-		new Label(container, SWT.NONE);
-		
-		labelAgent = new Label(container, SWT.NONE);
-		new Label(container, SWT.NONE);
-		new Label(container, SWT.NONE);
-		
-		labelGUIState = new Label(container, SWT.NONE);
-		labelGUIState.setLayoutData(new GridData(SWT.LEFT, SWT.BOTTOM, false, false, 1, 1));
-		new Label(container, SWT.NONE);
 		
 		setDoxygenLabelPathFromConfig();
 		if (!projectAnalizer.isMasonProject())	label_Message.setText("Please select a project that use MASON library!");
 		if (isDoxygenPathSet() && projectAnalizer.isMasonProject())	super.setPageComplete(true);
 		else	super.setPageComplete(false);
-	
-		if (projectAnalizer.isMasonProject()){
-			setProjectLabel();
-		}
 		
 	}
 
 	private void setProjectLabel() {
-		labelProjectFound.setText("Project Found: " + projectAnalizer.getProjectName());
+		lblProjectFound = new Label(composite, SWT.NONE);
+		lblProjectFound.setText("Project Found: " + projectAnalizer.getProjectName());
 		if (projectAnalizer.getGuiStateCU()!=null)
 			if (projectAnalizer.getGuiStateCU().getElementName()!=null){
-				labelGUIState.setText("GUISTATE: " + projectAnalizer.getGuiStateCU().getElementName());
+				lblGuiState = new Label(composite, SWT.NONE);
+				lblGuiState.setText("GUISTATE: " + projectAnalizer.getGuiStateCU().getElementName());
 			}
 		else
-			labelGUIState.setText("GUI not found");	
-		labelSimState.setText("SIMSTATE: " + projectAnalizer.getSimStateCU().getElementName());
+			lblGuiState.setText("GUI not found");	
+		lblSimState = new Label(composite, SWT.NONE);
+		lblSimState.setText("SIMSTATE: " + projectAnalizer.getSimStateCU().getElementName());
 		if (projectAnalizer.getAgentsNum()!=0){
+			lblAgent = new Label(composite, SWT.NONE);
 			for (int i=0; i<projectAnalizer.getAgentsNum(); i++)
-				labelAgent.setText(labelAgent.getText() + "AGENT: " + projectAnalizer.getAgentCU(i).getElementName() +"\n");
+				lblAgent.setText(lblAgent.getText() + "AGENT: " + projectAnalizer.getAgentCU(i).getElementName() +"\n");
 		}
 	}
 

@@ -72,7 +72,7 @@ public class AgentAnalizer implements Analizer{
 	public void setClassDescription(String modelDescription){
 		List<TypeDeclaration> types = compilationUnit.types();		
 		TypeDeclaration agent = types.get(0);	//get class definition (element in position 0)
-		modelDescription = "@ingroup entities\n*\n*" + modelDescription;	
+		modelDescription = "@ingroup entities\n*\n*" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, modelDescription);	
 		GlobalUtility.setJavadocToType(root, agent, modelDescription);
 	}
 	

@@ -1,5 +1,7 @@
 package it.isislab.masonhelperdocumentation.ODD;
 
+import it.isislab.masonhelperdocumentation.analizer.GlobalUtility;
+
 import java.io.Serializable;
 
 /**
