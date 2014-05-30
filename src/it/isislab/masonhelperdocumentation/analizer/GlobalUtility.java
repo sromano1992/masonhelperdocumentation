@@ -506,6 +506,9 @@ public class GlobalUtility {
 		try {
 			FileWriter fstreamWrite = new FileWriter(new File(output + File.separator + getProjectAnalizer().getProjectName() + "_config"));
 	    	BufferedWriter out = new BufferedWriter(fstreamWrite);
+	    	String haveDot = "YES";
+	    	if (!ConfigFile.getValue("graphvizPath").equals(""))
+	    		haveDot = "NO";
 	    	out.write("INPUT = " + getProjectAnalizer().getSimStateCU().getResource().getRawLocation().toOSString().substring(0, getProjectAnalizer().getSimStateCU().getResource().getRawLocation().toOSString().lastIndexOf(File.separator)) + "\n"
 	    			+ "PROJECT_NAME = " + getProjectAnalizer().getProjectName() + "\n"
 	    			+ "INLINE_SOURCES = YES" + "\n"
@@ -521,7 +524,7 @@ public class GlobalUtility {
 	    			+ "GENERATE_TREEVIEW = YES" + "\n"
 	    			+ "#DOT configuration#" +"\n"	//will be optional
 	    			+ "CLASS_DIAGRAMS = YES" +"\n"
-	    			+ "HAVE_DOT = YES" + "\n"
+	    			+ "HAVE_DOT = " + haveDot + "\n"
 	    			+ "DOT_NUM_THREADS = 0" + "\n"
 	    			+ "DOT_FONTNAME = Helvetica" + "\n"
 	    			+ "DOT_FONTSIZE = 10" + "\n"
