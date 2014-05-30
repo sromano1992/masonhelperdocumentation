@@ -570,8 +570,8 @@ public class GlobalUtility {
 	 */
 	public static String surroundWithSpan(Integer[] colorRGB, String toSorround){
 		if (colorRGB.length != 3)	return toSorround;
-		String toReturn = "\\htmlonly<span style='color:" + "rgb(" + colorRGB[0] + "," + colorRGB[1] + "," + colorRGB[2] + ");'>"
-						+ toSorround + "</span>\\endhtmlonly<br>";
+		String toReturn = "\\htmlonly<span style='color:" + "rgb(" + colorRGB[0] + "," + colorRGB[1] + "," + colorRGB[2] + ");'>\\endhtmlonly"
+						+ toSorround + "\\htmlonly</span>\\endhtmlonly<br>";
 		log.info(toReturn);
 		return toReturn;
 	}
