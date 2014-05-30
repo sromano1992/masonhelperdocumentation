@@ -507,7 +507,7 @@ public class GlobalUtility {
 			FileWriter fstreamWrite = new FileWriter(new File(output + File.separator + getProjectAnalizer().getProjectName() + "_config"));
 	    	BufferedWriter out = new BufferedWriter(fstreamWrite);
 	    	String haveDot = "YES";
-	    	if (!ConfigFile.getValue("graphvizPath").equals(""))
+	    	if (ConfigFile.getValue("graphvizPath").equals(""))
 	    		haveDot = "NO";
 	    	out.write("INPUT = " + getProjectAnalizer().getSimStateCU().getResource().getRawLocation().toOSString().substring(0, getProjectAnalizer().getSimStateCU().getResource().getRawLocation().toOSString().lastIndexOf(File.separator)) + "\n"
 	    			+ "PROJECT_NAME = " + getProjectAnalizer().getProjectName() + "\n"
