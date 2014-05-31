@@ -24,6 +24,10 @@ public class Submodel_s  implements Serializable{
 		return this.submodel_s;
 	}
 	
+	public void setSubmodel_s(ArrayList<Submodel> submodel_s){
+		this.submodel_s = submodel_s;
+	}
+	
 	public String toString(){
 		if (differentsColors){
 			String toReturn = "";

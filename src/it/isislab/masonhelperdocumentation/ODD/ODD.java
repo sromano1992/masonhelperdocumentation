@@ -10,6 +10,9 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.logging.Logger;
 
 import org.eclipse.jdt.core.dom.CompilationUnit;
@@ -54,6 +57,35 @@ public class ODD implements Serializable{
 	public static Submodel_s getSubmodel_s(){
 		if (submodel_s == null)
 			submodel_s = new Submodel_s();
+		return clearSubmodel_s();
+	}
+	
+
+	/**
+	 * Remove void submodels (without description) and duplicate submodels.
+	 * @param submodel_s2
+	 * @return submodel_s
+	 */
+	private static Submodel_s clearSubmodel_s() {
+		//***********removing void submodel_s***********//
+		ArrayList<Submodel> voidSubmodel_s = new ArrayList<Submodel>();
+		for (Submodel s : submodel_s.getSubmodel_s()){
+			if (s.getDescription().equals(""))	voidSubmodel_s.add(s);
+		}
+		for (Submodel s : voidSubmodel_s)	submodel_s.getSubmodel_s().remove(s);
+		
+		//***********removing duplicate submodel_s***********//
+		//to remove duplicate entry I create an hashmap with key = description+name of submodel
+		//and entry = submodel. Submodels with equals description+name will be rewrite (delete).
+		HashMap<String,Submodel> hashSubmodel_s = new HashMap<String,Submodel>();
+		for (Submodel s : submodel_s.getSubmodel_s()){
+			hashSubmodel_s.put(s.getDescription() + s.getName(), s);
+		}
+		ArrayList<Submodel> newSubmodel_s = new ArrayList<Submodel>();
+		Collection<Submodel> collectionSubmodel_s = hashSubmodel_s.values();
+		for (Submodel s : collectionSubmodel_s)
+			newSubmodel_s.add(s);
+		submodel_s.setSubmodel_s(newSubmodel_s);
 		return submodel_s;
 	}
 

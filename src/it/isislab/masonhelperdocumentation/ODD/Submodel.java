@@ -39,4 +39,10 @@ public class Submodel  implements Serializable{
 			return "<h1>" + getName() + "</h1>\n" + getDescription() + "\n";
 		return "";
 	}
+	
+	public boolean equals(Submodel s){
+		if (s.getDescription().equals(this.getDescription()) && s.getName().equals(this.getName()))
+			return true;
+		return false;
+	}
 }
