@@ -81,7 +81,7 @@ public class M_DesignConceptsPage extends WizardPage {
 		lblBasicPrinciples.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblBasicPrinciples.setText("Basic principles");
 		
-		txtBasicPrinciplesHelp = new Text(composite, SWT.BORDER | SWT.MULTI);
+		txtBasicPrinciplesHelp = new Text(composite, SWT.BORDER | SWT.V_SCROLL | SWT.MULTI);
 		txtBasicPrinciplesHelp.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_DARK_SHADOW));
 		txtBasicPrinciplesHelp.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.ITALIC));
 		txtBasicPrinciplesHelp.setText("Which general concepts, theories, hypotheses, or modeling approaches\r\n are underlying the model\u2019s design?");
@@ -111,7 +111,7 @@ public class M_DesignConceptsPage extends WizardPage {
 		lblEmergence.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblEmergence.setText("Emergence");
 
-		txtEmergenceHelp = new Text(composite, SWT.BORDER | SWT.MULTI);
+		txtEmergenceHelp = new Text(composite, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL);
 		txtEmergenceHelp.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_DARK_SHADOW));
 		txtEmergenceHelp.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.ITALIC));
 		txtEmergenceHelp.setText("What key results or outputs of the model are modeled as emerging\nfrom the adaptive traits, or behaviors, of individuals?");
@@ -141,7 +141,7 @@ public class M_DesignConceptsPage extends WizardPage {
 		lblAdaption.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblAdaption.setText("Adaption");
 
-		txtAdaptionHelp = new Text(composite, SWT.BORDER | SWT.MULTI);
+		txtAdaptionHelp = new Text(composite, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL);
 		txtAdaptionHelp.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_DARK_SHADOW));
 		txtAdaptionHelp.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.ITALIC));
 		txtAdaptionHelp.setText("What adaptive traits do the individuals have? What rules do\nthey have for making decisions or changing behavior in response to\nchanges in themselves or their environment");
@@ -171,7 +171,7 @@ public class M_DesignConceptsPage extends WizardPage {
 		lblObjectives.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblObjectives.setText("Objectives");
 
-		txtObjectivesHelp = new Text(composite, SWT.BORDER | SWT.MULTI);
+		txtObjectivesHelp = new Text(composite, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL);
 		txtObjectivesHelp.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_DARK_SHADOW));
 		txtObjectivesHelp.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.ITALIC));
 		txtObjectivesHelp.setText("If adaptive traits explicitly act to increase some measure of the\nindividual’s success at meeting some objective, what exactly is\nthat objective and how is it measured?");
@@ -201,7 +201,7 @@ public class M_DesignConceptsPage extends WizardPage {
 		lblLearning.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblLearning.setText("Learning");
 
-		txtLearningHelp = new Text(composite, SWT.BORDER | SWT.MULTI);
+		txtLearningHelp = new Text(composite, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL);
 		txtLearningHelp.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_DARK_SHADOW));
 		txtLearningHelp.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.ITALIC));
 		txtLearningHelp.setText("Many individuals or agents (but also organizations and institutions\nchange their adaptive traits over time as a consequence of\ntheir experience? If so, how?");
@@ -231,7 +231,7 @@ public class M_DesignConceptsPage extends WizardPage {
 		lblPrediction.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblPrediction.setText("Prediction");
 
-		txtPredictionHelp = new Text(composite, SWT.BORDER | SWT.MULTI);
+		txtPredictionHelp = new Text(composite, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL);
 		txtPredictionHelp.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_DARK_SHADOW));
 		txtPredictionHelp.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.ITALIC));
 		txtPredictionHelp.setText("Prediction is fundamental to successful decision-making; if an\nagent’s adaptive traits or learning procedures are based on estimating\nfuture consequences of decisions,howdo agents predict the\nfuture conditions (either environmental or internal) they will experience?");
@@ -261,7 +261,7 @@ public class M_DesignConceptsPage extends WizardPage {
 		lblSensing.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblSensing.setText("Sensing");
 
-		txtSensingHelp = new Text(composite, SWT.BORDER | SWT.MULTI);
+		txtSensingHelp = new Text(composite, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL);
 		txtSensingHelp.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_DARK_SHADOW));
 		txtSensingHelp.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.ITALIC));
 		txtSensingHelp.setText("What internal and environmental state variables are individuals\nassumed to sense and consider in their decisions?");
@@ -291,7 +291,7 @@ public class M_DesignConceptsPage extends WizardPage {
 		lblInteraction.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblInteraction.setText("Interaction");
 
-		txtInteractionHelp = new Text(composite, SWT.BORDER | SWT.MULTI);
+		txtInteractionHelp = new Text(composite, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL);
 		txtInteractionHelp.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_DARK_SHADOW));
 		txtInteractionHelp.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.ITALIC));
 		txtInteractionHelp.setText("What kinds of interactions among agents are assumed? Are\nthere direct interactions in which individuals encounter and affect\nothers, or are interactions indirect, e.g., via competition for amediating\nresource?");
@@ -321,7 +321,7 @@ public class M_DesignConceptsPage extends WizardPage {
 		lblStochasticity.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblStochasticity.setText("Stochasticity");
 
-		txtStochasticityHelp = new Text(composite, SWT.BORDER | SWT.MULTI);
+		txtStochasticityHelp = new Text(composite, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL);
 		txtStochasticityHelp.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_DARK_SHADOW));
 		txtStochasticityHelp.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.ITALIC));
 		txtStochasticityHelp.setText("What processes are modeled by assuming they are random or\npartly random?");
@@ -351,7 +351,7 @@ public class M_DesignConceptsPage extends WizardPage {
 		lblCollectives.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblCollectives.setText("Collectives");
 
-		txtCollectivesHelp = new Text(composite, SWT.BORDER | SWT.MULTI);
+		txtCollectivesHelp = new Text(composite, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL);
 		txtCollectivesHelp.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_DARK_SHADOW));
 		txtCollectivesHelp.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.ITALIC));
 		txtCollectivesHelp.setText("Do the individuals form or belong to aggregations that affect,\nand are affected by, the individuals?");
@@ -381,7 +381,7 @@ public class M_DesignConceptsPage extends WizardPage {
 		lblObservation.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblObservation.setText("Observation");
 
-		txtObservationHelp = new Text(composite, SWT.BORDER | SWT.MULTI);
+		txtObservationHelp = new Text(composite, SWT.BORDER | SWT.MULTI | SWT.V_SCROLL);
 		txtObservationHelp.setForeground(SWTResourceManager.getColor(SWT.COLOR_WIDGET_DARK_SHADOW));
 		txtObservationHelp.setFont(SWTResourceManager.getFont("Segoe UI", 9, SWT.ITALIC));
 		txtObservationHelp.setText("What data are collected from the ABM for testing, understanding,\nand analyzing it, and how and when are they collected?");

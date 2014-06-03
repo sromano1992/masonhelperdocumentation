@@ -59,8 +59,10 @@ public class ProjectAnalizer {
 	}
 
 	/**
-	 * Check if select project is a Mason project
+	 * Check if select project is a Mason project and
+	 * contains a SimState class.
 	 * @return true if Project use a mason.*.jar library
+	 * 		   and contains a SimState class
 	 */
 	public boolean isMasonProject() {
 		try {
@@ -68,7 +70,7 @@ public class ProjectAnalizer {
 			for (IPackageFragmentRoot p:elements){
 				if (p.getElementName().contains("mason")){
 					log.info("Selected project uses MASON library");
-					return true;
+					return true;					
 				}
 			}
 		} catch (JavaModelException e) {

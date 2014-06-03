@@ -10,18 +10,18 @@ import org.eclipse.swt.widgets.Label;
 
 public class A_IntroductionPage extends WizardPage {
 	private static String introduction = "This wizard will auto-generate ABMs "
-							+ "documentation with the standard ODD format. The objectives of "
+							+ "documentation with the standard ODD format. The objectives of \n"
 							+ "ODD are to make model descriptions more understandable and "
-							+ "complete, thereby making ABMs less subject to criticism for "
+							+ "complete, thereby making ABMs less \nsubject to criticism for "
 							+ "being irreproducible.\n\n"
 							+ "Elements of ODD:\n"
-							+ "1. Purpose\n"
-							+ "2. Entities, state variables, and scales\n"
-							+ "3. Process overview and scheduling\n"
-							+ "4. Design concepts\n"
-							+ "5. Initialization\n"	
-							+ "6. Input data\n"
-							+ "7. Submodels";
+							+ "	  1. Purpose\n"
+							+ "	  2. Entities, state variables, and scales\n"
+							+ "	  3. Process overview and scheduling\n"
+							+ "	  4. Design concepts\n"
+							+ "	  5. Initialization\n"	
+							+ "	  6. Input data\n"
+							+ "	  7. Submodels";
 	
 	/**
 	 * Create the wizard.
@@ -41,7 +41,7 @@ public class A_IntroductionPage extends WizardPage {
 
 		setControl(container);
 		
-		Label lblIntroduction = new Label(container, SWT.CENTER);
+		Label lblIntroduction = new Label(container, SWT.NONE);
 		lblIntroduction.setBounds(10, 10, 554, 189);
 		lblIntroduction.setText(introduction);
 	}

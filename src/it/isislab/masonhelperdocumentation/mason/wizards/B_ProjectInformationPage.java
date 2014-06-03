@@ -316,7 +316,7 @@ public class B_ProjectInformationPage extends WizardPage{
 		setControl(container);
 		
 		setDoxygenLabelPathFromConfig();
-		if (!projectAnalizer.isMasonProject())	label_Message.setText("Please select a project that use MASON library!");
+		if (!projectAnalizer.isMasonProject())	label_Message.setText("Please select a project that use MASON library and has a SimState class!");
 		if (isDoxygenPathSet() && projectAnalizer.isMasonProject())	super.setPageComplete(true);
 		else	super.setPageComplete(false);
 		

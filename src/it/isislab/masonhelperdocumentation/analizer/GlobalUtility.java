@@ -48,6 +48,27 @@ public class GlobalUtility {
 	public static int actualAgent = 0;
 	public static Integer[] userOutputColor = {32,1,205};	//default blue
 	public static Integer[] autoOutputColor = {0,0,0};	//default black
+	public static String documentDescription = "This documentation contains information on the simulation model. These information are partially self-generated and partially entered. <br>" 
+											 + "The information is grouped according to the protocol ODD. "
+											 + "Each section of the protocol answers some questions. In particular: <br>"
+											 + "<h3>Purpose</h3> What is the purpose of the model?\n<br>"
+											 + "<h3>Entities, state variables and scales</h3> What kinds of entities are in the model?bBy what state variables, or attributes, are these entities characterized?\n<br>"
+											 + "<h3>Process overview and scheduling</h3> Who (i.e., what entity) does what, and in what order?\n<br>"
+											 + "<h3>Design concepts</h3> Which general concepts, theories, hypotheses, or modeling approaches are underlying the model's design? "
+											 +							  "What key results or outputs of the model are modeled as emerging from the adaptive traits, or behaviors, of individuals? "	
+											 +							  "What adaptive traits do the individuals have? What rules do they have for making decisions or changing behavior in response to changes in themselves or their environment "
+											 +							  "If adaptive traits explicitly act to increase some measure of theindividual's success at meeting some objective, what exactly is that objective and how is it measured? "
+										 	 + 							  "Many individuals or agents (but also organizations and institutions change their adaptive traits over time as a consequence of their experience? If so, how? "
+											 +							  "Prediction is fundamental to successful decision-making; if an agent's adaptive traits or learning procedures are based on estimating future consequences of decisions,howdo agents predict the future conditions (either environmental or internal) they will experience? "
+											 +							  "What internal and environmental state variables are individuals assumed to sense and consider in their decisions? "
+											 +							  "What kinds of interactions among agents are assumed? Are there direct interactions in which individuals encounter and affect others, or are interactions indirect, e.g., via competition for amediating resource? "
+											 +							  "What processes are modeled by assuming they are random or partly random? "
+											 +							  "Do the individuals form or belong to aggregations that affect, and are affected by, the individuals? "
+											 +							  "What data are collected from the ABM for testing, understanding, and analyzing it, and how and when are they collected?\n<br>"
+											 + "<h3>Initialization</h3> What is the initial state of the model world, i.e., at time t = 0 of a simulation run?\n<br>"
+											 + "<h3>Input data</h3> Does the model use input from external sources such as data files or other models to represent processes that change over time?\n<br>"
+											 + "<h3>Submodels</h3> Information about submodels identified in seciont 'Process overview and scheduling'\n<br>";
+											 
 	
 	public GlobalUtility(IJavaProject javaProject){
 		GlobalUtility.setJavaProject(javaProject);

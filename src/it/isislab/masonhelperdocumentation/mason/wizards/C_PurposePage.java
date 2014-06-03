@@ -14,6 +14,7 @@ import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.layout.GridData;
 import org.eclipse.ui.actions.GlobalBuildAction;
+import org.eclipse.swt.custom.ScrolledComposite;
 
 public class C_PurposePage extends WizardPage {
 	private static String pageDescription = "What is the purpose of the model?";
@@ -31,10 +32,17 @@ public class C_PurposePage extends WizardPage {
 		Composite container = new Composite(parent, SWT.NULL);
 		setControl(container);
 		container.setLayout(new GridLayout(1, false));		
-		text = new Text(container, SWT.BORDER | SWT.MULTI);
-		GridData gd_text = new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1);
-		gd_text.heightHint = 169;
-		text.setLayoutData(gd_text);
+		
+		ScrolledComposite scrolledComposite = new ScrolledComposite(container, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL);
+		scrolledComposite.setExpandHorizontal(true);
+		scrolledComposite.setExpandVertical(true);
+		
+		Composite composite = new Composite(scrolledComposite, SWT.NONE);
+		text = new Text(composite, SWT.BORDER | SWT.H_SCROLL | SWT.V_SCROLL | SWT.CANCEL | SWT.MULTI);
+		text.setLocation(0, 0);
+		text.setSize(562, 269);
+		scrolledComposite.setContent(composite);
+		scrolledComposite.setMinSize(composite.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 		getOldInformation();
 	}
 

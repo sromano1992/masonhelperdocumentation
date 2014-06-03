@@ -23,7 +23,7 @@ public class Initialization  implements Serializable{
 			if (variable_s.size() != 0){
 				autoInitialization += "<h2>Entity " + e.getName() + "</h2>\n";
 				for (Variable v :variable_s)
-					autoInitialization += "variable '" + v.getName() + "' has initial value = " + v.getInitialValue() + ";<br>";
+					autoInitialization += "variable '" + v.getName() + "' has initial value = " + v.getInitialValue() + ";\n<br>";
 				}
 		}
 		return autoInitialization;
