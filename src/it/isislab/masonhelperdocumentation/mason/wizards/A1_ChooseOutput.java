@@ -47,7 +47,7 @@ public class A1_ChooseOutput extends WizardPage {
 		btnDoxygen.setText("Doxygen");
 		
 		Label lblNewLabel = new Label(container, SWT.NONE);
-		lblNewLabel.setText("This required Doxygen installation. Output will contain html and latex.");
+		lblNewLabel.setText("This require Doxygen installation. Output will contain html and latex.");
 		new Label(container, SWT.NONE);
 		new Label(container, SWT.NONE);
 		new Label(container, SWT.NONE);
