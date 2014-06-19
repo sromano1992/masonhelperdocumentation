@@ -43,4 +43,8 @@ public class ProcessOverviewElement  implements Serializable{
 	public void setUserDoWhat(String userDoWhat) {
 		this.userDoWhat = userDoWhat;
 	}
+	
+	public String toString(){
+		return autoDoWhat + "\n" + userDoWhat;
+	}
 }

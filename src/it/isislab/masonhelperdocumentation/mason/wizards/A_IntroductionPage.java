@@ -47,7 +47,7 @@ public class A_IntroductionPage extends WizardPage {
 	}
 	
 	public IWizardPage getNextPage(){ 
-		B_ProjectInformationPage nextPage = new B_ProjectInformationPage();
+		A1_ChooseOutput nextPage = new A1_ChooseOutput();
 		((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);
 		return nextPage;
 	}

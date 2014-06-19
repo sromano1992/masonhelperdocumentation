@@ -19,4 +19,5 @@ Import-Package: org.eclipse.jdt.core,
  org.eclipse.jdt.internal.core,
  org.eclipse.jdt.internal.core.jdom
 Bundle-ClassPath: javaparser-1.0.8.jar,
- .
+ .,
+ .settings/itext-1.2.jar

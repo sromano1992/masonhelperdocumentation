@@ -2,6 +2,8 @@ package it.isislab.masonhelperdocumentation.ODD;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
 /**
  * 
@@ -35,6 +37,16 @@ public class Entitie_s implements Serializable{
 	}
 
 	public ArrayList<Entity> getEntitie_s() {
-		return entitie_s;
+		//remove duplicate entry
+		HashMap<String, Entity> tmp = new HashMap<String, Entity>();
+		for (Entity e : entitie_s){
+			if (!tmp.containsKey(e.getName()))
+				tmp.put(e.getName(), e);
+		}
+		Collection<Entity> collectionOfEntity = tmp.values();
+		ArrayList<Entity> toReturn = new ArrayList<Entity>();
+		for (Entity e : collectionOfEntity)
+			toReturn.add(e);
+		return toReturn;
 	}	
 }

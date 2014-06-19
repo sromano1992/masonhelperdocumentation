@@ -56,7 +56,7 @@ public class B_ProjectInformationPage extends WizardPage{
 	private Label label_Message;
 	private Composite composite_1;
 	private Button btnAutoColor;
-	private Label lblAtuoColor;
+	private Label lblAutoColor;
 	private Label labelUserColor;
 	private Button btnUserColor;
 	private Label lblViewAutoColor;
@@ -94,6 +94,32 @@ public class B_ProjectInformationPage extends WizardPage{
 		container.setLayout(layout);
 		layout.numColumns = 3;
 		layout.verticalSpacing = 9;
+		
+		Label lblOutputPath = new Label(container, SWT.NONE);
+		lblOutputPath.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+		lblOutputPath.setText("Output path:");
+		
+		text = new Text(container, SWT.BORDER);
+		text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
+		text.setText(ConfigFile.getValue("output"));
+		
+		btnOutputBrowse = new Button(container, SWT.NONE);
+		btnOutputBrowse.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				JFileChooser chooser = new JFileChooser();
+	            chooser.setCurrentDirectory(new java.io.File("."));
+	            chooser.setDialogTitle("Browse the folder to process");
+	            chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+	            chooser.setAcceptAllFileFilterUsed(false);
+	            if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {	                            
+                	ConfigFile.setProperty("output", chooser.getSelectedFile().getAbsolutePath());
+			        log.info("Config file updated: " + chooser.getCurrentDirectory().getPath());
+					text.setText(ConfigFile.getValue("output"));
+	            }
+			}
+		});
+		btnOutputBrowse.setText("Browse...");
 		lblDoxygenPath = new Label(container, SWT.NULL);
 		lblDoxygenPath.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
 		lblDoxygenPath.setText("Doxygen path:");
@@ -172,32 +198,9 @@ public class B_ProjectInformationPage extends WizardPage{
 		});
 		btnImgBrowse.setText("Browse...");
 		textImgPath.setText(ConfigFile.getValue("imgPath"));
-		
-		Label lblOutputPath = new Label(container, SWT.NONE);
-		lblOutputPath.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-		lblOutputPath.setText("Output path:");
-		
-		text = new Text(container, SWT.BORDER);
-		text.setLayoutData(new GridData(SWT.FILL, SWT.CENTER, true, false, 1, 1));
-		
-		btnOutputBrowse = new Button(container, SWT.NONE);
-		btnOutputBrowse.addSelectionListener(new SelectionAdapter() {
-			@Override
-			public void widgetSelected(SelectionEvent e) {
-				JFileChooser chooser = new JFileChooser();
-	            chooser.setCurrentDirectory(new java.io.File("."));
-	            chooser.setDialogTitle("Browse the folder to process");
-	            chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-	            chooser.setAcceptAllFileFilterUsed(false);
-	            if (chooser.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {	                            
-                	ConfigFile.setProperty("output", chooser.getSelectedFile().getAbsolutePath());
-			        log.info("Config file updated: " + chooser.getCurrentDirectory().getPath());
-					text.setText(ConfigFile.getValue("output"));
-	            }
-			}
-		});
-		btnOutputBrowse.setText("Browse...");
-		text.setText(ConfigFile.getValue("output"));
+		new Label(container, SWT.NONE);
+		new Label(container, SWT.NONE);
+		new Label(container, SWT.NONE);
 		new Label(container, SWT.NONE);
 		
 		composite_1 = new Composite(container, SWT.NONE);
@@ -207,9 +210,9 @@ public class B_ProjectInformationPage extends WizardPage{
 		gd_composite_1.heightHint = 60;
 		composite_1.setLayoutData(gd_composite_1);
 		
-		lblAtuoColor = new Label(composite_1, SWT.NONE);
-		lblAtuoColor.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
-		lblAtuoColor.setText("Auto-generated info color:");
+		lblAutoColor = new Label(composite_1, SWT.NONE);
+		lblAutoColor.setLayoutData(new GridData(SWT.RIGHT, SWT.CENTER, false, false, 1, 1));
+		lblAutoColor.setText("Auto-generated info color:");
 
 		
 		final RGB autoRGB = new RGB(32, 1, 205);	//default blue
@@ -320,6 +323,39 @@ public class B_ProjectInformationPage extends WizardPage{
 		if (isDoxygenPathSet() && projectAnalizer.isMasonProject())	super.setPageComplete(true);
 		else	super.setPageComplete(false);
 		
+		//What we can see?
+		String outputType = ConfigFile.getValue("outputType");
+		if (outputType.equals("pdf")){
+			lblDoxygenPath.setVisible(false);
+			labelGraphvizPath.setVisible(false);
+			lblAutoColor.setVisible(false);
+			labelUserColor.setVisible(false);
+			containerText.setVisible(false);
+			textGraphvizPath.setVisible(false);
+			btnAutoColor.setVisible(false);
+			btnUserColor.setVisible(false);
+			buttonBrowse.setVisible(false);
+			buttonGraphvizBrowser.setVisible(false);
+			lblViewAutoColor.setVisible(false);
+			lblViewUserColor.setVisible(false);
+		}
+		if (outputType.equals("txt")){
+			lblDoxygenPath.setVisible(false);
+			labelGraphvizPath.setVisible(false);
+			lblAutoColor.setVisible(false);
+			labelUserColor.setVisible(false);
+			lblImagePath.setVisible(false);
+			containerText.setVisible(false);
+			textGraphvizPath.setVisible(false);
+			textImgPath.setVisible(false);
+			btnAutoColor.setVisible(false);
+			btnUserColor.setVisible(false);
+			btnImgBrowse.setVisible(false);
+			buttonBrowse.setVisible(false);
+			buttonGraphvizBrowser.setVisible(false);
+			lblViewAutoColor.setVisible(false);
+			lblViewUserColor.setVisible(false);
+		}	
 	}
 
 	private void setProjectLabel() {

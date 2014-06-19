@@ -2,6 +2,8 @@ package it.isislab.masonhelperdocumentation.ODD;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 
 /**
  * @author Romano Simone 0512101343
@@ -42,7 +44,16 @@ public class Entity  implements Serializable{
 	}
 
 	public ArrayList<Variable> getVariable_s() {
-		return variable_s;
+		HashMap<String, Variable> tmp = new HashMap<String, Variable>();
+		for (Variable v : variable_s){
+			if (!tmp.containsKey(v.getName()))
+				tmp.put(v.getName(), v);
+		}
+		Collection<Variable> collectionOfVariable = tmp.values();
+		ArrayList<Variable> toReturn = new ArrayList<Variable>();
+		for (Variable v : collectionOfVariable)
+			toReturn.add(v);
+		return toReturn;
 	}	
 	
 	public Variable getVariable(String varName){

@@ -67,7 +67,7 @@ public class GlobalUtility {
 											 +							  "What data are collected from the ABM for testing, understanding, and analyzing it, and how and when are they collected?\n<br>"
 											 + "<h3>Initialization</h3> What is the initial state of the model world, i.e., at time t = 0 of a simulation run?\n<br>"
 											 + "<h3>Input data</h3> Does the model use input from external sources such as data files or other models to represent processes that change over time?\n<br>"
-											 + "<h3>Submodels</h3> Information about submodels identified in seciont 'Process overview and scheduling'\n<br>";
+											 + "<h3>Submodels</h3> Information about submodels identified in seciont 'Process overview and scheduling'.\n<br>";
 											 
 	
 	public GlobalUtility(IJavaProject javaProject){

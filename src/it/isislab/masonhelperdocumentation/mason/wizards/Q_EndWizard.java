@@ -3,13 +3,19 @@ package it.isislab.masonhelperdocumentation.mason.wizards;
 import java.awt.Desktop;
 import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.logging.Logger;
 
+import javax.swing.JOptionPane;
+
 import it.isislab.masonhelperdocumentation.ODD.ODD;
+import it.isislab.masonhelperdocumentation.ODD.ODDInformationAsString;
 import it.isislab.masonhelperdocumentation.analizer.GlobalUtility;
 import it.isislab.masonhelperdocumentation.mason.control.ConfigFile;
+import it.isislab.masonhelperdocumentation.mason.control.PDFGenerator;
 
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
@@ -19,6 +25,9 @@ import org.eclipse.swt.widgets.ProgressBar;
 import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
+
+import com.lowagie.text.DocumentException;
+import com.lowagie.text.pdf.PdfWriter;
 
 public class Q_EndWizard extends WizardPage {
 	private Text shelltext;
@@ -60,8 +69,53 @@ public class Q_EndWizard extends WizardPage {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
 				ODD.serialize();
-				GlobalUtility.rewriteAll();
-				doxygenRun();
+				generateDocumentation();
+			}
+
+			private void generateDocumentation() {
+				String outputType = ConfigFile.getValue("outputType");
+				if (outputType.equals("Doxygen")){
+					GlobalUtility.rewriteAll();
+					doxygenRun();	
+				}
+				if (outputType.equals("pdf")){
+					String message = new PDFGenerator().createPdf(ConfigFile.getValue("output") + File.separator + GlobalUtility.getProjectAnalizer().getProjectName() + ".pdf");
+					if (message.equals("done")){
+						progressBar.setVisible(true);
+						progressBar.setSelection(100);
+						showOutput();
+					}
+					else
+						JOptionPane.showMessageDialog(null, message);
+				}
+				if (outputType.equals("txt")){
+					String filename = ConfigFile.getValue("output");
+					filename += File.separator + GlobalUtility.getProjectAnalizer().getProjectName() + ".txt";
+					File txtFile = new File(filename);
+					if (!txtFile.exists())
+						try {
+							txtFile.createNewFile();							
+						} catch (IOException e) {
+							log.severe("Error creating .txt file: " + e.getMessage());
+							e.printStackTrace();
+						}
+					FileOutputStream fout;
+					try {
+						fout = new FileOutputStream(txtFile);
+						fout.write(ODDInformationAsString.ODDToString().getBytes(), 0, ODDInformationAsString.ODDToString().length());
+						progressBar.setVisible(true);
+						progressBar.setSelection(100);
+						showOutput();
+					} catch (FileNotFoundException e) {
+						log.severe("File not found: " + e.getMessage());
+						e.printStackTrace();
+					} catch (IOException e) {
+						log.severe("IOException " + e.getMessage());
+						e.printStackTrace();
+					}
+					
+				}	
+				
 			}
 		});
 		btnGenerate.setBounds(10, 0, 75, 25);
@@ -105,9 +159,12 @@ public class Q_EndWizard extends WizardPage {
 				e.printStackTrace();
 			}
 		}
-		//show html
+		showOutput();
+	}
+
+	private void showOutput() {
 		if (btnShowOutput.getSelection()){
-			String htmlPath = ConfigFile.getValue("output") + File.separator + "html";
+			String htmlPath = ConfigFile.getValue("output") + File.separator;
 			try {
 				Desktop.getDesktop().open(new File(htmlPath));
 			} catch (IOException e) {

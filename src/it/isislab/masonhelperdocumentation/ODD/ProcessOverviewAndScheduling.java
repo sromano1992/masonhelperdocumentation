@@ -26,4 +26,8 @@ public class ProcessOverviewAndScheduling  implements Serializable{
 		}
 		return null;
 	}
+	
+	public ArrayList<ProcessOverviewElement> getProcessOverviewElement_s(){
+		return whoDoWhat;
+	}
 }
