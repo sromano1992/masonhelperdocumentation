@@ -73,6 +73,7 @@ public class Q_EndWizard extends WizardPage {
 			}
 
 			private void generateDocumentation() {
+				progressBar.setSelection(0);
 				String outputType = ConfigFile.getValue("outputType");
 				if (outputType.equals("Doxygen")){
 					GlobalUtility.rewriteAll();
@@ -164,11 +165,11 @@ public class Q_EndWizard extends WizardPage {
 
 	private void showOutput() {
 		if (btnShowOutput.getSelection()){
-			String htmlPath = ConfigFile.getValue("output") + File.separator;
+			String outputPath = ConfigFile.getValue("output") + File.separator;
 			try {
-				Desktop.getDesktop().open(new File(htmlPath));
+				Desktop.getDesktop().open(new File(outputPath));
 			} catch (IOException e) {
-				log.severe("Failure opening output directory: " + htmlPath); 
+				log.severe("Failure opening output directory: " + outputPath); 
 				e.printStackTrace();
 			}
 		}

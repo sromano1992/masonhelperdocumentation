@@ -593,7 +593,7 @@ public class GlobalUtility {
 		if (colorRGB.length != 3)	return toSorround;
 		String toReturn = "\\htmlonly<span style='color:" + "rgb(" + colorRGB[0] + "," + colorRGB[1] + "," + colorRGB[2] + ");'>\\endhtmlonly"
 						+ toSorround + "\\htmlonly</span>\\endhtmlonly<br>";
-		log.info(toReturn);
+		log.info("Span added to String");
 		return toReturn;
 	}
 

@@ -82,7 +82,7 @@ public class ODDInformationAsString {
 		ArrayList<Entity> entitie_s = ODD.getEntitie_s().getEntitie_s();
 		for (Entity e : entitie_s){
 			LinkedHashMap<String, String> entity = new LinkedHashMap<String, String>();
-			entity.put(e.getName()+"\n", e.getDescription()+"\n");
+			entity.put("Entity: " + e.getName()+"_subTitle\n", e.getDescription()+"\n");
 			ArrayList<Variable> variable_s = e.getVariable_s();
 			for (Variable v : variable_s){
 				entity.put(v.getName()+"\n", v.toString());
@@ -116,16 +116,50 @@ public class ODDInformationAsString {
 		LinkedHashMap<String, String> toReturn = new LinkedHashMap<String, String>();
 
 		toReturn.put("Design concepts\n", "");
-		toReturn.put("Basic principles\n", ODD.designConcepts.getAutoBasicPrinciples() + "\n" + ODD.designConcepts.getUserBasicPrinciples() + "\n");
-		toReturn.put("Adaption\n", ODD.designConcepts.getAutoEmergence() + "\n" + ODD.designConcepts.getUserEmergence() + "\n");
-		toReturn.put("Objectives\n", ODD.designConcepts.getAutoObjectives() + "\n" + ODD.designConcepts.getUserObjectives() + "\n");
-		toReturn.put("Learning\n", ODD.designConcepts.getAutoLearning() + "\n" + ODD.designConcepts.getUserLearning() + "\n");
-		toReturn.put("Prediction\n", ODD.designConcepts.getAutoPrediction() + "\n" + ODD.designConcepts.getUserPrediction() + "\n");
-		toReturn.put("Sensing\n", ODD.designConcepts.getAutoSensing() + "\n" + ODD.designConcepts.getUserSensing() + "\n");
-		toReturn.put("Interaction\n", ODD.designConcepts.getAutoInteraction() + "\n" + ODD.designConcepts.getUserInteraction() + "\n");
-		toReturn.put("Stochasticity\n", ODD.designConcepts.getAutoStochasticity() + "\n" + ODD.designConcepts.getUserStochasticity() + "\n");
-		toReturn.put("Collectives\n", ODD.designConcepts.getAutoCollectives() + "\n" + ODD.designConcepts.getUserCollectives() + "\n");
-		toReturn.put("Observation\n", ODD.designConcepts.getAutoObservation() + "\n" + ODD.designConcepts.getUserObservation() + "\n");
+		if (ODD.designConcepts.getAutoBasicPrinciples().equals("") && ODD.designConcepts.getUserBasicPrinciples().equals(""))
+			toReturn.put("Basic principles\n", "No Basic principles defined.\n");
+		else
+			toReturn.put("Basic principles\n", ODD.designConcepts.getAutoBasicPrinciples() + "\n" + ODD.designConcepts.getUserBasicPrinciples() + "\n");
+		if (ODD.designConcepts.getAutoEmergence().equals("") && ODD.designConcepts.getUserEmergence().equals(""))
+			toReturn.put("Emergence\n", "No Emergence defined.\n");
+		else
+			toReturn.put("Emergence\n", ODD.designConcepts.getAutoEmergence() + "\n" + ODD.designConcepts.getUserEmergence() + "\n");
+		if (ODD.designConcepts.getAutoAdaption().equals("") && ODD.designConcepts.getUserAdaption().equals(""))
+			toReturn.put("Adaption\n", "No Adaption defined.\n");
+		else
+			toReturn.put("Adaption\n", ODD.designConcepts.getAutoAdaption() + "\n" + ODD.designConcepts.getUserAdaption() + "\n");
+		if (ODD.designConcepts.getAutoObjectives().equals("") && ODD.designConcepts.getUserObjectives().equals(""))
+			toReturn.put("Objectives\n", "No Objectives defined.\n");
+		else
+			toReturn.put("Objectives\n", ODD.designConcepts.getAutoObjectives() + "\n" + ODD.designConcepts.getUserObjectives() + "\n");
+		if (ODD.designConcepts.getAutoLearning().equals("") && ODD.designConcepts.getUserLearning().equals(""))
+			toReturn.put("Learning\n", "No Learning defined.\n");
+		else
+			toReturn.put("Learning\n", ODD.designConcepts.getAutoLearning() + "\n" + ODD.designConcepts.getUserLearning() + "\n");
+		if (ODD.designConcepts.getAutoPrediction().equals("") && ODD.designConcepts.getUserPrediction().equals(""))
+			toReturn.put("Prediction\n", "No Prediction defined.\n");
+		else
+			toReturn.put("Prediction\n", ODD.designConcepts.getAutoPrediction() + "\n" + ODD.designConcepts.getUserPrediction() + "\n");
+		if (ODD.designConcepts.getAutoSensing().equals("") && ODD.designConcepts.getUserSensing().equals(""))
+			toReturn.put("Sensing\n", "No Sensing defined.\n");
+		else		
+			toReturn.put("Sensing\n", ODD.designConcepts.getAutoSensing() + "\n" + ODD.designConcepts.getUserSensing() + "\n");
+		if (ODD.designConcepts.getAutoInteraction().equals("") && ODD.designConcepts.getUserInteraction().equals(""))
+			toReturn.put("Interaction\n", "No Interaction defined.\n");
+		else
+			toReturn.put("Interaction\n", ODD.designConcepts.getAutoInteraction() + "\n" + ODD.designConcepts.getUserInteraction() + "\n");
+		if (ODD.designConcepts.getAutoStochasticity().equals("") && ODD.designConcepts.getUserStochasticity().equals(""))
+			toReturn.put("Stochasticity\n", "No Stochasticity defined.\n");
+		else
+			toReturn.put("Stochasticity\n", ODD.designConcepts.getAutoStochasticity() + "\n" + ODD.designConcepts.getUserStochasticity() + "\n");
+		if (ODD.designConcepts.getAutoCollectives().equals("") && ODD.designConcepts.getUserCollectives().equals(""))
+			toReturn.put("Collectives\n", "No Collectives defined.\n");
+		else
+			toReturn.put("Collectives\n", ODD.designConcepts.getAutoCollectives() + "\n" + ODD.designConcepts.getUserCollectives() + "\n");
+		if (ODD.designConcepts.getAutoObservation().equals("") && ODD.designConcepts.getUserObservation().equals(""))
+			toReturn.put("Observation\n", "No Observation defined.\n");
+		else
+			toReturn.put("Observation\n", ODD.designConcepts.getAutoObservation() + "\n" + ODD.designConcepts.getUserObservation() + "\n");
 		
 		return toReturn;
 	}
@@ -162,7 +196,10 @@ public class ODDInformationAsString {
 		LinkedHashMap<String, String> toReturn = new LinkedHashMap<String, String>();
 
 		String inputData = ODD.inputData;
-		toReturn.put("Input Data\n", inputData + "\n");
+		if (inputData == null || inputData == "")
+			toReturn.put("Input Data\n", "No input data defined.\n");
+		else
+			toReturn.put("Input Data\n", inputData + "\n");
 		
 		return toReturn;
 	}

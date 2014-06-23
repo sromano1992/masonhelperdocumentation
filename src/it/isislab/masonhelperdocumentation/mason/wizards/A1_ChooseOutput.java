@@ -80,8 +80,10 @@ public class A1_ChooseOutput extends WizardPage {
 		
 		String outputType = ConfigFile.getValue("outputType");
 		if (outputType.equals("Doxygen"))	btnDoxygen.setSelection(true);
-		if (outputType.equals("pdf"))	btnPdf.setSelection(true);
-		if (outputType.equals("txt"))	btnTxt.setSelection(true);
+		else if (outputType.equals("pdf"))	btnPdf.setSelection(true);
+		else if (outputType.equals("txt"))	btnTxt.setSelection(true);
+		else
+			btnDoxygen.setSelection(true);
 		
 		Label lblThisChooseWill = new Label(container, SWT.NONE);
 		lblThisChooseWill.setText("This choise will generate a txt document.");

@@ -10,6 +10,7 @@ import java.util.logging.Logger;
 
 import javax.swing.JColorChooser;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
@@ -369,7 +370,13 @@ public class B_ProjectInformationPage extends WizardPage{
 		else
 			lblGuiState.setText("GUI not found");	
 		lblSimState = new Label(composite, SWT.NONE);
-		lblSimState.setText("SIMSTATE: " + projectAnalizer.getSimStateCU().getElementName());
+		if (projectAnalizer.getSimStateCU() != null)
+			lblSimState.setText("SIMSTATE: " + projectAnalizer.getSimStateCU().getElementName());
+		else{
+			JOptionPane.showMessageDialog(null, "Project doesn't contain SimState Class!");
+			log.severe("Select project doesn't contain SimState Class!");
+			System.exit(1);;
+		}			
 		if (projectAnalizer.getAgentsNum()!=0){
 			lblAgent = new Label(composite, SWT.NONE);
 			for (int i=0; i<projectAnalizer.getAgentsNum(); i++)

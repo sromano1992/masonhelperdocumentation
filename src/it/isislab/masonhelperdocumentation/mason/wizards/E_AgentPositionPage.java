@@ -143,7 +143,7 @@ public class E_AgentPositionPage extends WizardPage{
 			//add this parameter to 'visitedParameters' to exclude them from next wizardPage
 			agentAnalizer.getVisitedParameters().add(positions.get(i));
 		}
-		log.info("Comment added to positions variables and to ODD object..."); //$NON-NLS-1$
+		log.info("Comment added to positions variables and to ODD object..."); 
 		F_AgentVariablesPage nextPage = new F_AgentVariablesPage();
 		((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);
 		return nextPage; 

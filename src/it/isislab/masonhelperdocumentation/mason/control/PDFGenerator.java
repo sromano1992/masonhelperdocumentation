@@ -1,17 +1,14 @@
 package it.isislab.masonhelperdocumentation.mason.control;
 
-import it.isislab.masonhelperdocumentation.ODD.ODD;
 import it.isislab.masonhelperdocumentation.ODD.ODDInformationAsString;
 import it.isislab.masonhelperdocumentation.analizer.GlobalUtility;
 
-import java.io.ByteArrayOutputStream;
+import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
 import java.util.Set;
@@ -20,22 +17,14 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 import com.lowagie.text.BadElementException;
-import com.lowagie.text.Chapter;
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
-import com.lowagie.text.Element;
 import com.lowagie.text.Font;
-import com.lowagie.text.Header;
 import com.lowagie.text.Image;
+import com.lowagie.text.List;
+import com.lowagie.text.ListItem;
 import com.lowagie.text.Paragraph;
-import com.lowagie.text.Rectangle;
-import com.lowagie.text.Section;
-import com.lowagie.text.pdf.ColumnText;
-import com.lowagie.text.pdf.PdfContentByte;
-import com.lowagie.text.pdf.PdfPTable;
-import com.lowagie.text.pdf.PdfReader;
-import com.lowagie.text.pdf.PdfStamper;
 import com.lowagie.text.pdf.PdfWriter;
 
 /**
@@ -44,8 +33,12 @@ import com.lowagie.text.pdf.PdfWriter;
  * @author Romano Simone 0512101343 *
  */
 public class PDFGenerator {
-	private Font parTitle = new Font(Font.HELVETICA, 18, Font.BOLD);
-	private Font parLine = new Font(Font.NORMAL, 10, Font.NORMAL);
+	private static final int _IMG_HEIGTH = 400;
+	private static final int _IMG_WIDTH = 400;
+	private Font parTitle = new Font(Font.TIMES_ROMAN, 18, Font.BOLD);
+	private Font parSubTitle = new Font(Font.TIMES_ROMAN, 14, Font.BOLD);
+	private Font elementTitle = new Font(Font.TIMES_ROMAN, 14, Font.ITALIC);
+	private Font parLine = new Font(Font.TIMES_ROMAN, 13, Font.NORMAL);
 	private static Logger log = Logger.getLogger("global");
 
 	/**
@@ -124,6 +117,7 @@ public class PDFGenerator {
 			Image img;
 			try {
 				img = Image.getInstance(imgPath);
+				img.scaleAbsolute(_IMG_WIDTH, _IMG_HEIGTH);
 		        document.add(img);
 			} catch (BadElementException | IOException e) {
 				log.severe("Error adding image_s: " + e.getMessage());
@@ -134,7 +128,7 @@ public class PDFGenerator {
 			}
 		}
 	}
-	
+
 	private ArrayList<String> imgInDirectory(String path){
 		File folder = new File(path);
 		File[] listOfFiles = folder.listFiles();
@@ -162,18 +156,27 @@ public class PDFGenerator {
 		String firstElementValue = "";
 		int cycle = 0;
 		for (Entry<String, String> e : element) {
-			title = new Chunk(e.getKey(), parTitle);
+			title = new Chunk(e.getKey(), elementTitle);
 			content = new Chunk(e.getValue(), parLine);
 			if (cycle == 0){	//title!
-				newPar = new Paragraph(e.getKey(), parTitle);
-				newPar.add(content);
-				firstElementValue = e.getValue();
+				if (e.getKey().contains("_subTitle")){
+					newPar = new Paragraph(e.getKey().replace("_subTitle", ""), parSubTitle);
+					newPar.add(content);
+					firstElementValue = e.getValue();
+				}
+				else{
+					newPar = new Paragraph(e.getKey(), parTitle);
+					newPar.add(content);
+					firstElementValue = e.getValue();
+				}
+				cycle = 1;
 			}
 			else{
-				newPar.add(title);
+				List list = new List(false, 20);
+				list.add(new ListItem(title));
+				newPar.add(list);
 				newPar.add(content);
 			}
-			cycle = 1;
 		}
 
 		try {			
