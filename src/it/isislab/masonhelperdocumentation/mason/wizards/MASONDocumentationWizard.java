@@ -57,6 +57,7 @@ public class MASONDocumentationWizard extends Wizard implements IExportWizard {
 	 */
 	public boolean performFinish() {
 		GlobalUtility.setAllToNull();
+		ODD.serialize();
 		return true;
 	}
 

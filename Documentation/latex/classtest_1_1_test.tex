@@ -1,0 +1,76 @@
+\hypertarget{classtest_1_1_test}{\section{test.\-Test Class Reference}
+\label{classtest_1_1_test}\index{test.\-Test@{test.\-Test}}
+}
+
+
+Inheritance diagram for test.\-Test\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classtest_1_1_test__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for test.\-Test\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=150pt]{classtest_1_1_test__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classtest_1_1_test_ace3b91603e4e6c1f6d46b41ddfc6f61c}{Test} ()
+\item 
+void \hyperlink{classtest_1_1_test_ab8e4697c266413464174ce2c283e7980}{create\-Control} (Composite parent)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classtest_1_1_test_ace3b91603e4e6c1f6d46b41ddfc6f61c}{\index{test\-::\-Test@{test\-::\-Test}!Test@{Test}}
+\index{Test@{Test}!test::Test@{test\-::\-Test}}
+\subsubsection[{Test}]{\setlength{\rightskip}{0pt plus 5cm}test.\-Test.\-Test (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classtest_1_1_test_ace3b91603e4e6c1f6d46b41ddfc6f61c}
+Create the wizard. 
+\begin{DoxyCode}
+12                   \{
+13         super(\textcolor{stringliteral}{"wizardPage"});
+14         setTitle(\textcolor{stringliteral}{"Wizard Page title"});
+15         setDescription(\textcolor{stringliteral}{"Wizard Page description"});
+16     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classtest_1_1_test_ab8e4697c266413464174ce2c283e7980}{\index{test\-::\-Test@{test\-::\-Test}!create\-Control@{create\-Control}}
+\index{create\-Control@{create\-Control}!test::Test@{test\-::\-Test}}
+\subsubsection[{create\-Control}]{\setlength{\rightskip}{0pt plus 5cm}void test.\-Test.\-create\-Control (
+\begin{DoxyParamCaption}
+\item[{Composite}]{parent}
+\end{DoxyParamCaption}
+)}}\label{classtest_1_1_test_ab8e4697c266413464174ce2c283e7980}
+Create contents of the wizard. 
+\begin{DoxyParams}{Parameters}
+{\em parent} & \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyCode}
+22                                                 \{
+23         Composite container = \textcolor{keyword}{new} Composite(parent, SWT.NULL);
+24 
+25         setControl(container);
+26     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/test/\hyperlink{_test_8java}{Test.\-java}\end{DoxyCompactItemize}

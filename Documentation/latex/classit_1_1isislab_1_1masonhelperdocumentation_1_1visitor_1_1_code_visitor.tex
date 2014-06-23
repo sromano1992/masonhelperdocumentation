@@ -1,0 +1,344 @@
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor}{\section{it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor Class Reference}
+\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor}\index{it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor@{it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor}}
+}
+
+
+Inheritance diagram for it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=286pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a187184161108b27007b877d0c2370443}{Code\-Visitor} (Compilation\-Unit \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_af9088f73f92fd3640698ad4e660f042b}{cu})
+\item 
+boolean \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8725175075e5b835707c806d7d168366}{visit} (If\-Statement node)
+\item 
+void \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ab5af98ceed9837f084b6d0a677b655ff}{end\-Visit} (If\-Statement node)
+\item 
+boolean \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ac93a6ee9bc2290dc054774d26a1e85f1}{visit} (For\-Statement f)
+\item 
+void \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ac0c818698da51575c8a9c9b6f643a96f}{end\-Visit} (For\-Statement node)
+\item 
+boolean \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_afe7c0b57633a57e1cc2a5609163b48bd}{visit} (Do\-Statement d)
+\item 
+void \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_aa83144733b831fd503c1cddb307abf68}{end\-Visit} (Do\-Statement node)
+\item 
+boolean \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a35fed6bc304be6fc1cf1b0d41e67cdea}{visit} (Switch\-Statement s)
+\item 
+void \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ac7190fc5f2c9e21dd1ffde65f3921d87}{end\-Visit} (Switch\-Statement node)
+\item 
+boolean \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a65b76f4e3876f0d044984dfe16c42d16}{visit} (Type\-Declaration t)
+\item 
+void \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ad08a404899ec7336cb57e02a6568ad09}{end\-Visit} (Type\-Declaration node)
+\item 
+boolean \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a2b41e9c8c3315dbb1fd18e6890a3842e}{visit} (Assignment node)
+\item 
+void \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a4efdef7b2bec3dad2b29f14c0bfe62d6}{end\-Visit} (Assignment node)
+\item 
+boolean \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a217f515da74b716c9d3fb43027be8301}{visit} (Method\-Invocation node)
+\item 
+void \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a0621bb29c4a918f034a2d7a8815cba6d}{end\-Visit} (Method\-Invocation node)
+\item 
+String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a464d8e1b4691e88a39a287c1543cbdd2}{get\-Information\-\_\-s} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Compilation\-Unit \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_af9088f73f92fd3640698ad4e660f042b}{cu}
+\item 
+String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\-\_\-s}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class represent a visitor for method. Purpose of this class is extract a description of method in natural language. \begin{DoxyAuthor}{Author}
+Romano Simone 0512101343 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a187184161108b27007b877d0c2370443}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!Code\-Visitor@{Code\-Visitor}}
+\index{Code\-Visitor@{Code\-Visitor}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{Code\-Visitor}]{\setlength{\rightskip}{0pt plus 5cm}it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-Code\-Visitor (
+\begin{DoxyParamCaption}
+\item[{Compilation\-Unit}]{cu}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a187184161108b27007b877d0c2370443}
+
+\begin{DoxyCode}
+34                                           \{
+35         this.cu = \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_af9088f73f92fd3640698ad4e660f042b}{cu};
+36         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} = \textcolor{stringliteral}{""};
+37     \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a187184161108b27007b877d0c2370443_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ab5af98ceed9837f084b6d0a677b655ff}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!end\-Visit@{end\-Visit}}
+\index{end\-Visit@{end\-Visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{end\-Visit}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-end\-Visit (
+\begin{DoxyParamCaption}
+\item[{If\-Statement}]{node}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ab5af98ceed9837f084b6d0a677b655ff}
+
+\begin{DoxyCode}
+45                                           \{
+46         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_messages_ac30d6eb5c0dfe157ff4707375c9bc967}{Messages.Visitor\_EndIf};
+47     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ac0c818698da51575c8a9c9b6f643a96f}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!end\-Visit@{end\-Visit}}
+\index{end\-Visit@{end\-Visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{end\-Visit}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-end\-Visit (
+\begin{DoxyParamCaption}
+\item[{For\-Statement}]{node}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ac0c818698da51575c8a9c9b6f643a96f}
+
+\begin{DoxyCode}
+54                                            \{
+55         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_messages_a22bdeb4184a47b5dca73a5f6be80829f}{Messages.Visitor\_EndFor}; \textcolor{comment}{//$NON-NLS-2$;}
+56     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_aa83144733b831fd503c1cddb307abf68}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!end\-Visit@{end\-Visit}}
+\index{end\-Visit@{end\-Visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{end\-Visit}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-end\-Visit (
+\begin{DoxyParamCaption}
+\item[{Do\-Statement}]{node}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_aa83144733b831fd503c1cddb307abf68}
+
+\begin{DoxyCode}
+63                                           \{
+64         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_messages_a51a130626b490a71efd339a23c0e4ddf}{Messages.Visitor\_DoWhileEnd};
+65     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ac7190fc5f2c9e21dd1ffde65f3921d87}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!end\-Visit@{end\-Visit}}
+\index{end\-Visit@{end\-Visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{end\-Visit}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-end\-Visit (
+\begin{DoxyParamCaption}
+\item[{Switch\-Statement}]{node}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ac7190fc5f2c9e21dd1ffde65f3921d87}
+
+\begin{DoxyCode}
+72                                               \{
+73         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_messages_ad36ac06cbc96b50d396a7400b4faf972}{Messages.Visitor\_EndSwitch};
+74     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ad08a404899ec7336cb57e02a6568ad09}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!end\-Visit@{end\-Visit}}
+\index{end\-Visit@{end\-Visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{end\-Visit}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-end\-Visit (
+\begin{DoxyParamCaption}
+\item[{Type\-Declaration}]{node}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ad08a404899ec7336cb57e02a6568ad09}
+
+\begin{DoxyCode}
+81                                               \{
+82         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_messages_aea00da7022007d6739ca682635b64092}{Messages.Visitor\_EndTypeDeclaration}
+      ;
+83     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a4efdef7b2bec3dad2b29f14c0bfe62d6}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!end\-Visit@{end\-Visit}}
+\index{end\-Visit@{end\-Visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{end\-Visit}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-end\-Visit (
+\begin{DoxyParamCaption}
+\item[{Assignment}]{node}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a4efdef7b2bec3dad2b29f14c0bfe62d6}
+
+\begin{DoxyCode}
+90                                          \{
+91         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_messages_ad3b39e81af7e7f2d36f3b9522b0d7ea5}{Messages.Visitor\_EndAssignent};
+92     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a0621bb29c4a918f034a2d7a8815cba6d}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!end\-Visit@{end\-Visit}}
+\index{end\-Visit@{end\-Visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{end\-Visit}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-end\-Visit (
+\begin{DoxyParamCaption}
+\item[{Method\-Invocation}]{node}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a0621bb29c4a918f034a2d7a8815cba6d}
+
+\begin{DoxyCode}
+109                                                \{
+110         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += Messages.Visitor\_EndInvocation + node.getName() + Messages.
+      Visitor\_EndInvocation1;
+111     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a464d8e1b4691e88a39a287c1543cbdd2}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!get\-Information\-\_\-s@{get\-Information\-\_\-s}}
+\index{get\-Information\-\_\-s@{get\-Information\-\_\-s}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{get\-Information\-\_\-s}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-get\-Information\-\_\-s (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a464d8e1b4691e88a39a287c1543cbdd2}
+
+\begin{DoxyCode}
+113                                      \{
+114         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} + \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_messages_aecf94c4bd9def64267445d4624298066}{Messages.Visitor\_EndMethod};
+115     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8725175075e5b835707c806d7d168366}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!visit@{visit}}
+\index{visit@{visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}boolean it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-visit (
+\begin{DoxyParamCaption}
+\item[{If\-Statement}]{node}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8725175075e5b835707c806d7d168366}
+
+\begin{DoxyCode}
+40                                            \{
+41         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += Messages.Visitor\_If1 + node.getExpression() + \textcolor{stringliteral}{" "}; \textcolor{comment}{//$NON-NLS-2$}
+42         \textcolor{keywordflow}{return} super.visit(node);
+43     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ac93a6ee9bc2290dc054774d26a1e85f1}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!visit@{visit}}
+\index{visit@{visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}boolean it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-visit (
+\begin{DoxyParamCaption}
+\item[{For\-Statement}]{f}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_ac93a6ee9bc2290dc054774d26a1e85f1}
+
+\begin{DoxyCode}
+49                                         \{
+50         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += Messages.Visitor\_While1 + f.getExpression() + \textcolor{stringliteral}{" "}; \textcolor{comment}{//$NON-NLS-2$}
+51         \textcolor{keywordflow}{return} super.visit(f);
+52     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_afe7c0b57633a57e1cc2a5609163b48bd}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!visit@{visit}}
+\index{visit@{visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}boolean it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-visit (
+\begin{DoxyParamCaption}
+\item[{Do\-Statement}]{d}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_afe7c0b57633a57e1cc2a5609163b48bd}
+
+\begin{DoxyCode}
+58                                         \{
+59         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += Messages.Visitor\_Do1 + d.getExpression() + \textcolor{stringliteral}{" "}; \textcolor{comment}{//$NON-NLS-2$}
+60         \textcolor{keywordflow}{return} super.visit(d);
+61     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a35fed6bc304be6fc1cf1b0d41e67cdea}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!visit@{visit}}
+\index{visit@{visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}boolean it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-visit (
+\begin{DoxyParamCaption}
+\item[{Switch\-Statement}]{s}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a35fed6bc304be6fc1cf1b0d41e67cdea}
+
+\begin{DoxyCode}
+67                                            \{
+68         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += Messages.Visitor\_SwitchInfo + s.getExpression() + \textcolor{stringliteral}{" "}; \textcolor{comment}{//$NON-NLS-2$}
+69         \textcolor{keywordflow}{return} super.visit(s);
+70     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a65b76f4e3876f0d044984dfe16c42d16}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!visit@{visit}}
+\index{visit@{visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}boolean it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-visit (
+\begin{DoxyParamCaption}
+\item[{Type\-Declaration}]{t}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a65b76f4e3876f0d044984dfe16c42d16}
+
+\begin{DoxyCode}
+76                                            \{
+77         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += Messages.Visitor\_TypeDeclaration + t.getName();
+78         \textcolor{keywordflow}{return} super.visit(t);
+79     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a2b41e9c8c3315dbb1fd18e6890a3842e}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!visit@{visit}}
+\index{visit@{visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}boolean it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-visit (
+\begin{DoxyParamCaption}
+\item[{Assignment}]{node}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a2b41e9c8c3315dbb1fd18e6890a3842e}
+
+\begin{DoxyCode}
+85                                          \{
+86         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += Messages.Visitor\_Assignment + node.getLeftHandSide() + Messages.
+      Visitor\_Assignemnt1 + node.getRightHandSide() + \textcolor{stringliteral}{" "}; \textcolor{comment}{//$NON-NLS-3$}
+87         \textcolor{keywordflow}{return} super.visit(node);
+88     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a217f515da74b716c9d3fb43027be8301}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!visit@{visit}}
+\index{visit@{visit}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}boolean it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-visit (
+\begin{DoxyParamCaption}
+\item[{Method\-Invocation}]{node}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a217f515da74b716c9d3fb43027be8301}
+
+\begin{DoxyCode}
+94                                                 \{
+95         \textcolor{keywordtype}{boolean} visitedSubmetod = \textcolor{keyword}{false};
+96         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += \textcolor{stringliteral}{"Invoke method "} + node.getName();
+97         ArrayList<Method> method\_s = GlobalUtility.getAllMethods(\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_af9088f73f92fd3640698ad4e660f042b}{cu});
+98         \textcolor{keywordflow}{for} (Method m : method\_s)\{
+99             \textcolor{keywordflow}{if} (m.getName().toString().equals(node.getName().toString()))\{
+100                 visitedSubmetod = \textcolor{keyword}{true};
+101                 \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += \textcolor{stringliteral}{" that: "};
+102                 m.getMethod().getBody().accept(\textcolor{keyword}{new} \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a187184161108b27007b877d0c2370443}{CodeVisitor}(\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_af9088f73f92fd3640698ad4e660f042b}{cu}));
+103             \}
+104         \}
+105         \textcolor{keywordflow}{if} (!visitedSubmetod) \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{information\_s} += \textcolor{stringliteral}{".\(\backslash\)n"};
+106         \textcolor{keywordflow}{return} super.visit(node);
+107     \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a217f515da74b716c9d3fb43027be8301_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_af9088f73f92fd3640698ad4e660f042b}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!cu@{cu}}
+\index{cu@{cu}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{cu}]{\setlength{\rightskip}{0pt plus 5cm}Compilation\-Unit it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-cu\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_af9088f73f92fd3640698ad4e660f042b}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}{\index{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}!information\-\_\-s@{information\-\_\-s}}
+\index{information\-\_\-s@{information\-\_\-s}!it::isislab::masonhelperdocumentation::visitor::CodeVisitor@{it\-::isislab\-::masonhelperdocumentation\-::visitor\-::\-Code\-Visitor}}
+\subsubsection[{information\-\_\-s}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonhelperdocumentation.\-visitor.\-Code\-Visitor.\-information\-\_\-s\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor_a8bfc263e47218ff87b62a5ad9b1294e7}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/it/isislab/masonhelperdocumentation/visitor/\hyperlink{_code_visitor_8java}{Code\-Visitor.\-java}\end{DoxyCompactItemize}
