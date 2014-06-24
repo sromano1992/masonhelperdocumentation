@@ -74,7 +74,7 @@ public class Q_EndWizard extends WizardPage {
 
 			private void generateDocumentation() {
 				progressBar.setSelection(0);
-				String outputType = ConfigFile.getValue("outputType");
+				String outputType = ConfigFile.getValue("typeOutput");
 				if (outputType.equals("Doxygen")){
 					GlobalUtility.rewriteAll();
 					doxygenRun();	

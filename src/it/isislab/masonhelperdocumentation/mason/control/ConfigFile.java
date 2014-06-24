@@ -28,24 +28,34 @@ import java.util.logging.Logger;
  */
 public class ConfigFile {
 	private static Logger log = Logger.getLogger("global");
-	private static String dirName = "MASONHelperDocumentation_";
+	private static String baseDirName = "MASONHelperDocumentation_";
+	private static String project_sDirPath = "MASONHelperDocumentation";
 	private static String configFileName = "configMASONHelper.dat";
 
+	private static String getProject_sDirPath(){
+		String dirPath = File.separator + project_sDirPath;
+		File project_sDir = new File(dirPath);
+		if (!project_sDir.exists())
+			new File(dirPath).mkdir();
+		log.info("create/get dir: " + dirPath);
+		return dirPath;
+	}
+	
 	/**
 	 * Return directory path; directory will be create (if does not exist) in
 	 * disk root.
 	 * 
 	 * @return
 	 */
-	public static String getDir() {
-		String dirPath = File.separator + dirName + GlobalUtility.getProjectAnalizer().getProjectName();
+	public static String getProjectDir() {
+		String dirPath = getProject_sDirPath() + File.separator + baseDirName + GlobalUtility.getProjectAnalizer().getProjectName();
 		new File(dirPath).mkdir();
 		log.info("create/get dir: " + dirPath);
 		return dirPath;
 	}
 
 	private static File getConfigFile() {
-		String dirPath = getDir();
+		String dirPath = getProjectDir();
 		String configFilePath = dirPath + File.separator + configFileName;
 		File configFile = new File(configFilePath);
 		try {
@@ -126,7 +136,7 @@ public class ConfigFile {
 			String strLine;
 			while ((strLine = br.readLine()) != null) {
 				if (strLine.startsWith(key)) {
-					log.info("Get key: " + key);
+					log.info("Get key: " + key + "; returned value: " + strLine.split("=")[1]);
 					return strLine.split("=")[1];
 				}
 			}
@@ -141,6 +151,6 @@ public class ConfigFile {
 	}
 
 	public static String gettODDPath() {
-		return getDir() + File.separator;
+		return getProjectDir() + File.separator;
 	}
 }

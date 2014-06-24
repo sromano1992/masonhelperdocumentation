@@ -73,7 +73,7 @@ public class MASONDocumentationWizard extends Wizard implements IExportWizard {
 
 	private void setLogger() {
 		try {
-			String logFilePath = ConfigFile.getDir() + File.separator
+			String logFilePath = ConfigFile.getProjectDir() + File.separator
 					+ logFileName;
 			Handler handler;
 			handler = new FileHandler(logFilePath, _logFileSIZE, 1);

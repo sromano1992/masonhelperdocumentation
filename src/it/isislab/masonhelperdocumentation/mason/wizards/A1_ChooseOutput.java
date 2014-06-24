@@ -41,7 +41,7 @@ public class A1_ChooseOutput extends WizardPage {
 		btnDoxygen.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				ConfigFile.setProperty("outputType", "Doxygen");
+				ConfigFile.setProperty("typeOutput", "Doxygen");
 			}
 		});
 		btnDoxygen.setText("Doxygen");
@@ -57,7 +57,7 @@ public class A1_ChooseOutput extends WizardPage {
 		btnPdf.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				ConfigFile.setProperty("outputType", "pdf");
+				ConfigFile.setProperty("typeOutput", "pdf");
 			}
 		});
 		btnPdf.setText("pdf");
@@ -73,15 +73,15 @@ public class A1_ChooseOutput extends WizardPage {
 		btnTxt.addSelectionListener(new SelectionAdapter() {
 			@Override
 			public void widgetSelected(SelectionEvent e) {
-				ConfigFile.setProperty("outputType", "txt");
+				ConfigFile.setProperty("typeOutput", "txt");
 			}
 		});
 		btnTxt.setText("txt");
 		
-		String outputType = ConfigFile.getValue("outputType");
-		if (outputType.equals("Doxygen"))	btnDoxygen.setSelection(true);
-		else if (outputType.equals("pdf"))	btnPdf.setSelection(true);
-		else if (outputType.equals("txt"))	btnTxt.setSelection(true);
+		String typeOutput = ConfigFile.getValue("typeOutput");
+		if (typeOutput.equals("Doxygen"))	btnDoxygen.setSelection(true);
+		else if (typeOutput.equals("pdf"))	btnPdf.setSelection(true);
+		else if (typeOutput.equals("txt"))	btnTxt.setSelection(true);
 		else
 			btnDoxygen.setSelection(true);
 		
@@ -90,9 +90,9 @@ public class A1_ChooseOutput extends WizardPage {
 	}
 	
 	public IWizardPage getNextPage(){ 
-		if (btnDoxygen.getSelection())	ConfigFile.setProperty("outputType", "Doxygen");
-		if (btnPdf.getSelection())	ConfigFile.setProperty("outputType", "pdf");
-		if (btnTxt.getSelection())	ConfigFile.setProperty("outputType", "txt");
+		if (btnDoxygen.getSelection())	ConfigFile.setProperty("typeOutput", "Doxygen");
+		if (btnPdf.getSelection())	ConfigFile.setProperty("typeOutput", "pdf");
+		if (btnTxt.getSelection())	ConfigFile.setProperty("typeOutput", "txt");
 		
 		B_ProjectInformationPage nextPage = new B_ProjectInformationPage();
 		((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);

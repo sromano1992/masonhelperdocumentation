@@ -325,8 +325,8 @@ public class B_ProjectInformationPage extends WizardPage{
 		else	super.setPageComplete(false);
 		
 		//What we can see?
-		String outputType = ConfigFile.getValue("outputType");
-		if (outputType.equals("pdf")){
+		String typeOutput = ConfigFile.getValue("typeOutput");
+		if (typeOutput.equals("pdf")){
 			lblDoxygenPath.setVisible(false);
 			labelGraphvizPath.setVisible(false);
 			lblAutoColor.setVisible(false);
@@ -340,7 +340,7 @@ public class B_ProjectInformationPage extends WizardPage{
 			lblViewAutoColor.setVisible(false);
 			lblViewUserColor.setVisible(false);
 		}
-		if (outputType.equals("txt")){
+		if (typeOutput.equals("txt")){
 			lblDoxygenPath.setVisible(false);
 			labelGraphvizPath.setVisible(false);
 			lblAutoColor.setVisible(false);
