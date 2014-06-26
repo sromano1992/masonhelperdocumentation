@@ -15,6 +15,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.logging.Logger;
 
+import javax.swing.JOptionPane;
+
 import org.eclipse.jdt.core.ICompilationUnit;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.dom.AST;
@@ -507,7 +509,6 @@ public class GlobalUtility {
 		//call rewrite on all project class
 		getSimStateAnalizer().rewrite();
 		for (AgentAnalizer agent : agent_sAnalizer)	agent.rewrite();
-		getGUIStateAnalizer().rewrite();
 		log.info("Rewrite all source file...");
 	}
 	
@@ -576,6 +577,7 @@ public class GlobalUtility {
 			return shellProcess;
 		} catch (IOException e) {
 			log.severe("IOException creating doxygen config file");
+			JOptionPane.showMessageDialog(null, e.getMessage());
 			e.printStackTrace();
 		}
 		return null;		

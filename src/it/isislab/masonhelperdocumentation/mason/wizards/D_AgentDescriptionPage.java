@@ -100,10 +100,15 @@ public class D_AgentDescriptionPage extends WizardPage{
 			((MASONDocumentationWizard) super.getWizard()).addPage(nextPage); 
 			return nextPage; 
 		}
-		else{
+		else if (agentAnalizer.getNotVisitedParameter_s().size() > 0){
 			F_AgentVariablesPage nextPage = new F_AgentVariablesPage();
 			((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);
-			return nextPage;
+			return nextPage; 
+		}
+		else{
+			G_GridsCellPage nextPage = new G_GridsCellPage();
+			((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);
+			return nextPage; 
 		}
 	}
 

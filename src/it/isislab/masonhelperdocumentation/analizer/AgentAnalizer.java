@@ -140,6 +140,18 @@ public class AgentAnalizer implements Analizer{
 	}
 	
 	/**
+	 * Return parameter_s that are not visited until now.
+	 * @return
+	 */
+	public ArrayList<Parameter> getNotVisitedParameter_s(){
+		ArrayList<Parameter> remainingParameters = new ArrayList<Parameter>();
+		ArrayList<Parameter> allParameters = GlobalUtility.getAllParameters(getCompilationUnit());
+		for (Parameter p : allParameters)
+			if (!(alreadyVisited(p)))	remainingParameters.add(p);	
+		return remainingParameters;
+	}
+	
+	/**
 	 * Return class name of this agent.
 	 * @return
 	 */

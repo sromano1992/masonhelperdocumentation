@@ -144,9 +144,17 @@ public class E_AgentPositionPage extends WizardPage{
 			agentAnalizer.getVisitedParameters().add(positions.get(i));
 		}
 		log.info("Comment added to positions variables and to ODD object..."); 
-		F_AgentVariablesPage nextPage = new F_AgentVariablesPage();
-		((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);
-		return nextPage; 
+		
+		if (agentAnalizer.getNotVisitedParameter_s().size() > 0){
+			F_AgentVariablesPage nextPage = new F_AgentVariablesPage();
+			((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);
+			return nextPage; 
+		}
+		else{
+			G_GridsCellPage nextPage = new G_GridsCellPage();
+			((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);
+			return nextPage; 
+		}
 	}
 
 }
