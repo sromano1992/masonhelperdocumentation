@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['basedirname',['baseDirName',['../classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#ab6c578c3ded7f434d692230f7a4d2e81',1,'it::isislab::masonhelperdocumentation::mason::control::ConfigFile']]],
   ['bottom_5fleft',['BOTTOM_LEFT',['../classorg_1_1eclipse_1_1wb_1_1swt_1_1_s_w_t_resource_manager.html#a4f0d49da071dc4f1b575de93e27c074c',1,'org::eclipse::wb::swt::SWTResourceManager']]],
   ['bottom_5fright',['BOTTOM_RIGHT',['../classorg_1_1eclipse_1_1wb_1_1swt_1_1_s_w_t_resource_manager.html#ae0ed56ec45ea09895f7fba82814622d0',1,'org::eclipse::wb::swt::SWTResourceManager']]],
   ['btnautocolor',['btnAutoColor',['../classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_b___project_information_page.html#a60a4bbca5d0ee37acbc02b31f69db1bd',1,'it::isislab::masonhelperdocumentation::mason::wizards::B_ProjectInformationPage']]],

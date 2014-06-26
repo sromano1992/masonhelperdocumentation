@@ -1,5 +1,6 @@
 <map id="it.isislab.masonhelperdocumentation.mason.wizards.A1_ChooseOutput.getNextPage" name="it.isislab.masonhelperdocumentation.mason.wizards.A1_ChooseOutput.getNextPage">
 <area shape="rect" id="node2" href="$classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#a29d4bd9c148d1d7576cef7bcaf796172" title="it.isislab.masonhelperdocumentation.mason.control.\lConfigFile.setProperty" alt="" coords="381,5,704,47"/>
 <area shape="rect" id="node3" href="$classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#ac533dd01e862be359ae060d278daf1ea" title="it.isislab.masonhelperdocumentation.mason.control.\lConfigFile.getConfigFile" alt="" coords="752,5,1075,47"/>
-<area shape="rect" id="node4" href="$classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#afc023838475034a60185402e9cedbfba" title="it.isislab.masonhelperdocumentation.mason.control.\lConfigFile.getDir" alt="" coords="1123,5,1445,47"/>
+<area shape="rect" id="node4" href="$classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#a609deb51ff8ee114a270bd65098e69ae" title="it.isislab.masonhelperdocumentation.mason.control.\lConfigFile.getProjectDir" alt="" coords="1123,5,1445,47"/>
+<area shape="rect" id="node5" href="$classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#aa6b3af1b13073f9fb4a6516dfa54310b" title="it.isislab.masonhelperdocumentation.mason.control.\lConfigFile.getProject_sDirPath" alt="" coords="1493,5,1816,47"/>
 </map>

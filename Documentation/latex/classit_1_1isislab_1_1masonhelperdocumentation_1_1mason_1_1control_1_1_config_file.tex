@@ -3,8 +3,7 @@
 }
 
 
-Collaboration diagram for it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-Config\-File\-:
-\nopagebreak
+Collaboration diagram for it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-Config\-File\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -14,7 +13,7 @@ Collaboration diagram for it.\-isislab.\-masonhelperdocumentation.\-mason.\-cont
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_afc023838475034a60185402e9cedbfba}{get\-Dir} ()
+static String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a609deb51ff8ee114a270bd65098e69ae}{get\-Project\-Dir} ()
 \item 
 static void \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a29d4bd9c148d1d7576cef7bcaf796172}{set\-Property} (String key, String value)
 \item 
@@ -25,6 +24,8 @@ static String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason
 \subsection*{Static Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+static String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_aa6b3af1b13073f9fb4a6516dfa54310b}{get\-Project\-\_\-s\-Dir\-Path} ()
+\item 
 static File \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ac533dd01e862be359ae060d278daf1ea}{get\-Config\-File} ()
 \end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
@@ -32,7 +33,9 @@ static File \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1
 \item 
 static Logger \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a1e0cc7c39d846dcf3dd9def42f836e89}{log} = Logger.\-get\-Logger(\char`\"{}global\char`\"{})
 \item 
-static String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a7d8bbffdbfca146a398ed0bba454f347}{dir\-Name} = \char`\"{}M\-A\-S\-O\-N\-Helper\-Documentation\-\_\-\char`\"{}
+static String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ab6c578c3ded7f434d692230f7a4d2e81}{base\-Dir\-Name} = \char`\"{}M\-A\-S\-O\-N\-Helper\-Documentation\-\_\-\char`\"{}
+\item 
+static String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a693307679d18c1e5bc8830e878d12e9d}{project\-\_\-s\-Dir\-Path} = \char`\"{}M\-A\-S\-O\-N\-Helper\-Documentation\char`\"{}
 \item 
 static String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a46a4e9d3359f002ff462e19976987878}{config\-File\-Name} = \char`\"{}config\-M\-A\-S\-O\-N\-Helper.\-dat\char`\"{}
 \end{DoxyCompactItemize}
@@ -56,19 +59,19 @@ Romano Simone 0512101343
 )\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ac533dd01e862be359ae060d278daf1ea}
 
 \begin{DoxyCode}
-47                                         \{
-48         String dirPath = \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_afc023838475034a60185402e9cedbfba}{getDir}();
-49         String configFilePath = dirPath + File.separator + \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a46a4e9d3359f002ff462e19976987878}{configFileName};
-50         File configFile = \textcolor{keyword}{new} File(configFilePath);
-51         \textcolor{keywordflow}{try} \{
-52             configFile.createNewFile();
-53         \} \textcolor{keywordflow}{catch} (IOException e) \{
-54             log.severe(\textcolor{stringliteral}{"Error getting ConfigFile: "} + e.getMessage());
-55             e.printStackTrace();
-56         \}
-57         log.info(\textcolor{stringliteral}{"Got config file: "} + configFilePath);
-58         \textcolor{keywordflow}{return} configFile;
-59     \}
+57                                         \{
+58         String dirPath = \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a609deb51ff8ee114a270bd65098e69ae}{getProjectDir}();
+59         String configFilePath = dirPath + File.separator + \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a46a4e9d3359f002ff462e19976987878}{configFileName};
+60         File configFile = \textcolor{keyword}{new} File(configFilePath);
+61         \textcolor{keywordflow}{try} \{
+62             configFile.createNewFile();
+63         \} \textcolor{keywordflow}{catch} (IOException e) \{
+64             log.severe(\textcolor{stringliteral}{"Error getting ConfigFile: "} + e.getMessage());
+65             e.printStackTrace();
+66         \}
+67         log.info(\textcolor{stringliteral}{"Got config file: "} + configFilePath);
+68         \textcolor{keywordflow}{return} configFile;
+69     \}
 \end{DoxyCode}
 
 
@@ -84,8 +87,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -94,27 +96,23 @@ Here is the caller graph for this function\-:
 \end{figure}
 
 
-\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_afc023838475034a60185402e9cedbfba}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}!get\-Dir@{get\-Dir}}
-\index{get\-Dir@{get\-Dir}!it::isislab::masonhelperdocumentation::mason::control::ConfigFile@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}}
-\subsubsection[{get\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}static String it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-Config\-File.\-get\-Dir (
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_aa6b3af1b13073f9fb4a6516dfa54310b}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}!get\-Project\-\_\-s\-Dir\-Path@{get\-Project\-\_\-s\-Dir\-Path}}
+\index{get\-Project\-\_\-s\-Dir\-Path@{get\-Project\-\_\-s\-Dir\-Path}!it::isislab::masonhelperdocumentation::mason::control::ConfigFile@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}}
+\subsubsection[{get\-Project\-\_\-s\-Dir\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static String it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-Config\-File.\-get\-Project\-\_\-s\-Dir\-Path (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily [static]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_afc023838475034a60185402e9cedbfba}
-Return directory path; directory will be create (if does not exist) in disk root.
-
-\begin{DoxyReturn}{Returns}
-
-\end{DoxyReturn}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_aa6b3af1b13073f9fb4a6516dfa54310b}
 
 \begin{DoxyCode}
-40                                   \{
-41         String dirPath = File.separator + \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a7d8bbffdbfca146a398ed0bba454f347}{dirName} + GlobalUtility.getProjectAnalizer().
-      getProjectName();
-42         \textcolor{keyword}{new} File(dirPath).mkdir();
-43         log.info(\textcolor{stringliteral}{"create/get dir: "} + dirPath);
-44         \textcolor{keywordflow}{return} dirPath;
-45     \}
+35                                                \{
+36         String dirPath = File.separator + \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a693307679d18c1e5bc8830e878d12e9d}{project\_sDirPath};
+37         File project\_sDir = \textcolor{keyword}{new} File(dirPath);
+38         \textcolor{keywordflow}{if} (!project\_sDir.exists())
+39             \textcolor{keyword}{new} File(dirPath).mkdir();
+40         log.info(\textcolor{stringliteral}{"create/get dir: "} + dirPath);
+41         \textcolor{keywordflow}{return} dirPath;
+42     \}
 \end{DoxyCode}
 
 
@@ -123,7 +121,53 @@ Here is the caller graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_afc023838475034a60185402e9cedbfba_icgraph}
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_aa6b3af1b13073f9fb4a6516dfa54310b_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a609deb51ff8ee114a270bd65098e69ae}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}!get\-Project\-Dir@{get\-Project\-Dir}}
+\index{get\-Project\-Dir@{get\-Project\-Dir}!it::isislab::masonhelperdocumentation::mason::control::ConfigFile@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}}
+\subsubsection[{get\-Project\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}static String it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-Config\-File.\-get\-Project\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a609deb51ff8ee114a270bd65098e69ae}
+Return directory path; directory will be create (if does not exist) in disk root.
+
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+50                                          \{
+51         String dirPath = \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_aa6b3af1b13073f9fb4a6516dfa54310b}{getProject\_sDirPath}() + File.separator + 
+      \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ab6c578c3ded7f434d692230f7a4d2e81}{baseDirName} + GlobalUtility.getProjectAnalizer().getProjectName();
+52         \textcolor{keyword}{new} File(dirPath).mkdir();
+53         log.info(\textcolor{stringliteral}{"create/get dir: "} + dirPath);
+54         \textcolor{keywordflow}{return} dirPath;
+55     \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a609deb51ff8ee114a270bd65098e69ae_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a609deb51ff8ee114a270bd65098e69ae_icgraph}
 \end{center}
 \end{figure}
 
@@ -137,9 +181,9 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a066e1a4a3eb3969e1d59776ba39caac1}
 
 \begin{DoxyCode}
-143                                        \{
-144         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_afc023838475034a60185402e9cedbfba}{getDir}() + File.separator;
-145     \}
+153                                        \{
+154         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a609deb51ff8ee114a270bd65098e69ae}{getProjectDir}() + File.separator;
+155     \}
 \end{DoxyCode}
 
 
@@ -155,8 +199,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -184,30 +227,30 @@ Return the value associated to input key
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-118                                               \{
-119         FileInputStream fstream = null;
-120         DataInputStream in = null;
-121 
-122         \textcolor{keywordflow}{try} \{
-123             fstream = \textcolor{keyword}{new} FileInputStream(\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ac533dd01e862be359ae060d278daf1ea}{getConfigFile}());
-124             in = \textcolor{keyword}{new} DataInputStream(fstream);
-125             BufferedReader br = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(in));
-126             String strLine;
-127             \textcolor{keywordflow}{while} ((strLine = br.readLine()) != null) \{
-128                 \textcolor{keywordflow}{if} (strLine.startsWith(key)) \{
-129                     log.info(\textcolor{stringliteral}{"Get key: "} + key);
-130                     \textcolor{keywordflow}{return} strLine.split(\textcolor{stringliteral}{"="})[1];
-131                 \}
-132             \}
-133         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
-134             log.severe(\textcolor{stringliteral}{"File not found: '"} + \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ac533dd01e862be359ae060d278daf1ea}{getConfigFile}() + \textcolor{stringliteral}{"' "}
-135                     + e.getMessage());
-136         \} \textcolor{keywordflow}{catch} (IOException e) \{
-137             log.severe(\textcolor{stringliteral}{"Error reading file: '"} + \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ac533dd01e862be359ae060d278daf1ea}{getConfigFile}() + \textcolor{stringliteral}{"' "}
-138                     + e.getMessage());
-139         \}
-140         \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
-141     \}
+128                                               \{
+129         FileInputStream fstream = null;
+130         DataInputStream in = null;
+131 
+132         \textcolor{keywordflow}{try} \{
+133             fstream = \textcolor{keyword}{new} FileInputStream(\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ac533dd01e862be359ae060d278daf1ea}{getConfigFile}());
+134             in = \textcolor{keyword}{new} DataInputStream(fstream);
+135             BufferedReader br = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(in));
+136             String strLine;
+137             \textcolor{keywordflow}{while} ((strLine = br.readLine()) != null) \{
+138                 \textcolor{keywordflow}{if} (strLine.startsWith(key)) \{
+139                     log.info(\textcolor{stringliteral}{"Get key: "} + key + \textcolor{stringliteral}{"; returned value: "} + strLine.split(\textcolor{stringliteral}{"="})[1]);
+140                     \textcolor{keywordflow}{return} strLine.split(\textcolor{stringliteral}{"="})[1];
+141                 \}
+142             \}
+143         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
+144             log.severe(\textcolor{stringliteral}{"File not found: '"} + \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ac533dd01e862be359ae060d278daf1ea}{getConfigFile}() + \textcolor{stringliteral}{"' "}
+145                     + e.getMessage());
+146         \} \textcolor{keywordflow}{catch} (IOException e) \{
+147             log.severe(\textcolor{stringliteral}{"Error reading file: '"} + \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ac533dd01e862be359ae060d278daf1ea}{getConfigFile}() + \textcolor{stringliteral}{"' "}
+148                     + e.getMessage());
+149         \}
+150         \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
+151     \}
 \end{DoxyCode}
 
 
@@ -223,8 +266,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -252,50 +294,50 @@ Set the key to value in \hyperlink{classit_1_1isislab_1_1masonhelperdocumentatio
 \end{DoxyParams}
 
 \begin{DoxyCode}
-67                                                              \{
-68         FileInputStream fstream = null;
-69         DataInputStream in = null;
-70         BufferedWriter out = null;
-71         \textcolor{keywordtype}{boolean} propertySet = \textcolor{keyword}{false};
-72 
-73         \textcolor{keywordflow}{try} \{
-74             fstream = \textcolor{keyword}{new} FileInputStream(\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ac533dd01e862be359ae060d278daf1ea}{getConfigFile}());
-75             in = \textcolor{keyword}{new} DataInputStream(fstream);
-76             BufferedReader br = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(in));
-77             String strLine;
-78             StringBuilder fileContent = \textcolor{keyword}{new} StringBuilder();
-79 
-80             \textcolor{keywordflow}{while} ((strLine = br.readLine()) != null) \{
-81                 \textcolor{keywordflow}{if} (strLine.startsWith(key)) \{
-82                     fileContent.append(key + \textcolor{stringliteral}{"="} + value
-83                             + System.getProperty(\textcolor{stringliteral}{"line.separator"}));
-84                     propertySet = \textcolor{keyword}{true};
-85                 \} \textcolor{keywordflow}{else} \{
-86                     fileContent.append(strLine);
-87                     fileContent.append(System.getProperty(\textcolor{stringliteral}{"line.separator"}));
-88                 \}
-89             \}
-90             \textcolor{keywordflow}{if} (!propertySet) \{
-91                 fileContent.append(key + \textcolor{stringliteral}{"="} + value);
-92             \}
-93 
-94             FileWriter fstreamWrite = \textcolor{keyword}{new} FileWriter(\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ac533dd01e862be359ae060d278daf1ea}{getConfigFile}());
-95             out = \textcolor{keyword}{new} BufferedWriter(fstreamWrite);
-96             out.write(fileContent.toString());
-97         \} \textcolor{keywordflow}{catch} (Exception e) \{
-98             e.printStackTrace();
-99         \} \textcolor{keywordflow}{finally} \{
-100             \textcolor{keywordflow}{try} \{
-101                 fstream.close();
-102                 out.flush();
-103                 out.close();
-104                 in.close();
-105             \} \textcolor{keywordflow}{catch} (IOException e) \{
-106                 e.printStackTrace();
-107             \}
-108         \}
-109         log.info(\textcolor{stringliteral}{"Set key: "} + key + \textcolor{stringliteral}{" to value: "} + value);
-110     \}
+77                                                              \{
+78         FileInputStream fstream = null;
+79         DataInputStream in = null;
+80         BufferedWriter out = null;
+81         \textcolor{keywordtype}{boolean} propertySet = \textcolor{keyword}{false};
+82 
+83         \textcolor{keywordflow}{try} \{
+84             fstream = \textcolor{keyword}{new} FileInputStream(\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ac533dd01e862be359ae060d278daf1ea}{getConfigFile}());
+85             in = \textcolor{keyword}{new} DataInputStream(fstream);
+86             BufferedReader br = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(in));
+87             String strLine;
+88             StringBuilder fileContent = \textcolor{keyword}{new} StringBuilder();
+89 
+90             \textcolor{keywordflow}{while} ((strLine = br.readLine()) != null) \{
+91                 \textcolor{keywordflow}{if} (strLine.startsWith(key)) \{
+92                     fileContent.append(key + \textcolor{stringliteral}{"="} + value
+93                             + System.getProperty(\textcolor{stringliteral}{"line.separator"}));
+94                     propertySet = \textcolor{keyword}{true};
+95                 \} \textcolor{keywordflow}{else} \{
+96                     fileContent.append(strLine);
+97                     fileContent.append(System.getProperty(\textcolor{stringliteral}{"line.separator"}));
+98                 \}
+99             \}
+100             \textcolor{keywordflow}{if} (!propertySet) \{
+101                 fileContent.append(key + \textcolor{stringliteral}{"="} + value);
+102             \}
+103 
+104             FileWriter fstreamWrite = \textcolor{keyword}{new} FileWriter(\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ac533dd01e862be359ae060d278daf1ea}{getConfigFile}());
+105             out = \textcolor{keyword}{new} BufferedWriter(fstreamWrite);
+106             out.write(fileContent.toString());
+107         \} \textcolor{keywordflow}{catch} (Exception e) \{
+108             e.printStackTrace();
+109         \} \textcolor{keywordflow}{finally} \{
+110             \textcolor{keywordflow}{try} \{
+111                 fstream.close();
+112                 out.flush();
+113                 out.close();
+114                 in.close();
+115             \} \textcolor{keywordflow}{catch} (IOException e) \{
+116                 e.printStackTrace();
+117             \}
+118         \}
+119         log.info(\textcolor{stringliteral}{"Set key: "} + key + \textcolor{stringliteral}{" to value: "} + value);
+120     \}
 \end{DoxyCode}
 
 
@@ -311,8 +353,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -324,15 +365,18 @@ Here is the caller graph for this function\-:
 
 
 \subsection{Member Data Documentation}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ab6c578c3ded7f434d692230f7a4d2e81}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}!base\-Dir\-Name@{base\-Dir\-Name}}
+\index{base\-Dir\-Name@{base\-Dir\-Name}!it::isislab::masonhelperdocumentation::mason::control::ConfigFile@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}}
+\subsubsection[{base\-Dir\-Name}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-Config\-File.\-base\-Dir\-Name = \char`\"{}M\-A\-S\-O\-N\-Helper\-Documentation\-\_\-\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_ab6c578c3ded7f434d692230f7a4d2e81}
 \hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a46a4e9d3359f002ff462e19976987878}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}!config\-File\-Name@{config\-File\-Name}}
 \index{config\-File\-Name@{config\-File\-Name}!it::isislab::masonhelperdocumentation::mason::control::ConfigFile@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}}
 \subsubsection[{config\-File\-Name}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-Config\-File.\-config\-File\-Name = \char`\"{}config\-M\-A\-S\-O\-N\-Helper.\-dat\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a46a4e9d3359f002ff462e19976987878}
-\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a7d8bbffdbfca146a398ed0bba454f347}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}!dir\-Name@{dir\-Name}}
-\index{dir\-Name@{dir\-Name}!it::isislab::masonhelperdocumentation::mason::control::ConfigFile@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}}
-\subsubsection[{dir\-Name}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-Config\-File.\-dir\-Name = \char`\"{}M\-A\-S\-O\-N\-Helper\-Documentation\-\_\-\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a7d8bbffdbfca146a398ed0bba454f347}
 \hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a1e0cc7c39d846dcf3dd9def42f836e89}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}!log@{log}}
 \index{log@{log}!it::isislab::masonhelperdocumentation::mason::control::ConfigFile@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}}
 \subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}Logger it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-Config\-File.\-log = Logger.\-get\-Logger(\char`\"{}global\char`\"{})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a1e0cc7c39d846dcf3dd9def42f836e89}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a693307679d18c1e5bc8830e878d12e9d}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}!project\-\_\-s\-Dir\-Path@{project\-\_\-s\-Dir\-Path}}
+\index{project\-\_\-s\-Dir\-Path@{project\-\_\-s\-Dir\-Path}!it::isislab::masonhelperdocumentation::mason::control::ConfigFile@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-Config\-File}}
+\subsubsection[{project\-\_\-s\-Dir\-Path}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-Config\-File.\-project\-\_\-s\-Dir\-Path = \char`\"{}M\-A\-S\-O\-N\-Helper\-Documentation\char`\"{}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file_a693307679d18c1e5bc8830e878d12e9d}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}

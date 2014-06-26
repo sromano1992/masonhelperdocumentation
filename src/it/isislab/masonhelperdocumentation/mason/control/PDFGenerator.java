@@ -54,7 +54,7 @@ public class PDFGenerator {
 	 */
 	public String createPdf(String filename) {
 		// setup PdfWriter
-		createParagraphFont();
+		createFont();
 		Document document = new Document();
 		File pdfFile = null;
 		try {
@@ -107,7 +107,10 @@ public class PDFGenerator {
 		return "done";
 	}
 
-	private void createParagraphFont() {
+	/**
+	 * This method creates font for pdf.
+	 */
+	private void createFont() {
 		try {
 			String fontPath = File.separator + "font" + File.separator + "Concrete" + File.separator + "cmunorm.ttf";
 			BaseFont bf = BaseFont.createFont(fontPath, BaseFont.IDENTITY_H, true);
@@ -116,10 +119,10 @@ public class PDFGenerator {
 			parSubTitle = new Font(bf, 14, Font.BOLD);
 			elementTitle = new Font(bf, 14, Font.ITALIC);
 		} catch (DocumentException e) {
-			
+			log.severe("DocumentException setting font: " + e.getMessage());
 			e.printStackTrace();
 		} catch (IOException e) {
-
+			log.severe("IOExcpetion setting font: " + e.getMessage());
 			e.printStackTrace();
 		}
 	}

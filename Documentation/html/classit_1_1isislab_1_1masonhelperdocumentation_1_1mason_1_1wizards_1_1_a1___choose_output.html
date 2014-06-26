@@ -100,15 +100,11 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Inheritance diagram for it.isislab.masonhelperdocumentation.mason.wizards.A1_ChooseOutput:</div>
 <div class="dyncontent">
 <div class="center"><img src="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output__inherit__graph.png" border="0" usemap="#it_8isislab_8masonhelperdocumentation_8mason_8wizards_8_a1___choose_output_inherit__map" alt="Inheritance graph"/></div>
-<map name="it_8isislab_8masonhelperdocumentation_8mason_8wizards_8_a1___choose_output_inherit__map" id="it_8isislab_8masonhelperdocumentation_8mason_8wizards_8_a1___choose_output_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for it.isislab.masonhelperdocumentation.mason.wizards.A1_ChooseOutput:</div>
 <div class="dyncontent">
 <div class="center"><img src="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output__coll__graph.png" border="0" usemap="#it_8isislab_8masonhelperdocumentation_8mason_8wizards_8_a1___choose_output_coll__map" alt="Collaboration graph"/></div>
-<map name="it_8isislab_8masonhelperdocumentation_8mason_8wizards_8_a1___choose_output_coll__map" id="it_8isislab_8masonhelperdocumentation_8mason_8wizards_8_a1___choose_output_coll__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -189,7 +185,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        btnDoxygen.addSelectionListener(<span class="keyword">new</span> SelectionAdapter() {</div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;            @Override</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> widgetSelected(SelectionEvent e) {</div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                ConfigFile.setProperty(<span class="stringliteral">&quot;outputType&quot;</span>, <span class="stringliteral">&quot;Doxygen&quot;</span>);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                ConfigFile.setProperty(<span class="stringliteral">&quot;typeOutput&quot;</span>, <span class="stringliteral">&quot;Doxygen&quot;</span>);</div>
 <div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;            }</div>
 <div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        });</div>
 <div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;        btnDoxygen.setText(<span class="stringliteral">&quot;Doxygen&quot;</span>);</div>
@@ -205,7 +201,7 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;        btnPdf.addSelectionListener(<span class="keyword">new</span> SelectionAdapter() {</div>
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;            @Override</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> widgetSelected(SelectionEvent e) {</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                ConfigFile.setProperty(<span class="stringliteral">&quot;outputType&quot;</span>, <span class="stringliteral">&quot;pdf&quot;</span>);</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;                ConfigFile.setProperty(<span class="stringliteral">&quot;typeOutput&quot;</span>, <span class="stringliteral">&quot;pdf&quot;</span>);</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;            }</div>
 <div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;        });</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;        btnPdf.setText(<span class="stringliteral">&quot;pdf&quot;</span>);</div>
@@ -221,15 +217,15 @@ Private Attributes</h2></td></tr>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        btnTxt.addSelectionListener(<span class="keyword">new</span> SelectionAdapter() {</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;            @Override</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;            <span class="keyword">public</span> <span class="keywordtype">void</span> widgetSelected(SelectionEvent e) {</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                ConfigFile.setProperty(<span class="stringliteral">&quot;outputType&quot;</span>, <span class="stringliteral">&quot;txt&quot;</span>);</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                ConfigFile.setProperty(<span class="stringliteral">&quot;typeOutput&quot;</span>, <span class="stringliteral">&quot;txt&quot;</span>);</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;            }</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        });</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        btnTxt.setText(<span class="stringliteral">&quot;txt&quot;</span>);</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;        </div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        String outputType = ConfigFile.getValue(<span class="stringliteral">&quot;outputType&quot;</span>);</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (outputType.equals(<span class="stringliteral">&quot;Doxygen&quot;</span>))   <a class="code" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output.html#ac2ea8ed088a188d85870e9afb90b8f88">btnDoxygen</a>.setSelection(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (outputType.equals(<span class="stringliteral">&quot;pdf&quot;</span>))  <a class="code" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output.html#ae7d5e743ab4af65fec8563ca08ed561c">btnPdf</a>.setSelection(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (outputType.equals(<span class="stringliteral">&quot;txt&quot;</span>))  <a class="code" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output.html#a4332e3cc38ddfd02242b707d92333cd3">btnTxt</a>.setSelection(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;        String typeOutput = ConfigFile.getValue(<span class="stringliteral">&quot;typeOutput&quot;</span>);</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;        <span class="keywordflow">if</span> (typeOutput.equals(<span class="stringliteral">&quot;Doxygen&quot;</span>))   <a class="code" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output.html#ac2ea8ed088a188d85870e9afb90b8f88">btnDoxygen</a>.setSelection(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (typeOutput.equals(<span class="stringliteral">&quot;pdf&quot;</span>))  <a class="code" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output.html#ae7d5e743ab4af65fec8563ca08ed561c">btnPdf</a>.setSelection(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        <span class="keywordflow">else</span> <span class="keywordflow">if</span> (typeOutput.equals(<span class="stringliteral">&quot;txt&quot;</span>))  <a class="code" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output.html#a4332e3cc38ddfd02242b707d92333cd3">btnTxt</a>.setSelection(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordflow">else</span></div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;            btnDoxygen.setSelection(<span class="keyword">true</span>);</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;        </div>
@@ -255,9 +251,9 @@ Private Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 <div class="fragment"><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                                    { </div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output.html#ac2ea8ed088a188d85870e9afb90b8f88">btnDoxygen</a>.getSelection())  ConfigFile.setProperty(<span class="stringliteral">&quot;outputType&quot;</span>, <span class="stringliteral">&quot;Doxygen&quot;</span>);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output.html#ae7d5e743ab4af65fec8563ca08ed561c">btnPdf</a>.getSelection())  ConfigFile.setProperty(<span class="stringliteral">&quot;outputType&quot;</span>, <span class="stringliteral">&quot;pdf&quot;</span>);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output.html#a4332e3cc38ddfd02242b707d92333cd3">btnTxt</a>.getSelection())  ConfigFile.setProperty(<span class="stringliteral">&quot;outputType&quot;</span>, <span class="stringliteral">&quot;txt&quot;</span>);</div>
+<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output.html#ac2ea8ed088a188d85870e9afb90b8f88">btnDoxygen</a>.getSelection())  ConfigFile.setProperty(<span class="stringliteral">&quot;typeOutput&quot;</span>, <span class="stringliteral">&quot;Doxygen&quot;</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output.html#ae7d5e743ab4af65fec8563ca08ed561c">btnPdf</a>.getSelection())  ConfigFile.setProperty(<span class="stringliteral">&quot;typeOutput&quot;</span>, <span class="stringliteral">&quot;pdf&quot;</span>);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output.html#a4332e3cc38ddfd02242b707d92333cd3">btnTxt</a>.getSelection())  ConfigFile.setProperty(<span class="stringliteral">&quot;typeOutput&quot;</span>, <span class="stringliteral">&quot;txt&quot;</span>);</div>
 <div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        </div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        B_ProjectInformationPage nextPage = <span class="keyword">new</span> B_ProjectInformationPage();</div>
 <div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        ((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);</div>
@@ -272,7 +268,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_af4b084265832500929ab0f7e60f1b608_cgraph.png" border="0" usemap="#classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_af4b084265832500929ab0f7e60f1b608_cgraph" alt=""/></div>
 <map name="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_af4b084265832500929ab0f7e60f1b608_cgraph" id="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_af4b084265832500929ab0f7e60f1b608_cgraph">
-<area shape="rect" id="node2" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#a29d4bd9c148d1d7576cef7bcaf796172" title="it.isislab.masonhelperdocumentation.mason.control.\lConfigFile.setProperty" alt="" coords="381,5,704,47"/><area shape="rect" id="node3" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#ac533dd01e862be359ae060d278daf1ea" title="it.isislab.masonhelperdocumentation.mason.control.\lConfigFile.getConfigFile" alt="" coords="752,5,1075,47"/><area shape="rect" id="node4" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#afc023838475034a60185402e9cedbfba" title="it.isislab.masonhelperdocumentation.mason.control.\lConfigFile.getDir" alt="" coords="1123,5,1445,47"/></map>
+<area shape="rect" id="node2" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#a29d4bd9c148d1d7576cef7bcaf796172" title="it.isislab.masonhelperdocumentation.mason.control.\lConfigFile.setProperty" alt="" coords="381,5,704,47"/><area shape="rect" id="node3" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#ac533dd01e862be359ae060d278daf1ea" title="it.isislab.masonhelperdocumentation.mason.control.\lConfigFile.getConfigFile" alt="" coords="752,5,1075,47"/><area shape="rect" id="node4" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#a609deb51ff8ee114a270bd65098e69ae" title="it.isislab.masonhelperdocumentation.mason.control.\lConfigFile.getProjectDir" alt="" coords="1123,5,1445,47"/><area shape="rect" id="node5" href="classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_config_file.html#aa6b3af1b13073f9fb4a6516dfa54310b" title="it.isislab.masonhelperdocumentation.mason.control.\lConfigFile.getProject_sDirPath" alt="" coords="1493,5,1816,47"/></map>
 </div>
 </p>
 
@@ -345,7 +341,7 @@ Here is the call graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Jun 23 2014 13:03:02 for MASONHelperDocumentation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Thu Jun 26 2014 11:36:52 for MASONHelperDocumentation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

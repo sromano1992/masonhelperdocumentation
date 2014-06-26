@@ -3,8 +3,7 @@
 }
 
 
-Inheritance diagram for it.\-isislab.\-masonhelperdocumentation.\-mason.\-wizards.\-A1\-\_\-\-Choose\-Output\-:
-\nopagebreak
+Inheritance diagram for it.\-isislab.\-masonhelperdocumentation.\-mason.\-wizards.\-A1\-\_\-\-Choose\-Output\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,8 +12,7 @@ Inheritance diagram for it.\-isislab.\-masonhelperdocumentation.\-mason.\-wizard
 \end{figure}
 
 
-Collaboration diagram for it.\-isislab.\-masonhelperdocumentation.\-mason.\-wizards.\-A1\-\_\-\-Choose\-Output\-:
-\nopagebreak
+Collaboration diagram for it.\-isislab.\-masonhelperdocumentation.\-mason.\-wizards.\-A1\-\_\-\-Choose\-Output\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -91,7 +89,7 @@ Create contents of the wizard.
 41         btnDoxygen.addSelectionListener(\textcolor{keyword}{new} SelectionAdapter() \{
 42             @Override
 43             \textcolor{keyword}{public} \textcolor{keywordtype}{void} widgetSelected(SelectionEvent e) \{
-44                 ConfigFile.setProperty(\textcolor{stringliteral}{"outputType"}, \textcolor{stringliteral}{"Doxygen"});
+44                 ConfigFile.setProperty(\textcolor{stringliteral}{"typeOutput"}, \textcolor{stringliteral}{"Doxygen"});
 45             \}
 46         \});
 47         btnDoxygen.setText(\textcolor{stringliteral}{"Doxygen"});
@@ -107,7 +105,7 @@ Create contents of the wizard.
 57         btnPdf.addSelectionListener(\textcolor{keyword}{new} SelectionAdapter() \{
 58             @Override
 59             \textcolor{keyword}{public} \textcolor{keywordtype}{void} widgetSelected(SelectionEvent e) \{
-60                 ConfigFile.setProperty(\textcolor{stringliteral}{"outputType"}, \textcolor{stringliteral}{"pdf"});
+60                 ConfigFile.setProperty(\textcolor{stringliteral}{"typeOutput"}, \textcolor{stringliteral}{"pdf"});
 61             \}
 62         \});
 63         btnPdf.setText(\textcolor{stringliteral}{"pdf"});
@@ -123,15 +121,15 @@ Create contents of the wizard.
 73         btnTxt.addSelectionListener(\textcolor{keyword}{new} SelectionAdapter() \{
 74             @Override
 75             \textcolor{keyword}{public} \textcolor{keywordtype}{void} widgetSelected(SelectionEvent e) \{
-76                 ConfigFile.setProperty(\textcolor{stringliteral}{"outputType"}, \textcolor{stringliteral}{"txt"});
+76                 ConfigFile.setProperty(\textcolor{stringliteral}{"typeOutput"}, \textcolor{stringliteral}{"txt"});
 77             \}
 78         \});
 79         btnTxt.setText(\textcolor{stringliteral}{"txt"});
 80         
-81         String outputType = ConfigFile.getValue(\textcolor{stringliteral}{"outputType"});
-82         \textcolor{keywordflow}{if} (outputType.equals(\textcolor{stringliteral}{"Doxygen"}))   \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_ac2ea8ed088a188d85870e9afb90b8f88}{btnDoxygen}.setSelection(\textcolor{keyword}{true});
-83         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (outputType.equals(\textcolor{stringliteral}{"pdf"}))  \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_ae7d5e743ab4af65fec8563ca08ed561c}{btnPdf}.setSelection(\textcolor{keyword}{true});
-84         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (outputType.equals(\textcolor{stringliteral}{"txt"}))  \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_a4332e3cc38ddfd02242b707d92333cd3}{btnTxt}.setSelection(\textcolor{keyword}{true});
+81         String typeOutput = ConfigFile.getValue(\textcolor{stringliteral}{"typeOutput"});
+82         \textcolor{keywordflow}{if} (typeOutput.equals(\textcolor{stringliteral}{"Doxygen"}))   \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_ac2ea8ed088a188d85870e9afb90b8f88}{btnDoxygen}.setSelection(\textcolor{keyword}{true});
+83         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (typeOutput.equals(\textcolor{stringliteral}{"pdf"}))  \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_ae7d5e743ab4af65fec8563ca08ed561c}{btnPdf}.setSelection(\textcolor{keyword}{true});
+84         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (typeOutput.equals(\textcolor{stringliteral}{"txt"}))  \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_a4332e3cc38ddfd02242b707d92333cd3}{btnTxt}.setSelection(\textcolor{keyword}{true});
 85         \textcolor{keywordflow}{else}
 86             btnDoxygen.setSelection(\textcolor{keyword}{true});
 87         
@@ -149,9 +147,9 @@ Create contents of the wizard.
 
 \begin{DoxyCode}
 92                                     \{ 
-93         \textcolor{keywordflow}{if} (\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_ac2ea8ed088a188d85870e9afb90b8f88}{btnDoxygen}.getSelection())    ConfigFile.setProperty(\textcolor{stringliteral}{"outputType"}, \textcolor{stringliteral}{"Doxygen"});
-94         \textcolor{keywordflow}{if} (\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_ae7d5e743ab4af65fec8563ca08ed561c}{btnPdf}.getSelection())    ConfigFile.setProperty(\textcolor{stringliteral}{"outputType"}, \textcolor{stringliteral}{"pdf"});
-95         \textcolor{keywordflow}{if} (\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_a4332e3cc38ddfd02242b707d92333cd3}{btnTxt}.getSelection())    ConfigFile.setProperty(\textcolor{stringliteral}{"outputType"}, \textcolor{stringliteral}{"txt"});
+93         \textcolor{keywordflow}{if} (\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_ac2ea8ed088a188d85870e9afb90b8f88}{btnDoxygen}.getSelection())    ConfigFile.setProperty(\textcolor{stringliteral}{"typeOutput"}, \textcolor{stringliteral}{"Doxygen"});
+94         \textcolor{keywordflow}{if} (\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_ae7d5e743ab4af65fec8563ca08ed561c}{btnPdf}.getSelection())    ConfigFile.setProperty(\textcolor{stringliteral}{"typeOutput"}, \textcolor{stringliteral}{"pdf"});
+95         \textcolor{keywordflow}{if} (\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_a1___choose_output_a4332e3cc38ddfd02242b707d92333cd3}{btnTxt}.getSelection())    ConfigFile.setProperty(\textcolor{stringliteral}{"typeOutput"}, \textcolor{stringliteral}{"txt"});
 96         
 97         B\_ProjectInformationPage nextPage = \textcolor{keyword}{new} B\_ProjectInformationPage();
 98         ((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);

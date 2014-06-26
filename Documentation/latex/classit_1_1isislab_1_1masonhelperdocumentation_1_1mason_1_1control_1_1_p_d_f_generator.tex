@@ -3,8 +3,7 @@
 }
 
 
-Collaboration diagram for it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator\-:
-\nopagebreak
+Collaboration diagram for it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -19,6 +18,8 @@ String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1con
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+void \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a403097faddc3554447db07d62b3ebfda}{create\-Font} ()
+\item 
 void \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_abc1f7c0af1e9a3328d917e6e1751d421}{add\-Image} (Document document)
 \item 
 Array\-List$<$ String $>$ \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a9fa1dfe581da4d09e9c7bee1a8b12972}{img\-In\-Directory} (String path)
@@ -28,13 +29,13 @@ void \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1contr
 \subsection*{Private Attributes}
 \begin{DoxyCompactItemize}
 \item 
-Font \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a74f4e5e2095668aa762c3c3df4325c74}{par\-Title} = new Font(Font.\-T\-I\-M\-E\-S\-\_\-\-R\-O\-M\-A\-N, 18, Font.\-B\-O\-L\-D)
+Font \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a74f4e5e2095668aa762c3c3df4325c74}{par\-Title}
 \item 
-Font \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac4f2d6c81c14b60dcddfc358b9296ee5}{par\-Sub\-Title} = new Font(Font.\-T\-I\-M\-E\-S\-\_\-\-R\-O\-M\-A\-N, 14, Font.\-B\-O\-L\-D)
+Font \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac4f2d6c81c14b60dcddfc358b9296ee5}{par\-Sub\-Title}
 \item 
-Font \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_aef4e775d865ce931436933184abfcafa}{element\-Title} = new Font(Font.\-T\-I\-M\-E\-S\-\_\-\-R\-O\-M\-A\-N, 14, Font.\-I\-T\-A\-L\-I\-C)
+Font \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_aef4e775d865ce931436933184abfcafa}{element\-Title}
 \item 
-Font \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a4887bc031c4ee6469cf807e7cd1afca6}{par\-Line} = new Font(Font.\-T\-I\-M\-E\-S\-\_\-\-R\-O\-M\-A\-N, 13, Font.\-N\-O\-R\-M\-A\-L)
+Font \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a4887bc031c4ee6469cf807e7cd1afca6}{par\-Line}
 \end{DoxyCompactItemize}
 \subsection*{Static Private Attributes}
 \begin{DoxyCompactItemize}
@@ -65,37 +66,36 @@ Romano Simone 0512101343 $\ast$
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_abc1f7c0af1e9a3328d917e6e1751d421}
 
 \begin{DoxyCode}
-105                                              \{
-106         \textcolor{comment}{//imageSelected?}
-107         String imgDirPath = ConfigFile.getValue(\textcolor{stringliteral}{"imgPath"});
-108         ArrayList<String> fileInDir = \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a9fa1dfe581da4d09e9c7bee1a8b12972}{imgInDirectory}(imgDirPath);
-109         ArrayList<String> image\_s = \textcolor{keyword}{new} ArrayList<String>();
-110         \textcolor{keywordflow}{if} (fileInDir != null)\{
-111             \textcolor{keywordflow}{for} (String s : fileInDir)\{
-112                 \textcolor{keywordflow}{if} (s.endsWith(\textcolor{stringliteral}{".png"}) || s.endsWith(\textcolor{stringliteral}{"jpg"}))
-113                     image\_s.add(s);
-114             \}
-115         \}
-116         \textcolor{keywordflow}{for} (String imgPath : image\_s)\{
-117             Image img;
-118             \textcolor{keywordflow}{try} \{
-119                 img = Image.getInstance(imgPath);
-120                 img.scaleAbsolute(\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_adf2d9b75632647f25441597140cb36f7}{\_IMG\_WIDTH}, \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a7d5a4882865b3339cca7e6b532a4620a}{\_IMG\_HEIGTH});
-121                 document.add(img);
-122             \} \textcolor{keywordflow}{catch} (BadElementException | IOException e) \{
-123                 log.severe(\textcolor{stringliteral}{"Error adding image\_s: "} + e.getMessage());
-124                 e.printStackTrace();
-125             \} \textcolor{keywordflow}{catch} (DocumentException e) \{
-126                 log.severe(\textcolor{stringliteral}{"Error adding image\_s: "} + e.getMessage());
-127                 e.printStackTrace();
-128             \}
-129         \}
-130     \}
+130                                              \{
+131         \textcolor{comment}{//imageSelected?}
+132         String imgDirPath = ConfigFile.getValue(\textcolor{stringliteral}{"imgPath"});
+133         ArrayList<String> fileInDir = \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a9fa1dfe581da4d09e9c7bee1a8b12972}{imgInDirectory}(imgDirPath);
+134         ArrayList<String> image\_s = \textcolor{keyword}{new} ArrayList<String>();
+135         \textcolor{keywordflow}{if} (fileInDir != null)\{
+136             \textcolor{keywordflow}{for} (String s : fileInDir)\{
+137                 \textcolor{keywordflow}{if} (s.endsWith(\textcolor{stringliteral}{".png"}) || s.endsWith(\textcolor{stringliteral}{"jpg"}))
+138                     image\_s.add(s);
+139             \}
+140         \}
+141         \textcolor{keywordflow}{for} (String imgPath : image\_s)\{
+142             Image img;
+143             \textcolor{keywordflow}{try} \{
+144                 img = Image.getInstance(imgPath);
+145                 img.scaleAbsolute(\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_adf2d9b75632647f25441597140cb36f7}{\_IMG\_WIDTH}, \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a7d5a4882865b3339cca7e6b532a4620a}{\_IMG\_HEIGTH});
+146                 document.add(img);
+147             \} \textcolor{keywordflow}{catch} (BadElementException | IOException e) \{
+148                 log.severe(\textcolor{stringliteral}{"Error adding image\_s: "} + e.getMessage());
+149                 e.printStackTrace();
+150             \} \textcolor{keywordflow}{catch} (DocumentException e) \{
+151                 log.severe(\textcolor{stringliteral}{"Error adding image\_s: "} + e.getMessage());
+152                 e.printStackTrace();
+153             \}
+154         \}
+155     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -106,8 +106,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -133,47 +132,85 @@ Generate new paragraph in document with input element. First element of set is c
 \end{DoxyParams}
 
 \begin{DoxyCode}
-153                                                                                      \{
-154         Paragraph newPar = null;
-155         Chunk title, content = null;
-156         String firstElementValue = \textcolor{stringliteral}{""};
-157         \textcolor{keywordtype}{int} cycle = 0;
-158         \textcolor{keywordflow}{for} (Entry<String, String> e : element) \{
-159             title = \textcolor{keyword}{new} Chunk(e.getKey(), \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_aef4e775d865ce931436933184abfcafa}{elementTitle});
-160             content = \textcolor{keyword}{new} Chunk(e.getValue(), \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a4887bc031c4ee6469cf807e7cd1afca6}{parLine});
-161             \textcolor{keywordflow}{if} (cycle == 0)\{    \textcolor{comment}{//title!}
-162                 \textcolor{keywordflow}{if} (e.getKey().contains(\textcolor{stringliteral}{"\_subTitle"}))\{
-163                     newPar = \textcolor{keyword}{new} Paragraph(e.getKey().replace(\textcolor{stringliteral}{"\_subTitle"}, \textcolor{stringliteral}{""}), 
+178                                                                                      \{
+179         Paragraph newPar = null;
+180         Chunk title, content = null;
+181         String firstElementValue = \textcolor{stringliteral}{""};
+182         \textcolor{keywordtype}{int} cycle = 0;
+183         \textcolor{keywordflow}{for} (Entry<String, String> e : element) \{
+184             title = \textcolor{keyword}{new} Chunk(e.getKey(), \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_aef4e775d865ce931436933184abfcafa}{elementTitle});
+185             content = \textcolor{keyword}{new} Chunk(e.getValue(), \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a4887bc031c4ee6469cf807e7cd1afca6}{parLine});
+186             \textcolor{keywordflow}{if} (cycle == 0)\{    \textcolor{comment}{//title!}
+187                 \textcolor{keywordflow}{if} (e.getKey().contains(\textcolor{stringliteral}{"\_subTitle"}))\{
+188                     newPar = \textcolor{keyword}{new} Paragraph(e.getKey().replace(\textcolor{stringliteral}{"\_subTitle"}, \textcolor{stringliteral}{""}), 
       \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac4f2d6c81c14b60dcddfc358b9296ee5}{parSubTitle});
-164                     newPar.add(content);
-165                     firstElementValue = e.getValue();
-166                 \}
-167                 \textcolor{keywordflow}{else}\{
-168                     newPar = \textcolor{keyword}{new} Paragraph(e.getKey(), \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a74f4e5e2095668aa762c3c3df4325c74}{parTitle});
-169                     newPar.add(content);
-170                     firstElementValue = e.getValue();
-171                 \}
-172                 cycle = 1;
-173             \}
-174             \textcolor{keywordflow}{else}\{
-175                 List list = \textcolor{keyword}{new} List(\textcolor{keyword}{false}, 20);
-176                 list.add(\textcolor{keyword}{new} ListItem(title));
-177                 newPar.add(list);
-178                 newPar.add(content);
-179             \}
-180         \}
-181 
-182         \textcolor{keywordflow}{try} \{           
-183             document.add(newPar);
-184             \textcolor{keywordflow}{if} (element.size() > 1 || (element.size()==1 && firstElementValue != \textcolor{stringliteral}{""}))   \textcolor{comment}{//add new page only
+189                     newPar.add(content);
+190                     firstElementValue = e.getValue();
+191                 \}
+192                 \textcolor{keywordflow}{else}\{
+193                     newPar = \textcolor{keyword}{new} Paragraph(e.getKey(), \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a74f4e5e2095668aa762c3c3df4325c74}{parTitle});
+194                     newPar.add(content);
+195                     firstElementValue = e.getValue();
+196                 \}
+197                 cycle = 1;
+198             \}
+199             \textcolor{keywordflow}{else}\{
+200                 List list = \textcolor{keyword}{new} List(\textcolor{keyword}{false}, 20);
+201                 list.add(\textcolor{keyword}{new} ListItem(title));
+202                 newPar.add(list);
+203                 newPar.add(content);
+204             \}
+205         \}
+206 
+207         \textcolor{keywordflow}{try} \{           
+208             document.add(newPar);
+209             \textcolor{keywordflow}{if} (element.size() > 1 || (element.size()==1 && firstElementValue != \textcolor{stringliteral}{""}))   \textcolor{comment}{//add new page only
        if page content is not empty}
-185                 document.newPage();
-186             log.info(\textcolor{stringliteral}{"Add new paragraph"});
-187         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
-188             log.severe(\textcolor{stringliteral}{"Error adding odd paragraph: "} + e.getMessage());
-189             e.printStackTrace();
-190         \}
-191     \}
+210                 document.newPage();
+211             log.info(\textcolor{stringliteral}{"Add new paragraph"});
+212         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
+213             log.severe(\textcolor{stringliteral}{"Error adding odd paragraph: "} + e.getMessage());
+214             e.printStackTrace();
+215         \}
+216     \}
+\end{DoxyCode}
+
+
+Here is the caller graph for this function\-:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a403097faddc3554447db07d62b3ebfda}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator}!create\-Font@{create\-Font}}
+\index{create\-Font@{create\-Font}!it::isislab::masonhelperdocumentation::mason::control::PDFGenerator@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator}}
+\subsubsection[{create\-Font}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator.\-create\-Font (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a403097faddc3554447db07d62b3ebfda}
+This method creates font for pdf. 
+\begin{DoxyCode}
+113                               \{
+114         \textcolor{keywordflow}{try} \{
+115             String fontPath = File.separator + \textcolor{stringliteral}{"font"} + File.separator + \textcolor{stringliteral}{"Concrete"} + File.separator + \textcolor{stringliteral}{"
+      cmunorm.ttf"};
+116             BaseFont bf = BaseFont.createFont(fontPath, BaseFont.IDENTITY\_H, \textcolor{keyword}{true});
+117             \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a4887bc031c4ee6469cf807e7cd1afca6}{parLine} = \textcolor{keyword}{new} Font(bf, 12);
+118             \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a74f4e5e2095668aa762c3c3df4325c74}{parTitle} = \textcolor{keyword}{new} Font(bf, 18, Font.BOLD);
+119             \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac4f2d6c81c14b60dcddfc358b9296ee5}{parSubTitle} = \textcolor{keyword}{new} Font(bf, 14, Font.BOLD);
+120             \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_aef4e775d865ce931436933184abfcafa}{elementTitle} = \textcolor{keyword}{new} Font(bf, 14, Font.ITALIC);
+121         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
+122             log.severe(\textcolor{stringliteral}{"DocumentException setting font: "} + e.getMessage());
+123             e.printStackTrace();
+124         \} \textcolor{keywordflow}{catch} (IOException e) \{
+125             log.severe(\textcolor{stringliteral}{"IOExcpetion setting font: "} + e.getMessage());
+126             e.printStackTrace();
+127         \}
+128     \}
 \end{DoxyCode}
 
 
@@ -182,7 +219,7 @@ Here is the caller graph for this function\-:
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=350pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36_icgraph}
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a403097faddc3554447db07d62b3ebfda_icgraph}
 \end{center}
 \end{figure}
 
@@ -206,59 +243,60 @@ String message
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-51                                              \{
-52         \textcolor{comment}{// setup PdfWriter}
-53         Document document = \textcolor{keyword}{new} Document();
-54         File pdfFile = null;
-55         \textcolor{keywordflow}{try} \{
-56             pdfFile = \textcolor{keyword}{new} File(filename);
-57             \textcolor{keywordflow}{if} (!pdfFile.exists())
-58                 pdfFile.createNewFile();
-59             PdfWriter.getInstance(document,
-60                     \textcolor{keyword}{new} FileOutputStream(pdfFile, \textcolor{keyword}{false}));
-61         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
-62             log.severe(\textcolor{stringliteral}{"File "} + filename + \textcolor{stringliteral}{" not found!"});
-63             JOptionPane.showMessageDialog(null, \textcolor{stringliteral}{"File open in other program!"});
-64             e.printStackTrace();
-65             \textcolor{keywordflow}{return} e.getMessage();
-66         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
-67             log.severe(\textcolor{stringliteral}{"DocumentException: "} + e.getMessage());
-68             e.printStackTrace();
-69             \textcolor{keywordflow}{return} e.getMessage();
-70         \} \textcolor{keywordflow}{catch} (IOException e) \{
-71             log.severe(\textcolor{stringliteral}{"Error creating new file :"} + e.getMessage());
-72             e.printStackTrace();
-73             \textcolor{keywordflow}{return} e.getMessage();
-74         \}
-75         document.setMargins(50, 50, 70, 70);
-76         document.setMarginMirroring(\textcolor{keyword}{true});
-77         
-78         document.open();
-79         
-80         LinkedHashMap<String, String> title = \textcolor{keyword}{new} LinkedHashMap<String, String>();
-81         title.put(GlobalUtility.getProjectAnalizer().getProjectName() + \textcolor{stringliteral}{" documentation"}, \textcolor{stringliteral}{""});
-82         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, title.entrySet());
-83         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_abc1f7c0af1e9a3328d917e6e1751d421}{addImage}(document);
-84         \textcolor{keywordflow}{try} \{
-85             document.newPage();
-86         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
-87             e.printStackTrace();
-88         \}
-89         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getODDDescritpion().entrySet());
-90         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getPurpose().entrySet());
-91         ArrayList<LinkedHashMap<String, String>> entitie\_s = ODDInformationAsString.getEntities();
-92         \textcolor{keywordflow}{for}(LinkedHashMap<String, String> entity : entitie\_s)
-93             \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, entity.entrySet());
-94         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getProcessElement().entrySet());
-95         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getDesignConcpets().entrySet());
-96         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getInitialization().entrySet());
-97         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getInputData().entrySet());
-98         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getSubmodels().entrySet()); 
-99         
-100         document.close();
-101         log.info(\textcolor{stringliteral}{"PDF generated"});
-102         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"done"};
-103     \}
+55                                              \{
+56         \textcolor{comment}{// setup PdfWriter}
+57         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a403097faddc3554447db07d62b3ebfda}{createFont}();
+58         Document document = \textcolor{keyword}{new} Document();
+59         File pdfFile = null;
+60         \textcolor{keywordflow}{try} \{
+61             pdfFile = \textcolor{keyword}{new} File(filename);
+62             \textcolor{keywordflow}{if} (!pdfFile.exists())
+63                 pdfFile.createNewFile();
+64             PdfWriter.getInstance(document,
+65                     \textcolor{keyword}{new} FileOutputStream(pdfFile, \textcolor{keyword}{false}));
+66         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
+67             log.severe(\textcolor{stringliteral}{"File "} + filename + \textcolor{stringliteral}{" not found!"});
+68             JOptionPane.showMessageDialog(null, \textcolor{stringliteral}{"File open in other program!"});
+69             e.printStackTrace();
+70             \textcolor{keywordflow}{return} e.getMessage();
+71         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
+72             log.severe(\textcolor{stringliteral}{"DocumentException: "} + e.getMessage());
+73             e.printStackTrace();
+74             \textcolor{keywordflow}{return} e.getMessage();
+75         \} \textcolor{keywordflow}{catch} (IOException e) \{
+76             log.severe(\textcolor{stringliteral}{"Error creating new file :"} + e.getMessage());
+77             e.printStackTrace();
+78             \textcolor{keywordflow}{return} e.getMessage();
+79         \}
+80         document.setMargins(50, 50, 70, 70);
+81         document.setMarginMirroring(\textcolor{keyword}{true});
+82         
+83         document.open();
+84         
+85         LinkedHashMap<String, String> title = \textcolor{keyword}{new} LinkedHashMap<String, String>();
+86         title.put(GlobalUtility.getProjectAnalizer().getProjectName() + \textcolor{stringliteral}{" documentation"}, \textcolor{stringliteral}{""});
+87         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, title.entrySet());
+88         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_abc1f7c0af1e9a3328d917e6e1751d421}{addImage}(document);
+89         \textcolor{keywordflow}{try} \{
+90             document.newPage();
+91         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
+92             e.printStackTrace();
+93         \}
+94         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getODDDescritpion().entrySet());
+95         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getPurpose().entrySet());
+96         ArrayList<LinkedHashMap<String, String>> entitie\_s = ODDInformationAsString.getEntities();
+97         \textcolor{keywordflow}{for}(LinkedHashMap<String, String> entity : entitie\_s)
+98             \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, entity.entrySet());
+99         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getProcessElement().entrySet());
+100         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getDesignConcpets().entrySet());
+101         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getInitialization().entrySet());
+102         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getInputData().entrySet());
+103         \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac98a9ab63c62a942fc1d410aab226e36}{createElement}(document, ODDInformationAsString.getSubmodels().entrySet()); 
+104         
+105         document.close();
+106         log.info(\textcolor{stringliteral}{"PDF generated"});
+107         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"done"};
+108     \}
 \end{DoxyCode}
 
 
@@ -281,25 +319,24 @@ Here is the call graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a9fa1dfe581da4d09e9c7bee1a8b12972}
 
 \begin{DoxyCode}
-132                                                          \{
-133         File folder = \textcolor{keyword}{new} File(path);
-134         File[] listOfFiles = folder.listFiles();
-135         ArrayList<String> toReturn = \textcolor{keyword}{new} ArrayList<String>();
-136         \textcolor{keywordflow}{if} (listOfFiles != null)\{
-137             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < listOfFiles.length; i++) \{
-138               \textcolor{keywordflow}{if} (listOfFiles[i].isFile()) \{
-139                 toReturn.add(listOfFiles[i].getAbsolutePath());
-140               \}
-141             \}
-142             \textcolor{keywordflow}{return} toReturn;
-143         \}
-144         \textcolor{keywordflow}{return} null;
-145     \}
+157                                                          \{
+158         File folder = \textcolor{keyword}{new} File(path);
+159         File[] listOfFiles = folder.listFiles();
+160         ArrayList<String> toReturn = \textcolor{keyword}{new} ArrayList<String>();
+161         \textcolor{keywordflow}{if} (listOfFiles != null)\{
+162             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < listOfFiles.length; i++) \{
+163               \textcolor{keywordflow}{if} (listOfFiles[i].isFile()) \{
+164                 toReturn.add(listOfFiles[i].getAbsolutePath());
+165               \}
+166             \}
+167             \textcolor{keywordflow}{return} toReturn;
+168         \}
+169         \textcolor{keywordflow}{return} null;
+170     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -319,19 +356,19 @@ Here is the caller graph for this function\-:
 \subsubsection[{\-\_\-\-I\-M\-G\-\_\-\-W\-I\-D\-T\-H}]{\setlength{\rightskip}{0pt plus 5cm}final int it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator.\-\_\-\-I\-M\-G\-\_\-\-W\-I\-D\-T\-H = 400\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_adf2d9b75632647f25441597140cb36f7}
 \hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_aef4e775d865ce931436933184abfcafa}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator}!element\-Title@{element\-Title}}
 \index{element\-Title@{element\-Title}!it::isislab::masonhelperdocumentation::mason::control::PDFGenerator@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator}}
-\subsubsection[{element\-Title}]{\setlength{\rightskip}{0pt plus 5cm}Font it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator.\-element\-Title = new Font(Font.\-T\-I\-M\-E\-S\-\_\-\-R\-O\-M\-A\-N, 14, Font.\-I\-T\-A\-L\-I\-C)\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_aef4e775d865ce931436933184abfcafa}
+\subsubsection[{element\-Title}]{\setlength{\rightskip}{0pt plus 5cm}Font it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator.\-element\-Title\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_aef4e775d865ce931436933184abfcafa}
 \hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a7ec74c952e08a9f11fd17f826de4edf1}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator}!log@{log}}
 \index{log@{log}!it::isislab::masonhelperdocumentation::mason::control::PDFGenerator@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator}}
 \subsubsection[{log}]{\setlength{\rightskip}{0pt plus 5cm}Logger it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator.\-log = Logger.\-get\-Logger(\char`\"{}global\char`\"{})\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a7ec74c952e08a9f11fd17f826de4edf1}
 \hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a4887bc031c4ee6469cf807e7cd1afca6}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator}!par\-Line@{par\-Line}}
 \index{par\-Line@{par\-Line}!it::isislab::masonhelperdocumentation::mason::control::PDFGenerator@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator}}
-\subsubsection[{par\-Line}]{\setlength{\rightskip}{0pt plus 5cm}Font it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator.\-par\-Line = new Font(Font.\-T\-I\-M\-E\-S\-\_\-\-R\-O\-M\-A\-N, 13, Font.\-N\-O\-R\-M\-A\-L)\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a4887bc031c4ee6469cf807e7cd1afca6}
+\subsubsection[{par\-Line}]{\setlength{\rightskip}{0pt plus 5cm}Font it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator.\-par\-Line\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a4887bc031c4ee6469cf807e7cd1afca6}
 \hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac4f2d6c81c14b60dcddfc358b9296ee5}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator}!par\-Sub\-Title@{par\-Sub\-Title}}
 \index{par\-Sub\-Title@{par\-Sub\-Title}!it::isislab::masonhelperdocumentation::mason::control::PDFGenerator@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator}}
-\subsubsection[{par\-Sub\-Title}]{\setlength{\rightskip}{0pt plus 5cm}Font it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator.\-par\-Sub\-Title = new Font(Font.\-T\-I\-M\-E\-S\-\_\-\-R\-O\-M\-A\-N, 14, Font.\-B\-O\-L\-D)\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac4f2d6c81c14b60dcddfc358b9296ee5}
+\subsubsection[{par\-Sub\-Title}]{\setlength{\rightskip}{0pt plus 5cm}Font it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator.\-par\-Sub\-Title\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_ac4f2d6c81c14b60dcddfc358b9296ee5}
 \hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a74f4e5e2095668aa762c3c3df4325c74}{\index{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator}!par\-Title@{par\-Title}}
 \index{par\-Title@{par\-Title}!it::isislab::masonhelperdocumentation::mason::control::PDFGenerator@{it\-::isislab\-::masonhelperdocumentation\-::mason\-::control\-::\-P\-D\-F\-Generator}}
-\subsubsection[{par\-Title}]{\setlength{\rightskip}{0pt plus 5cm}Font it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator.\-par\-Title = new Font(Font.\-T\-I\-M\-E\-S\-\_\-\-R\-O\-M\-A\-N, 18, Font.\-B\-O\-L\-D)\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a74f4e5e2095668aa762c3c3df4325c74}
+\subsubsection[{par\-Title}]{\setlength{\rightskip}{0pt plus 5cm}Font it.\-isislab.\-masonhelperdocumentation.\-mason.\-control.\-P\-D\-F\-Generator.\-par\-Title\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1control_1_1_p_d_f_generator_a74f4e5e2095668aa762c3c3df4325c74}
 
 
 The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
