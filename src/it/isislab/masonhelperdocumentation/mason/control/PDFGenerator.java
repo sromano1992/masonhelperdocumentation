@@ -108,7 +108,7 @@ public class PDFGenerator {
 	}
 
 	/**
-	 * This method creates font for pdf.
+	 * This method gets font for pdf.
 	 */
 	private void createFont() {
 		try {
