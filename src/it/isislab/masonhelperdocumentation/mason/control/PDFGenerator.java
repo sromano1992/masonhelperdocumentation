@@ -110,10 +110,10 @@ public class PDFGenerator {
 	private void createFont() {
 			String fontPath = File.separator + "font" + File.separator + "Concrete" + File.separator + "cmunorm.ttf";
 			//BaseFont bf = BaseFont.createFont(fontPath, BaseFont.IDENTITY_H, true);
-			parLine = new Font(Font.TIMES_ROMAN, 12);
-			parTitle = new Font(Font.TIMES_ROMAN);
-			parSubTitle = new Font(Font.TIMES_ROMAN, 14, Font.BOLD);
-			elementTitle = new Font(Font.TIMES_ROMAN, 14, Font.ITALIC);
+			parLine = new Font(Font.NORMAL, 10);
+			parTitle = new Font(Font.TIMES_ROMAN, 14, Font.BOLD);
+			parSubTitle = new Font(Font.TIMES_ROMAN, 13, Font.BOLD);
+			elementTitle = new Font(Font.TIMES_ROMAN, 12, Font.ITALIC);
 	}
 
 	private void addImage(Document document) {

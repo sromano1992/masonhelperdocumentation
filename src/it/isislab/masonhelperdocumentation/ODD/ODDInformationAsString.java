@@ -63,7 +63,10 @@ public class ODDInformationAsString {
 	 */
 	public static LinkedHashMap<String, String> getPurpose(){
 		LinkedHashMap<String, String> purpose = new LinkedHashMap<String, String>();
-		purpose.put("Purpose\n", ODD.getPurpose().getModelPurpose());
+		if (ODD.getPurpose().getModelPurpose().equals(""))
+			purpose.put("Purpose\n", "No purpose defined.");
+		else
+			purpose.put("Purpose\n", ODD.getPurpose().getModelPurpose());
 		return purpose;
 	}
 	
