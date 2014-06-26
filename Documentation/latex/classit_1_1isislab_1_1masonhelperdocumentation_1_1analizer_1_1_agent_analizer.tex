@@ -42,6 +42,8 @@ String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1
 \item 
 boolean \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_a6be22d4f751e44b18796b10767b581d5}{already\-Visited} (\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_parameter}{Parameter} p)
 \item 
+Array\-List$<$ \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_parameter}{Parameter} $>$ \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_a9fdb36c2a505d7ad2459d70f413216d0}{get\-Not\-Visited\-Parameter\-\_\-s} ()
+\item 
 String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_ace466e16439878a851eb63d5a11ddf43}{get\-Class\-Name} ()
 \item 
 String \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_aea58a6f4ec614b3778588784cb250dcb}{to\-String} ()
@@ -118,7 +120,8 @@ Return true if parameter p has been already visited. For 'visited' I mean that I
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:\nopagebreak
+Here is the caller graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -139,9 +142,9 @@ Return class name of this agent. \begin{DoxyReturn}{Returns}
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-146                                 \{
-147         \textcolor{keywordflow}{return} agentICompilationUnit.getElementName();
-148     \}
+158                                 \{
+159         \textcolor{keywordflow}{return} agentICompilationUnit.getElementName();
+160     \}
 \end{DoxyCode}
 
 
@@ -170,6 +173,18 @@ Retirn Compilation\-Unit. \begin{DoxyReturn}{Returns}
 109         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_a1fdd2196fdd7b7907ab94da91b8306f4}{compilationUnit};
 110     \}
 \end{DoxyCode}
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_af956b9fdd9d6b6b97d4982cba816d441_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_a4a819d1324aa806e8bc729bb5d6ce398}{\index{it\-::isislab\-::masonhelperdocumentation\-::analizer\-::\-Agent\-Analizer@{it\-::isislab\-::masonhelperdocumentation\-::analizer\-::\-Agent\-Analizer}!get\-Model\-Description@{get\-Model\-Description}}
 \index{get\-Model\-Description@{get\-Model\-Description}!it::isislab::masonhelperdocumentation::analizer::AgentAnalizer@{it\-::isislab\-::masonhelperdocumentation\-::analizer\-::\-Agent\-Analizer}}
 \subsubsection[{get\-Model\-Description}]{\setlength{\rightskip}{0pt plus 5cm}Javadoc it.\-isislab.\-masonhelperdocumentation.\-analizer.\-Agent\-Analizer.\-get\-Model\-Description (
@@ -188,6 +203,51 @@ Javadoc\-Comment if there is a description; else null.
 64         \textcolor{keywordflow}{return} agent.getJavadoc();
 65     \}
 \end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_a9fdb36c2a505d7ad2459d70f413216d0}{\index{it\-::isislab\-::masonhelperdocumentation\-::analizer\-::\-Agent\-Analizer@{it\-::isislab\-::masonhelperdocumentation\-::analizer\-::\-Agent\-Analizer}!get\-Not\-Visited\-Parameter\-\_\-s@{get\-Not\-Visited\-Parameter\-\_\-s}}
+\index{get\-Not\-Visited\-Parameter\-\_\-s@{get\-Not\-Visited\-Parameter\-\_\-s}!it::isislab::masonhelperdocumentation::analizer::AgentAnalizer@{it\-::isislab\-::masonhelperdocumentation\-::analizer\-::\-Agent\-Analizer}}
+\subsubsection[{get\-Not\-Visited\-Parameter\-\_\-s}]{\setlength{\rightskip}{0pt plus 5cm}Array\-List$<${\bf Parameter}$>$ it.\-isislab.\-masonhelperdocumentation.\-analizer.\-Agent\-Analizer.\-get\-Not\-Visited\-Parameter\-\_\-s (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_a9fdb36c2a505d7ad2459d70f413216d0}
+Return parameter\-\_\-s that are not visited until now. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+146                                                           \{
+147         ArrayList<Parameter> remainingParameters = \textcolor{keyword}{new} ArrayList<Parameter>();
+148         ArrayList<Parameter> allParameters = GlobalUtility.getAllParameters(
+      \hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_af956b9fdd9d6b6b97d4982cba816d441}{getCompilationUnit}());
+149         \textcolor{keywordflow}{for} (Parameter p : allParameters)
+150             \textcolor{keywordflow}{if} (!(\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_a6be22d4f751e44b18796b10767b581d5}{alreadyVisited}(p))) remainingParameters.add(p); 
+151         \textcolor{keywordflow}{return} remainingParameters;
+152     \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_a9fdb36c2a505d7ad2459d70f413216d0_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_a9fdb36c2a505d7ad2459d70f413216d0_icgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_a5f65d6f8f8c1a00b0b66fb3dd0ab37cb}{\index{it\-::isislab\-::masonhelperdocumentation\-::analizer\-::\-Agent\-Analizer@{it\-::isislab\-::masonhelperdocumentation\-::analizer\-::\-Agent\-Analizer}!get\-Position\-Class@{get\-Position\-Class}}
 \index{get\-Position\-Class@{get\-Position\-Class}!it::isislab::masonhelperdocumentation::analizer::AgentAnalizer@{it\-::isislab\-::masonhelperdocumentation\-::analizer\-::\-Agent\-Analizer}}
 \subsubsection[{get\-Position\-Class}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonhelperdocumentation.\-analizer.\-Agent\-Analizer.\-get\-Position\-Class (
@@ -346,9 +406,9 @@ This method set the description of model to model\-Description value.
 )}}\label{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_aea58a6f4ec614b3778588784cb250dcb}
 
 \begin{DoxyCode}
-150                             \{
-151         \textcolor{keywordflow}{return} compilationUnit.toString();
-152     \}
+162                             \{
+163         \textcolor{keywordflow}{return} compilationUnit.toString();
+164     \}
 \end{DoxyCode}
 
 

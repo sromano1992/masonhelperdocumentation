@@ -172,16 +172,22 @@ Add this agent to Entities list (entities represent the Entites of \hyperlink{na
 100             ((MASONDocumentationWizard) super.getWizard()).addPage(nextPage); 
 101             \textcolor{keywordflow}{return} nextPage; 
 102         \}
-103         \textcolor{keywordflow}{else}\{
+103         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1mason_1_1wizards_1_1_d___agent_description_page_a2a9e05cc43fedb16d75050620d30f712}{agentAnalizer}.\hyperlink{classit_1_1isislab_1_1masonhelperdocumentation_1_1analizer_1_1_agent_analizer_a9fdb36c2a505d7ad2459d70f413216d0}{getNotVisitedParameter\_s}().size() > 0)\{
 104             F\_AgentVariablesPage nextPage = \textcolor{keyword}{new} F\_AgentVariablesPage();
 105             ((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);
-106             \textcolor{keywordflow}{return} nextPage;
+106             \textcolor{keywordflow}{return} nextPage; 
 107         \}
-108     \}
+108         \textcolor{keywordflow}{else}\{
+109             G\_GridsCellPage nextPage = \textcolor{keyword}{new} G\_GridsCellPage();
+110             ((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);
+111             \textcolor{keywordflow}{return} nextPage; 
+112         \}
+113     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
