@@ -2,9 +2,7 @@ package it.isislab.masonhelperdocumentation.mason.control;
 
 import it.isislab.masonhelperdocumentation.ODD.ODDInformationAsString;
 import it.isislab.masonhelperdocumentation.analizer.GlobalUtility;
-import it.isislab.masonhelperdocumentation.analizer.ProjectAnalizer;
 
-import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -12,12 +10,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
-import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.logging.Logger;
 
-import javax.annotation.Resource;
 import javax.swing.JOptionPane;
+
 
 import com.lowagie.text.BadElementException;
 import com.lowagie.text.Chunk;
@@ -111,20 +108,12 @@ public class PDFGenerator {
 	 * This method gets font for pdf.
 	 */
 	private void createFont() {
-		try {
 			String fontPath = File.separator + "font" + File.separator + "Concrete" + File.separator + "cmunorm.ttf";
-			BaseFont bf = BaseFont.createFont(fontPath, BaseFont.IDENTITY_H, true);
-			parLine = new Font(bf, 12);
-			parTitle = new Font(bf, 18, Font.BOLD);
-			parSubTitle = new Font(bf, 14, Font.BOLD);
-			elementTitle = new Font(bf, 14, Font.ITALIC);
-		} catch (DocumentException e) {
-			log.severe("DocumentException setting font: " + e.getMessage());
-			e.printStackTrace();
-		} catch (IOException e) {
-			log.severe("IOExcpetion setting font: " + e.getMessage());
-			e.printStackTrace();
-		}
+			//BaseFont bf = BaseFont.createFont(fontPath, BaseFont.IDENTITY_H, true);
+			parLine = new Font(Font.TIMES_ROMAN, 12);
+			parTitle = new Font(Font.TIMES_ROMAN);
+			parSubTitle = new Font(Font.TIMES_ROMAN, 14, Font.BOLD);
+			elementTitle = new Font(Font.TIMES_ROMAN, 14, Font.ITALIC);
 	}
 
 	private void addImage(Document document) {
