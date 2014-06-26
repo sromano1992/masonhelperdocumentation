@@ -2,6 +2,7 @@ package it.isislab.masonhelperdocumentation.mason.control;
 
 import it.isislab.masonhelperdocumentation.ODD.ODDInformationAsString;
 import it.isislab.masonhelperdocumentation.analizer.GlobalUtility;
+import it.isislab.masonhelperdocumentation.analizer.ProjectAnalizer;
 
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -11,9 +12,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map.Entry;
+import java.util.ResourceBundle;
 import java.util.Set;
 import java.util.logging.Logger;
 
+import javax.annotation.Resource;
 import javax.swing.JOptionPane;
 
 import com.lowagie.text.BadElementException;
@@ -25,6 +28,7 @@ import com.lowagie.text.Image;
 import com.lowagie.text.List;
 import com.lowagie.text.ListItem;
 import com.lowagie.text.Paragraph;
+import com.lowagie.text.pdf.BaseFont;
 import com.lowagie.text.pdf.PdfWriter;
 
 /**
@@ -35,10 +39,10 @@ import com.lowagie.text.pdf.PdfWriter;
 public class PDFGenerator {
 	private static final int _IMG_HEIGTH = 400;
 	private static final int _IMG_WIDTH = 400;
-	private Font parTitle = new Font(Font.TIMES_ROMAN, 18, Font.BOLD);
-	private Font parSubTitle = new Font(Font.TIMES_ROMAN, 14, Font.BOLD);
-	private Font elementTitle = new Font(Font.TIMES_ROMAN, 14, Font.ITALIC);
-	private Font parLine = new Font(Font.TIMES_ROMAN, 13, Font.NORMAL);
+	private Font parTitle;
+	private Font parSubTitle;
+	private Font elementTitle;
+	private Font parLine;
 	private static Logger log = Logger.getLogger("global");
 
 	/**
@@ -50,6 +54,7 @@ public class PDFGenerator {
 	 */
 	public String createPdf(String filename) {
 		// setup PdfWriter
+		createParagraphFont();
 		Document document = new Document();
 		File pdfFile = null;
 		try {
@@ -100,6 +105,23 @@ public class PDFGenerator {
 		document.close();
 		log.info("PDF generated");
 		return "done";
+	}
+
+	private void createParagraphFont() {
+		try {
+			String fontPath = File.separator + "font" + File.separator + "Concrete" + File.separator + "cmunorm.ttf";
+			BaseFont bf = BaseFont.createFont(fontPath, BaseFont.IDENTITY_H, true);
+			parLine = new Font(bf, 12);
+			parTitle = new Font(bf, 18, Font.BOLD);
+			parSubTitle = new Font(bf, 14, Font.BOLD);
+			elementTitle = new Font(bf, 14, Font.ITALIC);
+		} catch (DocumentException e) {
+			
+			e.printStackTrace();
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
 	}
 
 	private void addImage(Document document) {
