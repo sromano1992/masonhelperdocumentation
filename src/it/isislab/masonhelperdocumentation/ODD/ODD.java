@@ -10,6 +10,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashMap;
@@ -129,8 +131,24 @@ public class ODD implements Serializable{
 		ODD.inputData = inputData;
 	}
 
+	/**
+	 * Add entity e in entite_s collection. First there is 
+	 * a control to check if Entity is already in collection.
+	 * This has sense because also at first run of program
+	 * some entities could be get from ODD serialized files. 
+	 * @param e
+	 */
 	public static void addEntity(Entity e){
-		getEntitie_s().add(e);
+		boolean alreadyIn = false;
+		ArrayList<Entity> entitie_s = getEntitie_s().getEntitie_s();
+		for (Entity entity : entitie_s){
+			if (entity.getName().equals(e.getName())){
+				entity.setDescription(e.getDescription());
+				alreadyIn = true;
+			}
+		}
+		if (!alreadyIn)
+			getEntitie_s().add(e);
 	}
 
 	public static Entity getEntity(String name){
@@ -164,6 +182,7 @@ public class ODD implements Serializable{
 			serializeObj(DesignConcepts.serializedName, getDesignConcepts());
 			serializeObj(Initialization.serializedName, getInitialization());
 			serializeObj("inputData.ser", inputData);
+			log.info("ODD object Serialized");
 		} catch (IOException e) {
 			log.severe("Error serializing ODD objects: " + e.getMessage());
 			e.printStackTrace();
@@ -183,6 +202,7 @@ public class ODD implements Serializable{
 			ODD.setDesignConcepts((DesignConcepts) deserializeObj(DesignConcepts.serializedName));
 			ODD.setInitialization((Initialization) deserializeObj(Initialization.serializedName));
 			ODD.setInputData((String) deserializeObj("inputData.ser"));
+			log.info("ODD object deserialized");
 		} catch (IOException e) {
 			log.severe("IOException deserializing ODD objects: " + e.getMessage());
 			e.printStackTrace();
@@ -201,7 +221,9 @@ public class ODD implements Serializable{
 	 * @throws IOException
 	 */
 	private static void serializeObj(String objName, Object toSerialize) throws FileNotFoundException, IOException {
-		FileOutputStream fileOut = new FileOutputStream(ConfigFile.gettODDPath() + objName);
+		String serializedObjPath = ConfigFile.gettODDPath() + objName;
+		Files.deleteIfExists(Paths.get(serializedObjPath));
+		FileOutputStream fileOut = new FileOutputStream(serializedObjPath);
 		ObjectOutputStream out = new ObjectOutputStream(fileOut);
 		out.writeObject(toSerialize);
 		out.close();
