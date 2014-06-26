@@ -5,14 +5,11 @@ import it.isislab.masonhelperdocumentation.ODD.ProcessOverviewElement;
 import it.isislab.masonhelperdocumentation.analizer.AgentAnalizer;
 import it.isislab.masonhelperdocumentation.analizer.GlobalUtility;
 import it.isislab.masonhelperdocumentation.analizer.Method;
-import it.isislab.masonhelperdocumentation.analizer.SimStateAnalizer;
 import it.isislab.masonhelperdocumentation.mason.wizards.MASONDocumentationWizard;
 
-import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import org.eclipse.jface.wizard.IWizardPage;
-import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
