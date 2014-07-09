@@ -4,14 +4,14 @@
    <extension
          point="org.eclipse.ui.exportWizards">
       <category
-            name="MASONHelper"
-            id="MASONHelperDocumentation">
+            name="MAD"
+            id="MASONAssistedDocumentation">
       </category>
       <wizard
-            name="MASON Helper Documentation"
+            name="MAD(MASON Assisted Documentation)"
             icon="icons/sample.gif"
-            category="MASONHelperDocumentation"
-            class="it.isislab.masonhelperdocumentation.mason.wizards.MASONDocumentationWizard"
+            category="MASONAssistedDocumentation"
+            class="it.isislab.masonassisteddocumentation.mason.wizards.MASONDocumentationWizard"
             id="it.isislab.masonhelperdocumentation.mason.wizards.MASONDocumentationWizard">
       </wizard>
    </extension>

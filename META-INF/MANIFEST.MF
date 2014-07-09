@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: MASONHelperDocumentation
-Bundle-SymbolicName: MASONHelperDocumentation;singleton:=true
+Bundle-SymbolicName: MAD_Mason_Assisted_documentation_;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.jface.text,
  org.eclipse.core.resources,
