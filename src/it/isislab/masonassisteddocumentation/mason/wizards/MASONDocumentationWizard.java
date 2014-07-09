@@ -5,7 +5,6 @@ import org.eclipse.core.runtime.CoreException;
 import org.eclipse.jdt.core.IJavaProject;
 import org.eclipse.jdt.core.JavaCore;
 import org.eclipse.jface.viewers.IStructuredSelection;
-import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.ui.IWorkbench;
 
@@ -13,10 +12,8 @@ import it.isislab.masonassisteddocumentation.ODD.ODD;
 import it.isislab.masonassisteddocumentation.mason.analizer.GlobalUtility;
 import it.isislab.masonassisteddocumentation.mason.control.ConfigFile;
 
-import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
-import java.io.InputStreamReader;
 import java.util.logging.FileHandler;
 import java.util.logging.Handler;
 import java.util.logging.Logger;
@@ -106,8 +103,7 @@ public class MASONDocumentationWizard extends Wizard implements IExportWizard {
 			e.printStackTrace();
 		} catch (Exception e) {
 			log.severe(e.getMessage());
-			JOptionPane
-					.showMessageDialog(null, "Open 'Project Explorer' view!");
+			JOptionPane.showMessageDialog(null, "Open 'Project Explorer' view!");
 		}
 	}
 }

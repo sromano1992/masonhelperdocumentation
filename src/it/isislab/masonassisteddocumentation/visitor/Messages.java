@@ -3,7 +3,7 @@ package it.isislab.masonassisteddocumentation.visitor;
 import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
-	private static final String BUNDLE_NAME = "it.isislab.masonhelperdocumentation.visitor.messages"; //$NON-NLS-1$
+	private static final String BUNDLE_NAME = "it.isislab.masonassisteddocumentation.visitor.messages"; //$NON-NLS-1$
 	public static String Visitor_AddEdgeInfo1;
 	public static String Visitor_AddEdgeInfo2;
 	public static String Visitor_AddEdgeInfo3;

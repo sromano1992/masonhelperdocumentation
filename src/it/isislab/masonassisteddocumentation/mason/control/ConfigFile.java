@@ -28,11 +28,11 @@ import java.util.logging.Logger;
  */
 public class ConfigFile {
 	private static Logger log = Logger.getLogger("global");
-	private static String baseDirName = "MASONHelperDocumentation_";
-	private static String project_sDirPath = "MASONHelperDocumentation";
-	private static String configFileName = "configMASONHelper.dat";
+	private static String baseDirName = "MAD_";
+	private static String project_sDirPath = "MAD(Mason-Assisted-Documentation)";
+	private static String configFileName = "MAD_config.dat";
 
-	private static String getProject_sDirPath(){
+	public static String getProject_sDirPath(){
 		String dirPath = File.separator + project_sDirPath;
 		File project_sDir = new File(dirPath);
 		if (!project_sDir.exists())
