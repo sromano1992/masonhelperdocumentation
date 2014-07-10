@@ -67,7 +67,7 @@ public abstract class CodeVisitor extends ASTVisitor {
 	}
 	
 	public boolean visit(Assignment node){
-		information_s += Messages.Visitor_Assignment + node.getLeftHandSide() + Messages.Visitor_Assignemnt1 + node.getRightHandSide() + " "; //$NON-NLS-3$
+		information_s += Messages.Visitor_Assignment + node.getLeftHandSide() + Messages.Visitor_Assignemnt1 + node.getRightHandSide() + "."; //$NON-NLS-3$
 		return super.visit(node);
 	}
 
@@ -82,6 +82,25 @@ public abstract class CodeVisitor extends ASTVisitor {
 	
 	public String getInformation_s() {
 		return information_s + Messages.Visitor_EndMethod;
+	}
+
+	/**
+	 * This method add '\n' each 8 white space.
+	 */
+	private void addSomeNewLine() {
+		int eachNumSpace = 8;
+		int spaceCounter = 0;
+		StringBuilder result = new StringBuilder(information_s);
+		for (int i=0; i<information_s.length(); i++){
+			if (information_s.charAt(i) == ' '){
+				spaceCounter++;
+				if (spaceCounter >= eachNumSpace){
+					result.setCharAt(i, '\n');
+					spaceCounter = 0;
+				}
+			}
+		}
+		information_s = result.toString();
 	}
 
 	public abstract boolean visit(MethodInvocation node);
