@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 import it.isislab.masonassisteddocumentation.mason.analizer.GlobalUtility;
 import it.isislab.masonassisteddocumentation.mason.analizer.Method;
-import it.isislab.masonassisteddocumentation.visitor.CodeVisitor;
+import it.isislab.masonassisteddocumentation.visitor.RecursiveCodeVisitor;
 
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.MethodInvocation;
@@ -21,7 +21,7 @@ public class Submodel  implements Serializable{
 	}
 	
 	public String getDescription(){
-		CodeVisitor cv = new CodeVisitor(cu);
+		RecursiveCodeVisitor cv = new RecursiveCodeVisitor(cu);
 		Method method = GlobalUtility.getMethodFrom(action, cu);
 		if (method != null){
 			method.getMethod().getBody().accept(cv);

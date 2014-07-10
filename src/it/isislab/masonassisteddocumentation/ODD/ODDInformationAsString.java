@@ -1,5 +1,7 @@
 package it.isislab.masonassisteddocumentation.ODD;
 
+import it.isislab.masonassisteddocumentation.mason.analizer.GlobalUtility;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
@@ -22,7 +24,7 @@ public class ODDInformationAsString {
 	 * @return
 	 */
 	public static LinkedHashMap<String, String> getODDDescritpion(){
-		String documentDescription_0 = ODD.getStandardDefinition;
+		String documentDescription_0 = GlobalUtility.MAD_SIGNATURE + ODD.getStandardDefinition;
 		String documentDescription_1 = "This documentation contains information on the simulation model. These information are partially self-generated and partially entered."
 				+ "The information is grouped according to the protocol ODD. "
 				+ "Each section of the protocol answers some questions. In particular: \n";

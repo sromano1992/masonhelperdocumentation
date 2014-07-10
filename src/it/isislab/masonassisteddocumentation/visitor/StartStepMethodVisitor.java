@@ -29,13 +29,12 @@ import org.eclipse.jdt.core.dom.WhileStatement;
  * @author Romano Simone 0512101343
  *
  */
-public class StartMethodVisitor extends ASTVisitor {
-	private String information_s;
+public class StartStepMethodVisitor extends CodeVisitor {
 	private CompilationUnit cu;
 	private static Logger log = Logger.getLogger("global"); //$NON-NLS-1$
 	
-	public StartMethodVisitor(CompilationUnit cu) {
-		super();
+	public StartStepMethodVisitor(CompilationUnit cu) {
+		super(cu);
 		this.cu = cu;
 		information_s = ""; //$NON-NLS-1$
 	}
@@ -66,7 +65,7 @@ public class StartMethodVisitor extends ASTVisitor {
         	ODD.addSubmodel(toAdd);
         	log.info(Messages.Visitor_SubmodelFound + node.getName() +"'.");        	 //$NON-NLS-2$
         }
-        return super.visit(node);
+        return true;
 	}
 	
 	private void generateAddEdgeInformations(MethodInvocation node) {
@@ -136,73 +135,5 @@ public class StartMethodVisitor extends ASTVisitor {
 								+ Messages.Visitor_Schedule5 + argument_s.get(3) + ".\n\n"; //$NON-NLS-2$
 		}
 		
-	}
-
-	@Override
-	public boolean visit(IfStatement node) {
-		information_s += Messages.Visitor_If1 + node.getExpression() + " "; //$NON-NLS-2$
-		return super.visit(node);
-	}
-	
-	public void endVisit(IfStatement node){
-		information_s += Messages.Visitor_EndIf;
-	}
-
-	public boolean visit(WhileStatement f){
-		information_s += Messages.Visitor_While1 + f.getExpression() + " "; //$NON-NLS-2$
-		return super.visit(f);
-	}
-
-	public boolean visit(ForStatement f){
-		information_s += Messages.Visitor_While1 + f.getExpression() + " "; //$NON-NLS-2$
-		return super.visit(f);
-	}
-	
-	public void endVisit(ForStatement node){
-		information_s += Messages.Visitor_EndFor; //$NON-NLS-2$;
-	}
-	
-	public boolean visit (DoStatement d){
-		information_s += Messages.Visitor_Do1 + d.getExpression() + " "; //$NON-NLS-2$
-		return super.visit(d);
-	}
-
-	public void endVisit(DoStatement node){
-		information_s += Messages.Visitor_DoWhileEnd;
-	}
-	
-	public boolean visit(SwitchStatement s){
-		information_s += Messages.Visitor_SwitchInfo + s.getExpression() + " "; //$NON-NLS-2$
-		return super.visit(s);
-	}
-
-	public void endVisit(SwitchStatement node){
-		information_s += Messages.Visitor_EndSwitch;
-	}
-	
-	public boolean visit(TypeDeclaration t){
-		information_s += Messages.Visitor_TypeDeclaration + t.getName();
-		return super.visit(t);
-	}
-
-	public void endVisit(TypeDeclaration node){
-		information_s += Messages.Visitor_EndTypeDeclaration;
-	}
-	
-	public boolean visit(Assignment node){
-		information_s += Messages.Visitor_Assignment + node.getLeftHandSide() + Messages.Visitor_Assignemnt1 + node.getRightHandSide() + " "; //$NON-NLS-3$
-		return super.visit(node);
-	}
-
-	public void endVisit(Assignment node){
-		information_s += Messages.Visitor_EndAssignent;
-	}
-
-	public void endVisit(MethodInvocation node){
-		information_s += Messages.Visitor_EndInvocation + node.getName() + Messages.Visitor_EndInvocation1;
-	}
-	
-	public String getInformation_s() {
-		return information_s + Messages.Visitor_EndMethod;
 	}
 }
