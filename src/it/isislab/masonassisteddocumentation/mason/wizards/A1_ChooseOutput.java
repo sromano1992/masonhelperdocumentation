@@ -13,7 +13,7 @@ import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 
 public class A1_ChooseOutput extends WizardPage {
-	private Button btnDoxygen, btnPdf, btnTxt;
+	private Button btnDoxygen, btnPdf, btnTxt, btnAll;
 	/**
 	 * Create the wizard.
 	 */
@@ -78,21 +78,43 @@ public class A1_ChooseOutput extends WizardPage {
 		});
 		btnTxt.setText("txt");
 		
+		Label lblThisChooseWill = new Label(container, SWT.NONE);
+		lblThisChooseWill.setText("This choise will generate a txt document.");
+		new Label(container, SWT.NONE);
+		new Label(container, SWT.NONE);
+		new Label(container, SWT.NONE);
+		new Label(container, SWT.NONE);
+		
+		btnAll = new Button(container, SWT.RADIO);
+		btnAll.addSelectionListener(new SelectionAdapter() {
+			@Override
+			public void widgetSelected(SelectionEvent e) {
+				ConfigFile.setProperty("typeOutput", "all");
+			}
+		});
+		btnAll.setText("All");
+		
+		setSelected();
+		
+		Label labelAll = new Label(container, SWT.NONE);
+		labelAll.setText("This choise will generate html-latex(with Doxygen), pdf-rtf and txt.");
+	}
+
+	private void setSelected() {
 		String typeOutput = ConfigFile.getValue("typeOutput");
 		if (typeOutput.equals("Doxygen"))	btnDoxygen.setSelection(true);
 		else if (typeOutput.equals("pdf"))	btnPdf.setSelection(true);
 		else if (typeOutput.equals("txt"))	btnTxt.setSelection(true);
+		else if (typeOutput.equals("all"))	btnAll.setSelection(true);
 		else
 			btnDoxygen.setSelection(true);
-		
-		Label lblThisChooseWill = new Label(container, SWT.NONE);
-		lblThisChooseWill.setText("This choise will generate a txt document.");
 	}
 	
 	public IWizardPage getNextPage(){ 
 		if (btnDoxygen.getSelection())	ConfigFile.setProperty("typeOutput", "Doxygen");
 		if (btnPdf.getSelection())	ConfigFile.setProperty("typeOutput", "pdf");
 		if (btnTxt.getSelection())	ConfigFile.setProperty("typeOutput", "txt");
+		if (btnAll.getSelection())	ConfigFile.setProperty("typeOutput", "all");
 		
 		B_ProjectInformationPage nextPage = new B_ProjectInformationPage();
 		((MASONDocumentationWizard) super.getWizard()).addPage(nextPage);

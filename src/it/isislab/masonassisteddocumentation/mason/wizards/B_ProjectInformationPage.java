@@ -69,8 +69,8 @@ public class B_ProjectInformationPage extends WizardPage{
 	 */
 	public B_ProjectInformationPage() {
 		super("wizardPage");
-		setTitle("MASON Helper documentation");
-		setDescription("This wizard will extract a documentation for Simulation model using Doxygen.");
+		setTitle("MAD(Mason Assisted Documentation)");
+		setDescription("This wizard will extract a documentation for Simulation model.");
 		projectAnalizer = GlobalUtility.getProjectAnalizer();
 	}
 

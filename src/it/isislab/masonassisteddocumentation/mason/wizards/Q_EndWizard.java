@@ -74,52 +74,67 @@ public class Q_EndWizard extends WizardPage {
 				progressBar.setSelection(0);
 				String outputType = ConfigFile.getValue("typeOutput");
 				if (outputType.equals("Doxygen")){
-					GlobalUtility.rewriteAll();
-					doxygenRun();	
+					generateDoxygenDoc();	
 				}
 				if (outputType.equals("pdf")){
-					String pdfMessage = new PdfRtfGenerator().createPdf(ConfigFile.getValue("output") + File.separator + GlobalUtility.getProjectAnalizer().getProjectName() + ".pdf");
-					String rtfMessage = new PdfRtfGenerator().createRtf(ConfigFile.getValue("output") + File.separator + GlobalUtility.getProjectAnalizer().getProjectName() + ".rtf");
-					if (pdfMessage.equals("done") && rtfMessage.equals("done")){
-						progressBar.setVisible(true);
-						progressBar.setSelection(100);
-						showOutput();
-					}
-					else{
-						if (!pdfMessage.equals("done"))
-							JOptionPane.showMessageDialog(null, pdfMessage);
-						if (!rtfMessage.equals("done"))
-							JOptionPane.showMessageDialog(null, rtfMessage);
-					}
+					generatePDF();
 				}
 				if (outputType.equals("txt")){
-					String filename = ConfigFile.getValue("output");
-					filename += File.separator + GlobalUtility.getProjectAnalizer().getProjectName() + ".txt";
-					File txtFile = new File(filename);
-					if (!txtFile.exists())
-						try {
-							txtFile.createNewFile();							
-						} catch (IOException e) {
-							log.severe("Error creating .txt file: " + e.getMessage());
-							e.printStackTrace();
-						}
-					FileOutputStream fout;
+					generateTxt();					
+				}	
+				else if (outputType.equals("all")){
+					generateDoxygenDoc();
+					generatePDF();
+					generateTxt();	
+				}
+			}
+
+			private void generateTxt() {
+				String filename = ConfigFile.getValue("output");
+				filename += File.separator + GlobalUtility.getProjectAnalizer().getProjectName() + ".txt";
+				File txtFile = new File(filename);
+				if (!txtFile.exists())
 					try {
-						fout = new FileOutputStream(txtFile);
-						fout.write(ODDInformationAsString.ODDToString().getBytes(), 0, ODDInformationAsString.ODDToString().length());
-						progressBar.setVisible(true);
-						progressBar.setSelection(100);
-						showOutput();
-					} catch (FileNotFoundException e) {
-						log.severe("File not found: " + e.getMessage());
-						e.printStackTrace();
+						txtFile.createNewFile();							
 					} catch (IOException e) {
-						log.severe("IOException " + e.getMessage());
+						log.severe("Error creating .txt file: " + e.getMessage());
 						e.printStackTrace();
 					}
-					
-				}	
-				
+				FileOutputStream fout;
+				try {
+					fout = new FileOutputStream(txtFile);
+					fout.write(ODDInformationAsString.ODDToString().getBytes(), 0, ODDInformationAsString.ODDToString().length());
+					progressBar.setVisible(true);
+					progressBar.setSelection(100);
+					showOutput();
+				} catch (FileNotFoundException e) {
+					log.severe("File not found: " + e.getMessage());
+					e.printStackTrace();
+				} catch (IOException e) {
+					log.severe("IOException " + e.getMessage());
+					e.printStackTrace();
+				}
+			}
+
+			private void generateDoxygenDoc() {
+				GlobalUtility.rewriteAll();
+				doxygenRun();
+			}
+
+			private void generatePDF() {
+				String pdfMessage = new PdfRtfGenerator().createPdf(ConfigFile.getValue("output") + File.separator + GlobalUtility.getProjectAnalizer().getProjectName() + ".pdf");
+				String rtfMessage = new PdfRtfGenerator().createRtf(ConfigFile.getValue("output") + File.separator + GlobalUtility.getProjectAnalizer().getProjectName() + ".rtf");
+				if (pdfMessage.equals("done") && rtfMessage.equals("done")){
+					progressBar.setVisible(true);
+					progressBar.setSelection(100);
+					showOutput();
+				}
+				else{
+					if (!pdfMessage.equals("done"))
+						JOptionPane.showMessageDialog(null, pdfMessage);
+					if (!rtfMessage.equals("done"))
+						JOptionPane.showMessageDialog(null, rtfMessage);
+				}
 			}
 		});
 		btnGenerate.setBounds(10, 0, 75, 25);

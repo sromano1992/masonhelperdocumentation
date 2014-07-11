@@ -3,6 +3,7 @@ package it.isislab.masonassisteddocumentation.mason.control;
 import it.isislab.masonassisteddocumentation.ODD.ODDInformationAsString;
 import it.isislab.masonassisteddocumentation.mason.analizer.GlobalUtility;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -21,6 +22,7 @@ import com.lowagie.text.Document;
 import com.lowagie.text.DocumentException;
 import com.lowagie.text.Element;
 import com.lowagie.text.Font;
+import com.lowagie.text.FontFactory;
 import com.lowagie.text.HeaderFooter;
 import com.lowagie.text.Image;
 import com.lowagie.text.List;
@@ -30,6 +32,7 @@ import com.lowagie.text.Phrase;
 import com.lowagie.text.Rectangle;
 import com.lowagie.text.pdf.BaseFont;
 import com.lowagie.text.pdf.PdfWriter;
+import com.lowagie.text.rtf.RtfFont;
 import com.lowagie.text.rtf.RtfWriter2;
 
 /**
