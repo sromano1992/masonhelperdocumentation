@@ -3,12 +3,9 @@ package it.isislab.masonassisteddocumentation.ODD;
 import it.isislab.masonassisteddocumentation.mason.analizer.GlobalUtility;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.LinkedHashMap;
-import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
-import java.util.TreeMap;
 
 /**
  * Return element printable from ODD.

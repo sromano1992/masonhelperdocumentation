@@ -1,24 +1,17 @@
 package it.isislab.masonassisteddocumentation.mason.wizards;
 
-import java.util.ArrayList;
-import java.util.logging.Logger;
 
-import it.isislab.masonassisteddocumentation.ODD.Entitie_s;
-import it.isislab.masonassisteddocumentation.ODD.Entity;
 import it.isislab.masonassisteddocumentation.ODD.ODD;
-import it.isislab.masonassisteddocumentation.ODD.Variable;
 
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.custom.ScrolledComposite;
 
 public class O_InputDataPage extends WizardPage {
 	private String pageDescription = "Does the model use input from external sources such\nas data files or other models to represent processes that change\nover time?";	
 	private Text textUserInputData;
-	private Logger log = Logger.getLogger("global");
 
 	public O_InputDataPage() {
 		super("wizardPage");

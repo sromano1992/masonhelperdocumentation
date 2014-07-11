@@ -37,7 +37,6 @@ import org.eclipse.jdt.core.dom.TagElement;
 import org.eclipse.jdt.core.dom.TextElement;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jdt.core.dom.VariableDeclarationFragment;
-import org.eclipse.jface.viewers.IStructuredSelection;
 
 /**
  * This class contains "global" variable
@@ -47,7 +46,6 @@ import org.eclipse.jface.viewers.IStructuredSelection;
 public class GlobalUtility {
 	private static IJavaProject javaProject;
 	private static Logger log = Logger.getLogger("global");
-	private static IStructuredSelection selection;
 	private static ProjectAnalizer projectAnalizer;
 	private static SimStateAnalizer simStateAnalizer;
 	private static GUIStateAnalizer guiStateAnalizer;
@@ -605,7 +603,6 @@ public class GlobalUtility {
 	public static Process doxygenRun(){
 		String output = ConfigFile.getValue("output");
 		String outputDirectory = "";
-		String doxygenPath = ConfigFile.getValue("doxygenPath");
 		String imgPath = ConfigFile.getValue("imgPath");
 		if (imgPath == null)	imgPath = "";
 		else	outputDirectory = output;

@@ -8,7 +8,6 @@ import it.isislab.masonassisteddocumentation.mason.analizer.GlobalUtility;
 import it.isislab.masonassisteddocumentation.mason.analizer.Parameter;
 
 import java.util.ArrayList;
-import java.util.logging.Logger;
 
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardPage;
@@ -27,8 +26,6 @@ import org.eclipse.swt.custom.ScrolledComposite;
  * Agent variables.
  */
 public class F_AgentVariablesPage extends WizardPage{
-	
-	private static Logger log = Logger.getLogger("global"); //$NON-NLS-1$
 	private AgentAnalizer agentAnalizer;
 	private Composite composite, container;
 	private ScrolledComposite scrolledComposite;

@@ -6,11 +6,8 @@ import it.isislab.masonassisteddocumentation.mason.analizer.GlobalUtility;
 import it.isislab.masonassisteddocumentation.mason.analizer.Method;
 import it.isislab.masonassisteddocumentation.mason.analizer.SimStateAnalizer;
 
-import java.util.ArrayList;
-import java.util.logging.Logger;
 
 import org.eclipse.jface.wizard.IWizardPage;
-import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -27,8 +24,6 @@ import org.eclipse.swt.custom.ScrolledComposite;
  * This page show start SimState's method description.
  */
 public class I_StartInformationPage extends WizardPage{
-	
-	private static Logger log = Logger.getLogger("global");
 	private SimStateAnalizer simStateAnalizer;
 	private Composite container;
 	private ScrolledComposite scrolledComposite;

@@ -6,15 +6,12 @@ import it.isislab.masonassisteddocumentation.ODD.Variable;
 import it.isislab.masonassisteddocumentation.mason.analizer.AgentAnalizer;
 import it.isislab.masonassisteddocumentation.mason.analizer.GlobalUtility;
 import it.isislab.masonassisteddocumentation.mason.analizer.Parameter;
-import it.isislab.masonassisteddocumentation.mason.analizer.SimStateAnalizer;
 import it.isislab.masonassisteddocumentation.mason.wizards.MASONDocumentationWizard;
 
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
-import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jface.wizard.IWizardPage;
-import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -22,7 +19,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.custom.ScrolledComposite;
 
 /**
@@ -109,14 +105,6 @@ public class E_AgentPositionPage extends WizardPage{
 		scrolledComposite.setContent(composite);
 		scrolledComposite.setMinSize(composite.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 	}
-
-	private String getOldInformation(String varName) {
-		Entity e = ODD.getEntity(agentAnalizer.getClassName());
-		Variable var = e.getVariable(varName);
-		if (var == null) return ""; //$NON-NLS-1$
-		return var.getUserComment();
-	}
-
 
 	@Override
 	public boolean canFlipToNextPage() {

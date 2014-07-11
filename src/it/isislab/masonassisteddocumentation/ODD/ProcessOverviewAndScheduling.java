@@ -3,7 +3,6 @@ package it.isislab.masonassisteddocumentation.ODD;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-import org.eclipse.jdt.core.dom.CompilationUnit;
 
 public class ProcessOverviewAndScheduling  implements Serializable{
 	private static final long serialVersionUID = 1;

@@ -11,9 +11,7 @@ import it.isislab.masonassisteddocumentation.mason.wizards.MASONDocumentationWiz
 import java.util.ArrayList;
 import java.util.logging.Logger;
 
-import org.eclipse.jdt.core.dom.TypeDeclaration;
 import org.eclipse.jface.wizard.IWizardPage;
-import org.eclipse.jface.wizard.Wizard;
 import org.eclipse.jface.wizard.WizardPage;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.layout.GridData;
@@ -21,7 +19,6 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.widgets.Text;
-import org.eclipse.swt.widgets.Combo;
 import org.eclipse.swt.custom.ScrolledComposite;
 
 /**
@@ -32,8 +29,6 @@ import org.eclipse.swt.custom.ScrolledComposite;
  * are about environment.
  */
 public class H_EnvironmentPage extends WizardPage{
-	
-	private static Logger log = Logger.getLogger("global");
 	private SimStateAnalizer simStateAnalizer;
 	private Composite composite, container;
 	private ScrolledComposite scrolledComposite;

@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
-import java.util.ArrayList;
 import java.util.logging.Logger;
 
 import org.eclipse.jdt.core.ICompilationUnit;
@@ -18,9 +17,9 @@ import org.eclipse.jdt.core.dom.CompilationUnit;
  */
 public class GUIStateAnalizer implements Analizer{
 	private ICompilationUnit GUIStateICompilationUnit;
-	private String absolutePath;
 	private CompilationUnit compilationUnit;
 	private AST root;
+	private String absolutePath;
 	public static String[] gridPortrayal = {"SparseGridPortrayal3D", "parseGrid2DPortrayal3D", "ContinuousPortrayal3D",
 								"ObjectGridPortrayal3D", "ValueGridPortrayal3D.", "ValueGridPortrayal3D", "ValueGrid2DPortrayal3D",
 								"NetworkPortrayal3D", "FastValueGridPortrayal2D", "FastObjectGridPortrayal2D", "SparseGridPortrayal2D",

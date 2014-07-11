@@ -12,7 +12,7 @@ public class Initialization  implements Serializable{
 	 * AutoInitialization is generated from Entities's variables.
 	 * Will be return a concatenation of variables initial value.
 	 */
-	private String autoInitialization, userInitialization;
+	private String userInitialization;
 	private static boolean differentsColor = true;
 
 	public String getAutoInitialization() {
@@ -30,7 +30,6 @@ public class Initialization  implements Serializable{
 	}
 
 	public void setAutoInitialization(String autoInitialization) {
-		this.autoInitialization = autoInitialization;
 	}
 
 	public String getUserInitialization() {

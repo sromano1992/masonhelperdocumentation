@@ -15,17 +15,6 @@ import java.util.logging.Logger;
 
 import javax.swing.JOptionPane;
 
-
-
-
-
-
-
-
-
-
-
-import com.lowagie.text.Anchor;
 import com.lowagie.text.BadElementException;
 import com.lowagie.text.Chunk;
 import com.lowagie.text.Document;

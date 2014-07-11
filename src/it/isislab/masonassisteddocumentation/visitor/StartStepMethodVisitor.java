@@ -2,25 +2,12 @@ package it.isislab.masonassisteddocumentation.visitor;
 
 import it.isislab.masonassisteddocumentation.ODD.ODD;
 import it.isislab.masonassisteddocumentation.ODD.Submodel;
-import it.isislab.masonassisteddocumentation.mason.analizer.GlobalUtility;
-import it.isislab.masonassisteddocumentation.mason.analizer.Method;
-
-import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
-import org.eclipse.jdt.core.dom.ASTVisitor;
-import org.eclipse.jdt.core.dom.Assignment;
-import org.eclipse.jdt.core.dom.ClassInstanceCreation;
 import org.eclipse.jdt.core.dom.CompilationUnit;
-import org.eclipse.jdt.core.dom.DoStatement;
 import org.eclipse.jdt.core.dom.Expression;
-import org.eclipse.jdt.core.dom.ForStatement;
-import org.eclipse.jdt.core.dom.IfStatement;
 import org.eclipse.jdt.core.dom.MethodInvocation;
-import org.eclipse.jdt.core.dom.SwitchStatement;
-import org.eclipse.jdt.core.dom.TypeDeclaration;
-import org.eclipse.jdt.core.dom.WhileStatement;
 
 /**
  * This visitor will visit Start method

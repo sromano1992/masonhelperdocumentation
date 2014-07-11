@@ -7,7 +7,6 @@ import it.isislab.masonassisteddocumentation.mason.analizer.Method;
 import it.isislab.masonassisteddocumentation.visitor.RecursiveCodeVisitor;
 
 import org.eclipse.jdt.core.dom.CompilationUnit;
-import org.eclipse.jdt.core.dom.MethodInvocation;
 
 public class Submodel  implements Serializable{
 	private static final long serialVersionUID = 1;

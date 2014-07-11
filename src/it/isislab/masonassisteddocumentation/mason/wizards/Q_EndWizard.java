@@ -14,7 +14,6 @@ import javax.swing.JOptionPane;
 import it.isislab.masonassisteddocumentation.ODD.ODD;
 import it.isislab.masonassisteddocumentation.ODD.ODDInformationAsString;
 import it.isislab.masonassisteddocumentation.mason.analizer.GlobalUtility;
-import it.isislab.masonassisteddocumentation.mason.analizer.ProjectAnalizer;
 import it.isislab.masonassisteddocumentation.mason.control.ConfigFile;
 import it.isislab.masonassisteddocumentation.mason.control.PdfRtfGenerator;
 
@@ -27,8 +26,6 @@ import org.eclipse.swt.widgets.Button;
 import org.eclipse.swt.events.SelectionAdapter;
 import org.eclipse.swt.events.SelectionEvent;
 
-import com.lowagie.text.DocumentException;
-import com.lowagie.text.pdf.PdfWriter;
 
 public class Q_EndWizard extends WizardPage {
 	private Text shelltext;

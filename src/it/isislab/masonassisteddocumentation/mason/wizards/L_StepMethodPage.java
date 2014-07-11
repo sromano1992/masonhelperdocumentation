@@ -7,14 +7,6 @@ import it.isislab.masonassisteddocumentation.mason.analizer.GlobalUtility;
 import it.isislab.masonassisteddocumentation.mason.analizer.Method;
 import it.isislab.masonassisteddocumentation.mason.wizards.MASONDocumentationWizard;
 
-import java.util.logging.Logger;
-
-
-
-
-
-import javax.swing.JEditorPane;
-import javax.swing.JTextPane;
 
 import org.eclipse.jface.wizard.IWizardPage;
 import org.eclipse.jface.wizard.WizardPage;
@@ -25,8 +17,6 @@ import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Text;
 import org.eclipse.swt.widgets.Label;
 import org.eclipse.swt.custom.ScrolledComposite;
-import org.eclipse.swt.custom.StyledText;
-import org.eclipse.ui.texteditor.ITextEditor;
 
 
 /**
@@ -34,7 +24,6 @@ import org.eclipse.ui.texteditor.ITextEditor;
  * This page show agent's step method description.
  */
 public class L_StepMethodPage extends WizardPage{	
-	private static Logger log = Logger.getLogger("global");
 	private AgentAnalizer agentAnalizer;
 	private Composite container;
 	private ScrolledComposite scrolledComposite;

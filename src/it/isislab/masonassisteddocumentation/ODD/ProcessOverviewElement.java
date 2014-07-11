@@ -2,7 +2,6 @@ package it.isislab.masonassisteddocumentation.ODD;
 
 import java.io.Serializable;
 
-import org.eclipse.jdt.core.dom.CompilationUnit;
 
 /**
  * In processOverview phase of ODD is

@@ -1,6 +1,5 @@
 package it.isislab.masonassisteddocumentation.mason.wizards;
 
-import java.util.ArrayList;
 
 import it.isislab.masonassisteddocumentation.ODD.ODD;
 import it.isislab.masonassisteddocumentation.ODD.Submodel;
