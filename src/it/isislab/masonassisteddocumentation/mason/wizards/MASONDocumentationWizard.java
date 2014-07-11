@@ -87,7 +87,7 @@ public class MASONDocumentationWizard extends Wizard implements IExportWizard {
 		ODD.deserialize();
 	}
 
-	private void getProject(IStructuredSelection selection) {
+	public void getProject(IStructuredSelection selection) {
 		try {
 			Object o = selection.getFirstElement();
 			IProject project = (IProject) o;

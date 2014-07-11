@@ -29,7 +29,7 @@ public class ProjectAnalizer {
 		if (isMasonProject())	getSimStateAndAgent();
 	}
 
-	private void getSimStateAndAgent() {
+	public void getSimStateAndAgent() {
 		try{
 			agent_s_CU = new ArrayList<ICompilationUnit>();
 			IPackageFragment[] packages = javaProject.getPackageFragments();

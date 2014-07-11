@@ -14,6 +14,7 @@ import javax.swing.JOptionPane;
 import it.isislab.masonassisteddocumentation.ODD.ODD;
 import it.isislab.masonassisteddocumentation.ODD.ODDInformationAsString;
 import it.isislab.masonassisteddocumentation.mason.analizer.GlobalUtility;
+import it.isislab.masonassisteddocumentation.mason.analizer.ProjectAnalizer;
 import it.isislab.masonassisteddocumentation.mason.control.ConfigFile;
 import it.isislab.masonassisteddocumentation.mason.control.PdfRtfGenerator;
 
@@ -152,6 +153,7 @@ public class Q_EndWizard extends WizardPage {
 					if (progressValue <80)
 						progressValue++;
 				}
+				GlobalUtility.removeMADComment();
 				progressBar.setSelection(100);
 			} catch (IOException e) {
 				e.printStackTrace();

@@ -13,11 +13,16 @@ import java.util.List;
 import java.util.logging.Logger;
 
 import org.eclipse.jdt.core.ICompilationUnit;
+import org.eclipse.jdt.core.JavaModelException;
 import org.eclipse.jdt.core.dom.AST;
 import org.eclipse.jdt.core.dom.CompilationUnit;
 import org.eclipse.jdt.core.dom.FieldDeclaration;
 import org.eclipse.jdt.core.dom.Javadoc;
 import org.eclipse.jdt.core.dom.TypeDeclaration;
+import org.eclipse.jdt.core.dom.rewrite.ASTRewrite;
+import org.eclipse.jface.text.BadLocationException;
+import org.eclipse.jface.text.Document;
+import org.eclipse.text.edits.MalformedTreeException;
 
 
 /**
@@ -135,32 +140,18 @@ public class SimStateAnalizer implements Analizer{
 	@Override
 	/**
 	 * Write new CompilationUnit to .java source file
+	 * after the add of groups definitions.
 	 */
 	public void rewrite() {	
+		addGroupsDefinitions();
+		writeSourceFile();		
+	}
+
+	public void writeSourceFile() {
 		File sourceFile = new File(simStateICompilationUnit.getResource().getRawLocation().toOSString());
 		FileOutputStream fileStream;
 		try {
 			fileStream = new FileOutputStream(sourceFile, false);
-			//imageSelected?
-			String imgDirPath = ConfigFile.getValue("imgPath");
-			ArrayList<String> screenShot_s = imgInDirectory(imgDirPath);
-			String imageImport = "";
-			if (screenShot_s != null){
-				for (String s : screenShot_s){
-					if (s.endsWith(".png") || s.endsWith("jpg"))
-						imageImport = imageImport + "\\image html " + s + "\n";
-				}
-			}
-			String group_sDefinition_s =   "@defgroup SimulationModel Simulation Model \n *" + ODD.getStandardDefinition +"<br>\n" + GlobalUtility.documentDescription + "<br>\n" + imageImport + "\n"
-					+ "@defgroup purpose Purpose \n *" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, ODD.getPurpose().getModelPurpose()) + "\n@ingroup SimulationModel\n"
-					+ "@defgroup entities Entities, state variables, and scales\n@ingroup SimulationModel\n"
-					+ "@defgroup process Process, overview and schedule\n@ingroup SimulationModel\n"
-					+ "@defgroup design Design Concepts\n *" + ODD.getDesignConcepts().toString() +"\n@ingroup SimulationModel\n"
-					+ "@defgroup initialization Initialization\n *" + ODD.getInitialization().toString() + "\n@ingroup SimulationModel\n"
-					+ "@defgroup input Input data\n *" +ODD.getInputData() + "\n@ingroup SimulationModel\n"
-					+ "@defgroup submodels Submodels\n *" + ODD.getSubmodel_s().toString() +"\n@ingroup SimulationModel\n";
-
-			setModelDescription(group_sDefinition_s);
 			String code = compilationUnit.toString();
 			byte[] myBytes = code.getBytes();
 			fileStream.write(myBytes);
@@ -171,7 +162,38 @@ public class SimStateAnalizer implements Analizer{
 			e.printStackTrace();
 		} catch (IOException e) {
 			e.printStackTrace();
-		}		
+		}
+	}
+
+	private void addGroupsDefinitions() {
+		String group_sDefinition_s = generateGroupsDefinitions();
+		setModelDescription(group_sDefinition_s);
+	}
+
+	private String generateGroupsDefinitions() {
+		String imageImport = getImage_s();
+		String group_sDefinition_s = GlobalUtility.COMMENT_SIGNATURE + "@defgroup SimulationModel Simulation Model \n *" + ODD.getStandardDefinition +"<br>\n" + GlobalUtility.documentDescription + "<br>\n" + imageImport + "\n"
+				+ "@defgroup purpose Purpose \n *" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, ODD.getPurpose().getModelPurpose()) + "\n@ingroup SimulationModel\n"
+				+ "@defgroup entities Entities, state variables, and scales\n@ingroup SimulationModel\n"
+				+ "@defgroup process Process, overview and schedule\n@ingroup SimulationModel\n"
+				+ "@defgroup design Design Concepts\n *" + ODD.getDesignConcepts().toString() +"\n@ingroup SimulationModel\n"
+				+ "@defgroup initialization Initialization\n *" + ODD.getInitialization().toString() + "\n@ingroup SimulationModel\n"
+				+ "@defgroup input Input data\n *" +ODD.getInputData() + "\n@ingroup SimulationModel\n"
+				+ "@defgroup submodels Submodels\n *" + ODD.getSubmodel_s().toString() +"\n@ingroup SimulationModel\n";
+		return group_sDefinition_s;
+	}
+
+	private String getImage_s() {
+		String imgDirPath = ConfigFile.getValue("imgPath");
+		ArrayList<String> screenShot_s = imgInDirectory(imgDirPath);
+		String imageImport = "";
+		if (screenShot_s != null){
+			for (String s : screenShot_s){
+				if (s.endsWith(".png") || s.endsWith("jpg"))
+					imageImport = imageImport + "\\image html " + s + "\n";
+			}
+		}
+		return imageImport;
 	}
 
 	private ArrayList<String> imgInDirectory(String path){
