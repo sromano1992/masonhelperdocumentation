@@ -3,8 +3,7 @@
 }
 
 
-Inheritance diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-analizer.\-Sim\-State\-Analizer\-:
-\nopagebreak
+Inheritance diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-analizer.\-Sim\-State\-Analizer\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,8 +12,7 @@ Inheritance diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-anal
 \end{figure}
 
 
-Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-analizer.\-Sim\-State\-Analizer\-:
-\nopagebreak
+Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-analizer.\-Sim\-State\-Analizer\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -41,6 +39,8 @@ Array\-List$<$ \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1ma
 void \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a9638ebfd96b5ecd957ff1798f15e4621}{rewrite} ()
 \item 
 void \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a310f2f2452a5f26ea5e1f86bcbc88f56}{write\-Source\-File} ()
+\item 
+void \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a15e27e8109663869d4636f2c08c1af59}{write\-Soruce\-File} (String path\-Name)
 \item 
 A\-S\-T \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_ad271c4ee4ffe808dcaa5fecc39cb7bd4}{get\-Root} ()
 \item 
@@ -143,15 +143,14 @@ Constructor of \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1ma
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a686b1fdc9c973e289069372ada60c1c8}
 
 \begin{DoxyCode}
-163                                         \{
-164         String group\_sDefinition\_s = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a08b8bb716aa03be25e82146ecbc77612}{generateGroupsDefinitions}();
-165         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a17e7eab8f806cd6a275ed1ff4c9682db}{setModelDescription}(group\_sDefinition\_s);
-166     \}
+181                                         \{
+182         String group\_sDefinition\_s = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a08b8bb716aa03be25e82146ecbc77612}{generateGroupsDefinitions}();
+183         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a17e7eab8f806cd6a275ed1ff4c9682db}{setModelDescription}(group\_sDefinition\_s);
+184     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -162,8 +161,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -208,17 +206,16 @@ Return true if parameter p has been already visited. For 'visited' I mean that I
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-234                                               \{
-235         \textcolor{keywordflow}{for} (Parameter par : \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_af04494d03ea6d22a94201b5c08706b67}{visitedParameters})\{
-236             \textcolor{keywordflow}{if} (par.equals(p))  \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-237         \}
-238         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-239     \}
+252                                               \{
+253         \textcolor{keywordflow}{for} (Parameter par : \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_af04494d03ea6d22a94201b5c08706b67}{visitedParameters})\{
+254             \textcolor{keywordflow}{if} (par.equals(p))  \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+255         \}
+256         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+257     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -236,30 +233,29 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a08b8bb716aa03be25e82146ecbc77612}
 
 \begin{DoxyCode}
-168                                                \{
-169         String imageImport = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_abff770f4e110a106f049361915f1f390}{getImage\_s}();
-170         String group\_sDefinition\_s = GlobalUtility.COMMENT\_SIGNATURE + \textcolor{stringliteral}{"@defgroup SimulationModel
-       Simulation Model \(\backslash\)n *"} + ODD.getStandardDefinition +\textcolor{stringliteral}{"<br>\(\backslash\)n"} + GlobalUtility.documentDescription + \textcolor{stringliteral}{"<br>\(\backslash\)n"} + 
-      imageImport + \textcolor{stringliteral}{"\(\backslash\)n"}
-171                 + \textcolor{stringliteral}{"@defgroup purpose Purpose \(\backslash\)n *"} + GlobalUtility.surroundWithSpan(
+186                                                \{
+187         String imageImport = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_abff770f4e110a106f049361915f1f390}{getImage\_s}();
+188         String group\_sDefinition\_s = GlobalUtility.COMMENT\_SIGNATURE + \textcolor{stringliteral}{"@defgroup SimulationModel
+       Simulation Model \(\backslash\)n *"} + GlobalUtility.MAD\_SIGNATURE + ODD.getStandardDefinition +\textcolor{stringliteral}{"<br>\(\backslash\)n"} + 
+      GlobalUtility.documentDescription + \textcolor{stringliteral}{"<br>\(\backslash\)n"} + imageImport + \textcolor{stringliteral}{"\(\backslash\)n"}
+189                 + \textcolor{stringliteral}{"@defgroup purpose Purpose \(\backslash\)n *"} + GlobalUtility.surroundWithSpan(
       \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_global_utility_a0fcb324ae33eb93bd5b9177e342ecc82}{GlobalUtility.userOutputColor}, ODD.getPurpose().getModelPurpose()) + \textcolor{stringliteral}{"\(\backslash\)n
       @ingroup SimulationModel\(\backslash\)n"}
-172                 + \textcolor{stringliteral}{"@defgroup entities Entities, state variables, and scales\(\backslash\)n@ingroup SimulationModel\(\backslash\)n"}
-173                 + \textcolor{stringliteral}{"@defgroup process Process, overview and schedule\(\backslash\)n@ingroup SimulationModel\(\backslash\)n"}
-174                 + \textcolor{stringliteral}{"@defgroup design Design Concepts\(\backslash\)n *"} + ODD.getDesignConcepts().toString() +\textcolor{stringliteral}{"\(\backslash\)n@ingroup
+190                 + \textcolor{stringliteral}{"@defgroup entities Entities, state variables, and scales\(\backslash\)n@ingroup SimulationModel\(\backslash\)n"}
+191                 + \textcolor{stringliteral}{"@defgroup process Process, overview and schedule\(\backslash\)n@ingroup SimulationModel\(\backslash\)n"}
+192                 + \textcolor{stringliteral}{"@defgroup design Design Concepts\(\backslash\)n *"} + ODD.getDesignConcepts().toString() +\textcolor{stringliteral}{"\(\backslash\)n@ingroup
        SimulationModel\(\backslash\)n"}
-175                 + \textcolor{stringliteral}{"@defgroup initialization Initialization\(\backslash\)n *"} + ODD.getInitialization().toString() + \textcolor{stringliteral}{"\(\backslash\)n
+193                 + \textcolor{stringliteral}{"@defgroup initialization Initialization\(\backslash\)n *"} + ODD.getInitialization().toString() + \textcolor{stringliteral}{"\(\backslash\)n
       @ingroup SimulationModel\(\backslash\)n"}
-176                 + \textcolor{stringliteral}{"@defgroup input Input data\(\backslash\)n *"} +ODD.getInputData() + \textcolor{stringliteral}{"\(\backslash\)n@ingroup SimulationModel\(\backslash\)n"}
-177                 + \textcolor{stringliteral}{"@defgroup submodels Submodels\(\backslash\)n *"} + ODD.getSubmodel\_s().
+194                 + \textcolor{stringliteral}{"@defgroup input Input data\(\backslash\)n *"} +ODD.getInputData() + \textcolor{stringliteral}{"\(\backslash\)n@ingroup SimulationModel\(\backslash\)n"}
+195                 + \textcolor{stringliteral}{"@defgroup submodels Submodels\(\backslash\)n *"} + ODD.getSubmodel\_s().
       \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a14f8302dff6fb0e3a6230c7e53468f41}{toString}() +\textcolor{stringliteral}{"\(\backslash\)n@ingroup SimulationModel\(\backslash\)n"};
-178         \textcolor{keywordflow}{return} group\_sDefinition\_s;
-179     \}
+196         \textcolor{keywordflow}{return} group\_sDefinition\_s;
+197     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -270,8 +266,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -289,9 +284,9 @@ Here is the caller graph for this function\-:
 )}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a9d891a1b9c5b9fc2e83bca09df312f2b}
 
 \begin{DoxyCode}
-266                                 \{
-267         \textcolor{keywordflow}{return} simStateICompilationUnit.getElementName();
-268     \}
+284                                 \{
+285         \textcolor{keywordflow}{return} simStateICompilationUnit.getElementName();
+286     \}
 \end{DoxyCode}
 
 
@@ -359,8 +354,7 @@ Array\-List of grids as Variable\-Declaration\-Fragment
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -381,18 +375,17 @@ Return a string representation of sim\-Field\-Grid array. \begin{DoxyReturn}{Ret
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-258                                     \{
-259         String toReturn = \textcolor{stringliteral}{""};
-260         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<simFiledGrid.length; i++)\{
-261             toReturn = toReturn + \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_af21adec0b3c44f8bfc09cd83d6eeb917}{simFiledGrid}[i] + \textcolor{stringliteral}{" - "};
-262         \}
-263         \textcolor{keywordflow}{return} toReturn.substring(0, toReturn.length()-3);
-264     \}
+276                                     \{
+277         String toReturn = \textcolor{stringliteral}{""};
+278         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<simFiledGrid.length; i++)\{
+279             toReturn = toReturn + \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_af21adec0b3c44f8bfc09cd83d6eeb917}{simFiledGrid}[i] + \textcolor{stringliteral}{" - "};
+280         \}
+281         \textcolor{keywordflow}{return} toReturn.substring(0, toReturn.length()-3);
+282     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -410,23 +403,22 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_abff770f4e110a106f049361915f1f390}
 
 \begin{DoxyCode}
-181                                 \{
-182         String imgDirPath = ConfigFile.getValue(\textcolor{stringliteral}{"imgPath"});
-183         ArrayList<String> screenShot\_s = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_acff4ec3593b77c94e197a43f9286ee36}{imgInDirectory}(imgDirPath);
-184         String imageImport = \textcolor{stringliteral}{""};
-185         \textcolor{keywordflow}{if} (screenShot\_s != null)\{
-186             \textcolor{keywordflow}{for} (String s : screenShot\_s)\{
-187                 \textcolor{keywordflow}{if} (s.endsWith(\textcolor{stringliteral}{".png"}) || s.endsWith(\textcolor{stringliteral}{"jpg"}))
-188                     imageImport = imageImport + \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)image html "} + s + \textcolor{stringliteral}{"\(\backslash\)n"};
-189             \}
-190         \}
-191         \textcolor{keywordflow}{return} imageImport;
-192     \}
+199                                 \{
+200         String imgDirPath = ConfigFile.getValue(\textcolor{stringliteral}{"imgPath"});
+201         ArrayList<String> screenShot\_s = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_acff4ec3593b77c94e197a43f9286ee36}{imgInDirectory}(imgDirPath);
+202         String imageImport = \textcolor{stringliteral}{""};
+203         \textcolor{keywordflow}{if} (screenShot\_s != null)\{
+204             \textcolor{keywordflow}{for} (String s : screenShot\_s)\{
+205                 \textcolor{keywordflow}{if} (s.endsWith(\textcolor{stringliteral}{".png"}) || s.endsWith(\textcolor{stringliteral}{"jpg"}))
+206                     imageImport = imageImport + \textcolor{stringliteral}{"\(\backslash\)\(\backslash\)image html "} + s + \textcolor{stringliteral}{"\(\backslash\)n"};
+207             \}
+208         \}
+209         \textcolor{keywordflow}{return} imageImport;
+210     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -437,8 +429,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -467,8 +458,7 @@ Javadoc\-Comment if there is a description; else null.
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -496,8 +486,7 @@ model description
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -518,14 +507,13 @@ A\-S\-T
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-213                          \{
-214         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a1e8de067ee5d4d1fc55506d4ae51465b}{root};
-215     \}
+231                          \{
+232         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a1e8de067ee5d4d1fc55506d4ae51465b}{root};
+233     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -546,14 +534,13 @@ Return the list of parameters visited at moment. For 'visited' I mean that I alr
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-223                                                        \{
-224         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_af04494d03ea6d22a94201b5c08706b67}{visitedParameters};
-225     \}
+241                                                        \{
+242         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_af04494d03ea6d22a94201b5c08706b67}{visitedParameters};
+243     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -571,25 +558,24 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_acff4ec3593b77c94e197a43f9286ee36}
 
 \begin{DoxyCode}
-194                                                          \{
-195         File folder = \textcolor{keyword}{new} File(path);
-196         File[] listOfFiles = folder.listFiles();
-197         ArrayList<String> toReturn = \textcolor{keyword}{new} ArrayList<String>();
-198         \textcolor{keywordflow}{if} (listOfFiles != null)\{
-199             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < listOfFiles.length; i++) \{
-200               \textcolor{keywordflow}{if} (listOfFiles[i].isFile()) \{
-201                 toReturn.add(listOfFiles[i].getAbsolutePath());
-202               \}
-203             \}
-204             \textcolor{keywordflow}{return} toReturn;
-205         \}
-206         \textcolor{keywordflow}{return} null;
-207     \}
+212                                                          \{
+213         File folder = \textcolor{keyword}{new} File(path);
+214         File[] listOfFiles = folder.listFiles();
+215         ArrayList<String> toReturn = \textcolor{keyword}{new} ArrayList<String>();
+216         \textcolor{keywordflow}{if} (listOfFiles != null)\{
+217             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < listOfFiles.length; i++) \{
+218               \textcolor{keywordflow}{if} (listOfFiles[i].isFile()) \{
+219                 toReturn.add(listOfFiles[i].getAbsolutePath());
+220               \}
+221             \}
+222             \textcolor{keywordflow}{return} toReturn;
+223         \}
+224         \textcolor{keywordflow}{return} null;
+225     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -618,8 +604,7 @@ Implements \hyperlink{interfaceit_1_1isislab_1_1masonassisteddocumentation_1_1ma
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -651,8 +636,7 @@ This method set the description of model to model\-Description value.
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -670,18 +654,18 @@ Here is the caller graph for this function\-:
 )}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a6c5d3f04cc9c6fa5e01c1e50166c09ea}
 
 \begin{DoxyCode}
-241                       \{ 
-242 
-243         \textcolor{comment}{//this.absolutePath = simStateICompilationUnit.getResource().getRawLocation().toOSString();}
-244         
-245         List<TypeDeclaration> types = compilationUnit.types();
-246         TypeDeclaration simState = types.get(0);
-247         FieldDeclaration[] fields = simState.getFields();
-248         \textcolor{keywordflow}{for} (FieldDeclaration f:fields)\{            
-249             System.out.println(f.getJavadoc());
-250             f.setJavadoc(GlobalUtility.createJavadoc(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a1e8de067ee5d4d1fc55506d4ae51465b}{root}, \textcolor{stringliteral}{"prova"}));
-251         \}
-252     \}
+259                       \{ 
+260 
+261         \textcolor{comment}{//this.absolutePath = simStateICompilationUnit.getResource().getRawLocation().toOSString();}
+262         
+263         List<TypeDeclaration> types = compilationUnit.types();
+264         TypeDeclaration simState = types.get(0);
+265         FieldDeclaration[] fields = simState.getFields();
+266         \textcolor{keywordflow}{for} (FieldDeclaration f:fields)\{            
+267             System.out.println(f.getJavadoc());
+268             f.setJavadoc(GlobalUtility.createJavadoc(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a1e8de067ee5d4d1fc55506d4ae51465b}{root}, \textcolor{stringliteral}{"prova"}));
+269         \}
+270     \}
 \end{DoxyCode}
 \hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a14f8302dff6fb0e3a6230c7e53468f41}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Sim\-State\-Analizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Sim\-State\-Analizer}!to\-String@{to\-String}}
 \index{to\-String@{to\-String}!it::isislab::masonassisteddocumentation::mason::analizer::SimStateAnalizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Sim\-State\-Analizer}}
@@ -692,14 +676,13 @@ Here is the caller graph for this function\-:
 )}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a14f8302dff6fb0e3a6230c7e53468f41}
 
 \begin{DoxyCode}
-270                             \{
-271         \textcolor{keywordflow}{return} compilationUnit.toString();
-272     \}
+288                             \{
+289         \textcolor{keywordflow}{return} compilationUnit.toString();
+290     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -708,6 +691,33 @@ Here is the caller graph for this function\-:
 \end{figure}
 
 
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a15e27e8109663869d4636f2c08c1af59}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Sim\-State\-Analizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Sim\-State\-Analizer}!write\-Soruce\-File@{write\-Soruce\-File}}
+\index{write\-Soruce\-File@{write\-Soruce\-File}!it::isislab::masonassisteddocumentation::mason::analizer::SimStateAnalizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Sim\-State\-Analizer}}
+\subsubsection[{write\-Soruce\-File}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonassisteddocumentation.\-mason.\-analizer.\-Sim\-State\-Analizer.\-write\-Soruce\-File (
+\begin{DoxyParamCaption}
+\item[{String}]{path\-Name}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a15e27e8109663869d4636f2c08c1af59}
+
+\begin{DoxyCode}
+163                                                 \{
+164         File sourceFile = \textcolor{keyword}{new} File(pathName);
+165         FileOutputStream fileStream;
+166         \textcolor{keywordflow}{try} \{
+167             fileStream = \textcolor{keyword}{new} FileOutputStream(sourceFile, \textcolor{keyword}{false});
+168             String code = compilationUnit.toString();
+169             byte[] myBytes = code.getBytes();
+170             fileStream.write(myBytes);
+171             fileStream.close();
+172             log.info(\textcolor{stringliteral}{"SimState rewrite"});
+173         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
+174             log.severe(\textcolor{stringliteral}{"SimState file not found to: "} + pathName + \textcolor{stringliteral}{"."});
+175             e.printStackTrace();
+176         \} \textcolor{keywordflow}{catch} (IOException e) \{
+177             e.printStackTrace();
+178         \}
+179     \}
+\end{DoxyCode}
 \hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_sim_state_analizer_a310f2f2452a5f26ea5e1f86bcbc88f56}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Sim\-State\-Analizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Sim\-State\-Analizer}!write\-Source\-File@{write\-Source\-File}}
 \index{write\-Source\-File@{write\-Source\-File}!it::isislab::masonassisteddocumentation::mason::analizer::SimStateAnalizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Sim\-State\-Analizer}}
 \subsubsection[{write\-Source\-File}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonassisteddocumentation.\-mason.\-analizer.\-Sim\-State\-Analizer.\-write\-Source\-File (
@@ -739,8 +749,7 @@ Here is the caller graph for this function\-:
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

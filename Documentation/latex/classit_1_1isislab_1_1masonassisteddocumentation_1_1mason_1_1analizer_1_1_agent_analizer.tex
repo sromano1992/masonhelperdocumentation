@@ -3,8 +3,7 @@
 }
 
 
-Inheritance diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-analizer.\-Agent\-Analizer\-:
-\nopagebreak
+Inheritance diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-analizer.\-Agent\-Analizer\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -13,8 +12,7 @@ Inheritance diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-anal
 \end{figure}
 
 
-Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-analizer.\-Agent\-Analizer\-:
-\nopagebreak
+Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-analizer.\-Agent\-Analizer\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,6 +25,8 @@ Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-an
 \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_a73ca1a318ae1635984ceced89e3f8d1d}{Agent\-Analizer} (I\-Compilation\-Unit agent\-C\-U)
 \item 
 void \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aa1cf97eff47c73e305fdd540a512a88c}{rewrite} ()
+\item 
+void \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_afd9a63275f03a03ca69187b8cce6613e}{rewrite} (String path\-Name)
 \item 
 Javadoc \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_ae8de4d1c4186a27f567257c4b85c3f1c}{get\-Model\-Description} ()
 \item 
@@ -113,17 +113,16 @@ Return true if parameter p has been already visited. For 'visited' I mean that I
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-135                                               \{
-136         \textcolor{keywordflow}{for} (Parameter par : \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aee5454eb7063c444081bdb2556d3a60b}{visitedParameters})\{
-137             \textcolor{keywordflow}{if} (par.equals(p))  \textcolor{keywordflow}{return} \textcolor{keyword}{true};
-138         \}
-139         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
-140     \}
+152                                               \{
+153         \textcolor{keywordflow}{for} (Parameter par : \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aee5454eb7063c444081bdb2556d3a60b}{visitedParameters})\{
+154             \textcolor{keywordflow}{if} (par.equals(p))  \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+155         \}
+156         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+157     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -144,14 +143,13 @@ Return class name of this agent. \begin{DoxyReturn}{Returns}
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-158                                 \{
-159         \textcolor{keywordflow}{return} agentICompilationUnit.getElementName();
-160     \}
+175                                 \{
+176         \textcolor{keywordflow}{return} agentICompilationUnit.getElementName();
+177     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -172,14 +170,13 @@ Retirn Compilation\-Unit. \begin{DoxyReturn}{Returns}
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-108                                                \{
-109         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aad9b5d0882694d2802dc24c982f21985}{compilationUnit};
-110     \}
+125                                                \{
+126         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aad9b5d0882694d2802dc24c982f21985}{compilationUnit};
+127     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -200,11 +197,11 @@ Javadoc\-Comment if there is a description; else null.
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-61                                         \{
-62         List<TypeDeclaration> types = compilationUnit.types();
-63         TypeDeclaration agent = types.get(0);
-64         \textcolor{keywordflow}{return} agent.getJavadoc();
-65     \}
+78                                         \{
+79         List<TypeDeclaration> types = compilationUnit.types();
+80         TypeDeclaration agent = types.get(0);
+81         \textcolor{keywordflow}{return} agent.getJavadoc();
+82     \}
 \end{DoxyCode}
 \hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_ad237f6e49d6d49e0138b1e2ac6a2b0bb}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}!get\-Not\-Visited\-Parameter\-\_\-s@{get\-Not\-Visited\-Parameter\-\_\-s}}
 \index{get\-Not\-Visited\-Parameter\-\_\-s@{get\-Not\-Visited\-Parameter\-\_\-s}!it::isislab::masonassisteddocumentation::mason::analizer::AgentAnalizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}}
@@ -218,19 +215,18 @@ Return parameter\-\_\-s that are not visited until now. \begin{DoxyReturn}{Retur
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-146                                                           \{
-147         ArrayList<Parameter> remainingParameters = \textcolor{keyword}{new} ArrayList<Parameter>();
-148         ArrayList<Parameter> allParameters = GlobalUtility.getAllParameters(
+163                                                           \{
+164         ArrayList<Parameter> remainingParameters = \textcolor{keyword}{new} ArrayList<Parameter>();
+165         ArrayList<Parameter> allParameters = GlobalUtility.getAllParameters(
       \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_a452c584a7035bc8c4a550f4e86db8266}{getCompilationUnit}());
-149         \textcolor{keywordflow}{for} (Parameter p : allParameters)
-150             \textcolor{keywordflow}{if} (!(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_a3e5ea2154f20535f5bd33db685cf045c}{alreadyVisited}(p))) remainingParameters.add(p); 
-151         \textcolor{keywordflow}{return} remainingParameters;
-152     \}
+166         \textcolor{keywordflow}{for} (Parameter p : allParameters)
+167             \textcolor{keywordflow}{if} (!(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_a3e5ea2154f20535f5bd33db685cf045c}{alreadyVisited}(p))) remainingParameters.add(p); 
+168         \textcolor{keywordflow}{return} remainingParameters;
+169     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -241,8 +237,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -263,13 +258,13 @@ Return a string representation of position\-Class array. \begin{DoxyReturn}{Retu
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-120                                     \{
-121         String toReturn = \textcolor{stringliteral}{""};
-122         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<positionClass.length; i++)\{
-123             toReturn = toReturn + \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aea5eff658e91428950dd0efd1339bf36}{positionClass}[i] + \textcolor{stringliteral}{" - "};
-124         \}
-125         \textcolor{keywordflow}{return} toReturn.substring(0, toReturn.length()-3);
-126     \}
+137                                     \{
+138         String toReturn = \textcolor{stringliteral}{""};
+139         \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<positionClass.length; i++)\{
+140             toReturn = toReturn + \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aea5eff658e91428950dd0efd1339bf36}{positionClass}[i] + \textcolor{stringliteral}{" - "};
+141         \}
+142         \textcolor{keywordflow}{return} toReturn.substring(0, toReturn.length()-3);
+143     \}
 \end{DoxyCode}
 \hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_a351c38491d7f706177c4c76478cabd6d}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}!get\-Positions\-Parameter@{get\-Positions\-Parameter}}
 \index{get\-Positions\-Parameter@{get\-Positions\-Parameter}!it::isislab::masonassisteddocumentation::mason::analizer::AgentAnalizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}}
@@ -283,22 +278,21 @@ Array\-List of positions as Variable\-Declaration\-Fragment
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-93                                                        \{
-94         \textcolor{keywordflow}{if} (GlobalUtility.getAllParameters(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aad9b5d0882694d2802dc24c982f21985}{compilationUnit}) == null) \textcolor{keywordflow}{return} null;
-95         ArrayList<Parameter> toReturn = \textcolor{keyword}{new} ArrayList<Parameter>();
-96         \textcolor{keywordflow}{for} (Parameter p : GlobalUtility.getAllParameters(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aad9b5d0882694d2802dc24c982f21985}{compilationUnit}))\{
-97                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<positionClass.length; i++)\{
-98                     \textcolor{keywordflow}{if} (p.getVariableType().equalsIgnoreCase(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aea5eff658e91428950dd0efd1339bf36}{positionClass}[i]))    
+110                                                        \{
+111         \textcolor{keywordflow}{if} (GlobalUtility.getAllParameters(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aad9b5d0882694d2802dc24c982f21985}{compilationUnit}) == null) \textcolor{keywordflow}{return} null;
+112         ArrayList<Parameter> toReturn = \textcolor{keyword}{new} ArrayList<Parameter>();
+113         \textcolor{keywordflow}{for} (Parameter p : GlobalUtility.getAllParameters(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aad9b5d0882694d2802dc24c982f21985}{compilationUnit}))\{
+114                 \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i=0; i<positionClass.length; i++)\{
+115                     \textcolor{keywordflow}{if} (p.getVariableType().equalsIgnoreCase(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aea5eff658e91428950dd0efd1339bf36}{positionClass}[i]))    
       toReturn.add(p);
-99                 \}               
-100         \}
-101         \textcolor{keywordflow}{return} toReturn;
-102     \}   
+116                 \}               
+117         \}
+118         \textcolor{keywordflow}{return} toReturn;
+119     \}   
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -309,8 +303,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -328,9 +321,9 @@ Here is the caller graph for this function\-:
 )}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_a1ac3fc1c6fdf3133e81fba94fe13c01d}
 
 \begin{DoxyCode}
-112                         \{
-113         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_a83430d48ecbe1fc48d0cd8f10c2d99a8}{root};
-114     \}
+129                         \{
+130         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_a83430d48ecbe1fc48d0cd8f10c2d99a8}{root};
+131     \}
 \end{DoxyCode}
 \hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_a76b619307dd702b85fc422f231fac76a}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}!get\-Visited\-Parameters@{get\-Visited\-Parameters}}
 \index{get\-Visited\-Parameters@{get\-Visited\-Parameters}!it::isislab::masonassisteddocumentation::mason::analizer::AgentAnalizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}}
@@ -344,9 +337,9 @@ Return a list of visited parameter (visited means that parameters are already in
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-84                                                        \{
-85         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aee5454eb7063c444081bdb2556d3a60b}{visitedParameters};
-86     \}
+101                                                        \{
+102         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aee5454eb7063c444081bdb2556d3a60b}{visitedParameters};
+103     \}
 \end{DoxyCode}
 \hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aa1cf97eff47c73e305fdd540a512a88c}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}!rewrite@{rewrite}}
 \index{rewrite@{rewrite}!it::isislab::masonassisteddocumentation::mason::analizer::AgentAnalizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}}
@@ -380,6 +373,32 @@ Implements \hyperlink{interfaceit_1_1isislab_1_1masonassisteddocumentation_1_1ma
 53         \}       
 54     \}
 \end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_afd9a63275f03a03ca69187b8cce6613e}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}!rewrite@{rewrite}}
+\index{rewrite@{rewrite}!it::isislab::masonassisteddocumentation::mason::analizer::AgentAnalizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}}
+\subsubsection[{rewrite}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonassisteddocumentation.\-mason.\-analizer.\-Agent\-Analizer.\-rewrite (
+\begin{DoxyParamCaption}
+\item[{String}]{path\-Name}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_afd9a63275f03a03ca69187b8cce6613e}
+
+\begin{DoxyCode}
+56                                         \{
+57         File sourceFile = \textcolor{keyword}{new} File(pathName);
+58         FileOutputStream fooStream;
+59         \textcolor{keywordflow}{try} \{
+60             fooStream = \textcolor{keyword}{new} FileOutputStream(sourceFile, \textcolor{keyword}{false});
+61             String code = compilationUnit.toString();
+62             byte[] myBytes = code.getBytes();
+63             fooStream.write(myBytes);
+64             fooStream.close();
+65         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
+66             log.severe(\textcolor{stringliteral}{"Agent file not found to: "} + pathName + \textcolor{stringliteral}{"."});
+67             e.printStackTrace();
+68         \} \textcolor{keywordflow}{catch} (IOException e) \{
+69             e.printStackTrace();
+70         \}   
+71     \}
+\end{DoxyCode}
 \hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aaef67e385b42699bd863f505be5df17d}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}!set\-Class\-Description@{set\-Class\-Description}}
 \index{set\-Class\-Description@{set\-Class\-Description}!it::isislab::masonassisteddocumentation::mason::analizer::AgentAnalizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}}
 \subsubsection[{set\-Class\-Description}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonassisteddocumentation.\-mason.\-analizer.\-Agent\-Analizer.\-set\-Class\-Description (
@@ -394,13 +413,13 @@ This method set the description of model to model\-Description value.
 \end{DoxyParams}
 
 \begin{DoxyCode}
-72                                                             \{
-73         List<TypeDeclaration> types = compilationUnit.types();      
-74         TypeDeclaration agent = types.get(0);   \textcolor{comment}{//get class definition (element in position 0)}
-75         modelDescription = GlobalUtility.COMMENT\_SIGNATURE + \textcolor{stringliteral}{"@ingroup entities\(\backslash\)n*\(\backslash\)n*"} + 
+89                                                             \{
+90         List<TypeDeclaration> types = compilationUnit.types();      
+91         TypeDeclaration agent = types.get(0);   \textcolor{comment}{//get class definition (element in position 0)}
+92         modelDescription = GlobalUtility.COMMENT\_SIGNATURE + \textcolor{stringliteral}{"@ingroup entities\(\backslash\)n*\(\backslash\)n*"} + 
       GlobalUtility.surroundWithSpan(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_global_utility_a0fcb324ae33eb93bd5b9177e342ecc82}{GlobalUtility.userOutputColor}, modelDescription);  
-76         GlobalUtility.setJavadocToType(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_a83430d48ecbe1fc48d0cd8f10c2d99a8}{root}, agent, modelDescription);
-77     \}
+93         GlobalUtility.setJavadocToType(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_a83430d48ecbe1fc48d0cd8f10c2d99a8}{root}, agent, modelDescription);
+94     \}
 \end{DoxyCode}
 \hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aa1e783609d0c0ffbb244ba4c22abc7b9}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}!to\-String@{to\-String}}
 \index{to\-String@{to\-String}!it::isislab::masonassisteddocumentation::mason::analizer::AgentAnalizer@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::analizer\-::\-Agent\-Analizer}}
@@ -411,9 +430,9 @@ This method set the description of model to model\-Description value.
 )}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_agent_analizer_aa1e783609d0c0ffbb244ba4c22abc7b9}
 
 \begin{DoxyCode}
-162                             \{
-163         \textcolor{keywordflow}{return} compilationUnit.toString();
-164     \}
+179                             \{
+180         \textcolor{keywordflow}{return} compilationUnit.toString();
+181     \}
 \end{DoxyCode}
 
 

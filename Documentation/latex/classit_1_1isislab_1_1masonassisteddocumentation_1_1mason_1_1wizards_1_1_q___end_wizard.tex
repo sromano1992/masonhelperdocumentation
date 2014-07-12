@@ -3,8 +3,7 @@
 }
 
 
-Inheritance diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-wizards.\-Q\-\_\-\-End\-Wizard\-:
-\nopagebreak
+Inheritance diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-wizards.\-Q\-\_\-\-End\-Wizard\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -27,6 +26,11 @@ Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-wi
 \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_abc279fa31f6236a1af58d99df0eda1b9}{Q\-\_\-\-End\-Wizard} ()
 \item 
 void \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a3a0591b1e30644840d9828f5c67f8510}{create\-Control} (Composite parent)
+\end{DoxyCompactItemize}
+\subsection*{Package Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Button \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a94ab1b59917837c6b2708a44f2d5e2c7}{btn\-Save\-Backup}
 \end{DoxyCompactItemize}
 \subsection*{Private Member Functions}
 \begin{DoxyCompactItemize}
@@ -188,7 +192,16 @@ Create contents of the wizard.
 143         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_ae2da7cbfbfd8b618427f5d7fa356a8a5}{btnShowOutput} = \textcolor{keyword}{new} Button(container, SWT.CHECK);
 144         btnShowOutput.setBounds(103, 9, 93, 16);
 145         btnShowOutput.setText(\textcolor{stringliteral}{"Show Output"});
-146     \}
+146         
+147         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a94ab1b59917837c6b2708a44f2d5e2c7}{btnSaveBackup} = \textcolor{keyword}{new} Button(container, SWT.CHECK);
+148         btnSaveBackup.setText(\textcolor{stringliteral}{"Save backup of commented code"});
+149         btnSaveBackup.setBounds(212, 9, 206, 16);
+150         btnSaveBackup.setEnabled(\textcolor{keyword}{false});
+151         
+152         \textcolor{keywordflow}{if} (ConfigFile.getValue(\textcolor{stringliteral}{"typeOutput"}).equals(\textcolor{stringliteral}{"Doxygen"}) ||
+153                 ConfigFile.getValue(\textcolor{stringliteral}{"typeOutput"}).equals(\textcolor{stringliteral}{"all"}))
+154             btnSaveBackup.setEnabled(\textcolor{keyword}{true});
+155     \}
 \end{DoxyCode}
 
 
@@ -211,49 +224,49 @@ Here is the call graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a42fd32637b3ac46154ab9c5ae720af05}
 
 \begin{DoxyCode}
-148                               \{
-149         \textcolor{keywordtype}{int} progressValue = 0;
-150         shelltext.setText(\textcolor{stringliteral}{""});
-151         progressBar.setVisible(\textcolor{keyword}{true});
-152         shelltext.setVisible(\textcolor{keyword}{true});
-153         Process doxygenProcess = GlobalUtility.doxygenRun();
-154         \textcolor{keywordflow}{if} (doxygenProcess != null)\{
-155             BufferedReader stdInput = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(doxygenProcess.
+157                               \{
+158         \textcolor{keywordtype}{int} progressValue = 0;
+159         shelltext.setText(\textcolor{stringliteral}{""});
+160         progressBar.setVisible(\textcolor{keyword}{true});
+161         shelltext.setVisible(\textcolor{keyword}{true});
+162         Process doxygenProcess = GlobalUtility.doxygenRun();
+163         \textcolor{keywordflow}{if} (doxygenProcess != null)\{
+164             BufferedReader stdInput = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(doxygenProcess.
       getInputStream()));
-156             BufferedReader stdError = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(doxygenProcess.
+165             BufferedReader stdError = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(doxygenProcess.
       getErrorStream()));
-157 
-158             \textcolor{comment}{// read the output from the command}
-159             String s = null;
-160             \textcolor{keywordflow}{try} \{
-161                 \textcolor{keywordflow}{while} ((s = stdInput.readLine()) != null) \{
-162                     s = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a89adac239da36e67abac1ec9c416bba4}{splitWithNewLine}(s);
-163                     shelltext.setText(shelltext.getText() + \textcolor{stringliteral}{"\(\backslash\)n"} + s);
-164                     progressBar.setSelection(progressValue);
-165                     \textcolor{keywordflow}{if} (progressValue <80)
-166                         progressValue++;
-167                 \}
-168                 GlobalUtility.removeMADComment();
-169                 progressBar.setSelection(100);
-170             \} \textcolor{keywordflow}{catch} (IOException e) \{
-171                 e.printStackTrace();
-172             \}
-173             \textcolor{comment}{// read any errors from the attempted command}
-174             \textcolor{keywordflow}{try} \{
-175                 \textcolor{keywordflow}{while} ((s = stdError.readLine()) != null) \{                 
-176                     log.severe(\textcolor{stringliteral}{"doxygenError: "} + s);
-177                 \}
-178             \} \textcolor{keywordflow}{catch} (IOException e) \{
-179                 e.printStackTrace();
-180             \}
-181         \}
-182         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a4564b1098ec942795cbd022ccbe338e0}{showOutput}();
-183     \}
+166 
+167             \textcolor{comment}{// read the output from the command}
+168             String s = null;
+169             \textcolor{keywordflow}{try} \{
+170                 \textcolor{keywordflow}{while} ((s = stdInput.readLine()) != null) \{
+171                     s = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a89adac239da36e67abac1ec9c416bba4}{splitWithNewLine}(s);
+172                     shelltext.setText(shelltext.getText() + \textcolor{stringliteral}{"\(\backslash\)n"} + s);
+173                     progressBar.setSelection(progressValue);
+174                     \textcolor{keywordflow}{if} (progressValue <80)
+175                         progressValue++;
+176                 \}
+177                 \textcolor{keywordtype}{boolean} saveCommentCodeBackup = btnSaveBackup.getSelection();
+178                 GlobalUtility.removeMADComment(saveCommentCodeBackup);
+179                 progressBar.setSelection(100);
+180             \} \textcolor{keywordflow}{catch} (IOException e) \{
+181                 e.printStackTrace();
+182             \}
+183             \textcolor{comment}{// read any errors from the attempted command}
+184             \textcolor{keywordflow}{try} \{
+185                 \textcolor{keywordflow}{while} ((s = stdError.readLine()) != null) \{                 
+186                     log.severe(\textcolor{stringliteral}{"doxygenError: "} + s);
+187                 \}
+188             \} \textcolor{keywordflow}{catch} (IOException e) \{
+189                 e.printStackTrace();
+190             \}
+191         \}
+192         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a4564b1098ec942795cbd022ccbe338e0}{showOutput}();
+193     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -264,8 +277,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -283,22 +295,21 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a4564b1098ec942795cbd022ccbe338e0}
 
 \begin{DoxyCode}
-185                               \{
-186         \textcolor{keywordflow}{if} (\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_ae2da7cbfbfd8b618427f5d7fa356a8a5}{btnShowOutput}.getSelection())\{
-187             String outputPath = ConfigFile.getValue(\textcolor{stringliteral}{"output"}) + File.separator;
-188             \textcolor{keywordflow}{try} \{
-189                 Desktop.getDesktop().open(\textcolor{keyword}{new} File(outputPath));
-190             \} \textcolor{keywordflow}{catch} (IOException e) \{
-191                 log.severe(\textcolor{stringliteral}{"Failure opening output directory: "} + outputPath); 
-192                 e.printStackTrace();
-193             \}
-194         \}
-195     \}
+195                               \{
+196         \textcolor{keywordflow}{if} (\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_ae2da7cbfbfd8b618427f5d7fa356a8a5}{btnShowOutput}.getSelection())\{
+197             String outputPath = ConfigFile.getValue(\textcolor{stringliteral}{"output"}) + File.separator;
+198             \textcolor{keywordflow}{try} \{
+199                 Desktop.getDesktop().open(\textcolor{keyword}{new} File(outputPath));
+200             \} \textcolor{keywordflow}{catch} (IOException e) \{
+201                 log.severe(\textcolor{stringliteral}{"Failure opening output directory: "} + outputPath); 
+202                 e.printStackTrace();
+203             \}
+204         \}
+205     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -316,19 +327,18 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a89adac239da36e67abac1ec9c416bba4}
 
 \begin{DoxyCode}
-197                                               \{
-198         String toReturn = \textcolor{stringliteral}{""};
-199         \textcolor{keywordflow}{while}(s.length()>100)\{
-200             toReturn = toReturn + s.substring(0, 100) + \textcolor{stringliteral}{"\(\backslash\)n"};
-201             s = s.substring(100, s.length());
-202         \}
-203         \textcolor{keywordflow}{return} toReturn + s + \textcolor{stringliteral}{"\(\backslash\)n"};
-204     \}
+207                                               \{
+208         String toReturn = \textcolor{stringliteral}{""};
+209         \textcolor{keywordflow}{while}(s.length()>100)\{
+210             toReturn = toReturn + s.substring(0, 100) + \textcolor{stringliteral}{"\(\backslash\)n"};
+211             s = s.substring(100, s.length());
+212         \}
+213         \textcolor{keywordflow}{return} toReturn + s + \textcolor{stringliteral}{"\(\backslash\)n"};
+214     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -340,6 +350,9 @@ Here is the caller graph for this function\-:
 
 
 \subsection{Member Data Documentation}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a94ab1b59917837c6b2708a44f2d5e2c7}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::wizards\-::\-Q\-\_\-\-End\-Wizard@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::wizards\-::\-Q\-\_\-\-End\-Wizard}!btn\-Save\-Backup@{btn\-Save\-Backup}}
+\index{btn\-Save\-Backup@{btn\-Save\-Backup}!it::isislab::masonassisteddocumentation::mason::wizards::Q_EndWizard@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::wizards\-::\-Q\-\_\-\-End\-Wizard}}
+\subsubsection[{btn\-Save\-Backup}]{\setlength{\rightskip}{0pt plus 5cm}Button it.\-isislab.\-masonassisteddocumentation.\-mason.\-wizards.\-Q\-\_\-\-End\-Wizard.\-btn\-Save\-Backup\hspace{0.3cm}{\ttfamily [package]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a94ab1b59917837c6b2708a44f2d5e2c7}
 \hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_ae2da7cbfbfd8b618427f5d7fa356a8a5}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::wizards\-::\-Q\-\_\-\-End\-Wizard@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::wizards\-::\-Q\-\_\-\-End\-Wizard}!btn\-Show\-Output@{btn\-Show\-Output}}
 \index{btn\-Show\-Output@{btn\-Show\-Output}!it::isislab::masonassisteddocumentation::mason::wizards::Q_EndWizard@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::wizards\-::\-Q\-\_\-\-End\-Wizard}}
 \subsubsection[{btn\-Show\-Output}]{\setlength{\rightskip}{0pt plus 5cm}Button it.\-isislab.\-masonassisteddocumentation.\-mason.\-wizards.\-Q\-\_\-\-End\-Wizard.\-btn\-Show\-Output\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_ae2da7cbfbfd8b618427f5d7fa356a8a5}

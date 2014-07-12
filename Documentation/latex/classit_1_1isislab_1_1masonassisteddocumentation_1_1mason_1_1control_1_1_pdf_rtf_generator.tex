@@ -3,8 +3,7 @@
 }
 
 
-Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-control.\-Pdf\-Rtf\-Generator\-:
-\nopagebreak
+Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-control.\-Pdf\-Rtf\-Generator\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -75,37 +74,36 @@ Romano Simone 0512101343 $\ast$
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_a256d403130ef860861402da49b373042}
 
 \begin{DoxyCode}
-195                                              \{
-196         \textcolor{comment}{//imageSelected?}
-197         String imgDirPath = ConfigFile.getValue(\textcolor{stringliteral}{"imgPath"});
-198         ArrayList<String> fileInDir = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ac64a0fecc25dd00c58f569e111c06fe6}{imgInDirectory}(imgDirPath);
-199         ArrayList<String> image\_s = \textcolor{keyword}{new} ArrayList<String>();
-200         \textcolor{keywordflow}{if} (fileInDir != null)\{
-201             \textcolor{keywordflow}{for} (String s : fileInDir)\{
-202                 \textcolor{keywordflow}{if} (s.endsWith(\textcolor{stringliteral}{".png"}) || s.endsWith(\textcolor{stringliteral}{"jpg"}))
-203                     image\_s.add(s);
-204             \}
-205         \}
-206         \textcolor{keywordflow}{for} (String imgPath : image\_s)\{
-207             Image img;
-208             \textcolor{keywordflow}{try} \{
-209                 img = Image.getInstance(imgPath);
-210                 img.scaleAbsolute(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_a6b1361e9b6de024b9aef76564ab8a6b1}{\_IMG\_WIDTH}, \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_a10a4f82a6bf2ff579193de7a28c84ac6}{\_IMG\_HEIGTH});
-211                 document.add(img);
-212             \} \textcolor{keywordflow}{catch} (BadElementException | IOException e) \{
-213                 log.severe(\textcolor{stringliteral}{"Error adding image\_s: "} + e.getMessage());
-214                 e.printStackTrace();
-215             \} \textcolor{keywordflow}{catch} (DocumentException e) \{
-216                 log.severe(\textcolor{stringliteral}{"Error adding image\_s: "} + e.getMessage());
-217                 e.printStackTrace();
-218             \}
-219         \}
-220     \}
+191                                              \{
+192         \textcolor{comment}{//imageSelected?}
+193         String imgDirPath = ConfigFile.getValue(\textcolor{stringliteral}{"imgPath"});
+194         ArrayList<String> fileInDir = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ac64a0fecc25dd00c58f569e111c06fe6}{imgInDirectory}(imgDirPath);
+195         ArrayList<String> image\_s = \textcolor{keyword}{new} ArrayList<String>();
+196         \textcolor{keywordflow}{if} (fileInDir != null)\{
+197             \textcolor{keywordflow}{for} (String s : fileInDir)\{
+198                 \textcolor{keywordflow}{if} (s.endsWith(\textcolor{stringliteral}{".png"}) || s.endsWith(\textcolor{stringliteral}{"jpg"}))
+199                     image\_s.add(s);
+200             \}
+201         \}
+202         \textcolor{keywordflow}{for} (String imgPath : image\_s)\{
+203             Image img;
+204             \textcolor{keywordflow}{try} \{
+205                 img = Image.getInstance(imgPath);
+206                 img.scaleAbsolute(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_a6b1361e9b6de024b9aef76564ab8a6b1}{\_IMG\_WIDTH}, \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_a10a4f82a6bf2ff579193de7a28c84ac6}{\_IMG\_HEIGTH});
+207                 document.add(img);
+208             \} \textcolor{keywordflow}{catch} (BadElementException | IOException e) \{
+209                 log.severe(\textcolor{stringliteral}{"Error adding image\_s: "} + e.getMessage());
+210                 e.printStackTrace();
+211             \} \textcolor{keywordflow}{catch} (DocumentException e) \{
+212                 log.severe(\textcolor{stringliteral}{"Error adding image\_s: "} + e.getMessage());
+213                 e.printStackTrace();
+214             \}
+215         \}
+216     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -116,8 +114,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -135,40 +132,39 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_add23c0e308cdf54a3c1e3a8128ea29ed}
 
 \begin{DoxyCode}
-119                                                    \{
-120         document.setMargins(50, 50, 70, 70);
-121         document.setMarginMirroring(\textcolor{keyword}{true});
-122         
-123         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_add96cb1e39ece24ace1e42aae99082a0}{setHeaderAndFooter}(document);     
-124         document.open();
-125         
-126         LinkedHashMap<String, String> title = \textcolor{keyword}{new} LinkedHashMap<String, String>();
-127         title.put(GlobalUtility.getProjectAnalizer().getProjectName() + \textcolor{stringliteral}{" documentation"}, \textcolor{stringliteral}{""});
-128         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, title.entrySet());
-129         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_a256d403130ef860861402da49b373042}{addImage}(document);
-130         \textcolor{keywordflow}{try} \{
-131             document.newPage();
-132         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
-133             e.printStackTrace();
-134         \}
-135         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getODDDescritpion().entrySet());
-136         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getPurpose().entrySet());
-137         ArrayList<LinkedHashMap<String, String>> entitie\_s = ODDInformationAsString.getEntities();
-138         \textcolor{keywordflow}{for}(LinkedHashMap<String, String> entity : entitie\_s)
-139             \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, entity.entrySet());
-140         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getProcessElement().entrySet());
-141         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getDesignConcpets().entrySet());
-142         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getInitialization().entrySet());
-143         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getInputData().entrySet());
-144         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getSubmodels().entrySet()); 
-145         
-146         document.close();
-147     \}
+115                                                    \{
+116         document.setMargins(50, 50, 70, 70);
+117         document.setMarginMirroring(\textcolor{keyword}{true});
+118         
+119         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_add96cb1e39ece24ace1e42aae99082a0}{setHeaderAndFooter}(document);     
+120         document.open();
+121         
+122         LinkedHashMap<String, String> title = \textcolor{keyword}{new} LinkedHashMap<String, String>();
+123         title.put(GlobalUtility.getProjectAnalizer().getProjectName() + \textcolor{stringliteral}{" documentation"}, \textcolor{stringliteral}{""});
+124         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, title.entrySet());
+125         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_a256d403130ef860861402da49b373042}{addImage}(document);
+126         \textcolor{keywordflow}{try} \{
+127             document.newPage();
+128         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
+129             e.printStackTrace();
+130         \}
+131         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getODDDescritpion().entrySet());
+132         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getPurpose().entrySet());
+133         ArrayList<LinkedHashMap<String, String>> entitie\_s = ODDInformationAsString.getEntities();
+134         \textcolor{keywordflow}{for}(LinkedHashMap<String, String> entity : entitie\_s)
+135             \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, entity.entrySet());
+136         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getProcessElement().entrySet());
+137         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getDesignConcpets().entrySet());
+138         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getInitialization().entrySet());
+139         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getInputData().entrySet());
+140         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ad3127f275f1af4f9d92f314fb3f29f51}{createElement}(document, ODDInformationAsString.getSubmodels().entrySet()); 
+141         
+142         document.close();
+143     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -179,8 +175,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -206,52 +201,73 @@ Generate new paragraph in document with input element. First element of set is c
 \end{DoxyParams}
 
 \begin{DoxyCode}
-243                                                                                      \{
-244         Paragraph newPar = null;
-245         Chunk title, content = null;
-246         String firstElementValue = \textcolor{stringliteral}{""};
-247         \textcolor{keywordtype}{int} cycle = 0;
-248         \textcolor{keywordflow}{for} (Entry<String, String> e : element) \{
-249             title = \textcolor{keyword}{new} Chunk(e.getKey(), \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_aa954332a7d987f1b6b8957fa25ee6190}{elementTitle});
-250             content = \textcolor{keyword}{new} Chunk(e.getValue(), \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae24c4a1666a5d601e16f3c3cb7a81fdb}{parLine});
-251             \textcolor{keywordflow}{if} (cycle == 0)\{    \textcolor{comment}{//title!}
-252                 \textcolor{keywordflow}{if} (e.getKey().contains(\textcolor{stringliteral}{"\_subTitle"}))\{
-253                     newPar = \textcolor{keyword}{new} Paragraph(e.getKey().replace(\textcolor{stringliteral}{"\_subTitle"}, \textcolor{stringliteral}{""}), 
+239                                                                                      \{
+240         Paragraph newPar = null, parContent = null;
+241         Chunk title, content = null;
+242         String firstElementValue = \textcolor{stringliteral}{""};
+243         \textcolor{keywordtype}{int} cycle = 0;
+244         \textcolor{keywordflow}{for} (Entry<String, String> e : element) \{
+245             title = \textcolor{keyword}{new} Chunk(e.getKey(), \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_aa954332a7d987f1b6b8957fa25ee6190}{elementTitle});
+246             content = \textcolor{keyword}{new} Chunk(e.getValue(), \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae24c4a1666a5d601e16f3c3cb7a81fdb}{parLine});
+247             \textcolor{keywordflow}{if} (cycle == 0)\{    \textcolor{comment}{//title!}
+248                 \textcolor{keywordflow}{if} (e.getKey().contains(\textcolor{stringliteral}{"\_subTitle"}))\{
+249                     newPar = \textcolor{keyword}{new} Paragraph(e.getKey().replace(\textcolor{stringliteral}{"\_subTitle"}, \textcolor{stringliteral}{""}), 
       \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae31536bac40b23df15fbb252e60c03bb}{parSubTitle});
-254                     newPar.add(content);
-255                     firstElementValue = e.getValue();
-256                 \}
-257                 \textcolor{keywordflow}{else}\{
-258                     newPar = \textcolor{keyword}{new} Paragraph(e.getKey(), \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_a3f130f576b5be4a3a82d7c59347c0869}{parTitle});
-259                     newPar.add(content);
-260                     firstElementValue = e.getValue();
-261                 \}
-262                 cycle = 1;
-263             \}
-264             \textcolor{keywordflow}{else}\{
-265                 List list = \textcolor{keyword}{new} List(\textcolor{keyword}{false}, 20);
-266                 list.add(\textcolor{keyword}{new} ListItem(title));
-267                 newPar.add(list);
-268                 newPar.add(content);
-269             \}
-270         \}
-271 
-272         \textcolor{keywordflow}{try} \{           
-273             document.add(newPar);
-274             \textcolor{keywordflow}{if} (element.size() > 1 || (element.size()==1 && firstElementValue != \textcolor{stringliteral}{""}))   \textcolor{comment}{//add new page only
+250                     parContent = \textcolor{keyword}{new} Paragraph(e.getValue(), \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae24c4a1666a5d601e16f3c3cb7a81fdb}{parLine});
+251                     newPar.add(content);
+252                     \textcolor{comment}{//newPar.add(content);}
+253                     firstElementValue = e.getValue();
+254                     \textcolor{keywordflow}{try} \{
+255                         document.add(newPar);
+256                         document.add(parContent);
+257                     \} \textcolor{keywordflow}{catch} (DocumentException e1) \{
+258                         e1.printStackTrace();
+259                     \}
+260                 \}
+261                 \textcolor{keywordflow}{else}\{
+262                     newPar = \textcolor{keyword}{new} Paragraph(e.getKey(), \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_a3f130f576b5be4a3a82d7c59347c0869}{parTitle});
+263                     parContent = \textcolor{keyword}{new} Paragraph(e.getValue(), \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae24c4a1666a5d601e16f3c3cb7a81fdb}{parLine});
+264                     \textcolor{comment}{//newPar.add(content);}
+265                     firstElementValue = e.getValue();
+266                     \textcolor{keywordflow}{try} \{
+267                         document.add(newPar);
+268                         document.add(parContent);
+269                     \} \textcolor{keywordflow}{catch} (DocumentException e1) \{
+270                         e1.printStackTrace();
+271                     \}
+272                 \}
+273                 cycle = 1;
+274             \}
+275             \textcolor{keywordflow}{else}\{
+276                 List list = \textcolor{keyword}{new} List(\textcolor{keyword}{false}, 20);
+277                 list.add(\textcolor{keyword}{new} ListItem(title));
+278                 newPar = \textcolor{keyword}{new} Paragraph();
+279                 newPar.add(list);
+280                 \textcolor{comment}{//newPar.add(content);}
+281                 parContent = \textcolor{keyword}{new} Paragraph(e.getValue(), \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae24c4a1666a5d601e16f3c3cb7a81fdb}{parLine});
+282                 \textcolor{keywordflow}{try} \{
+283                     document.add(newPar);
+284                     document.add(parContent);
+285                 \} \textcolor{keywordflow}{catch} (DocumentException e1) \{
+286                     e1.printStackTrace();
+287                 \}
+288             \}
+289         \}
+290 
+291         \textcolor{keywordflow}{try} \{           
+292             \textcolor{keywordflow}{if} (element.size() > 1 || (element.size()==1 && firstElementValue != \textcolor{stringliteral}{""}))   \textcolor{comment}{//add new page only
        if page content is not empty}
-275                 document.newPage();
-276             log.info(\textcolor{stringliteral}{"Add new paragraph"});
-277         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
-278             log.severe(\textcolor{stringliteral}{"Error adding odd paragraph: "} + e.getMessage());
-279             e.printStackTrace();
-280         \}
-281     \}
+293                 document.newPage();
+294             log.info(\textcolor{stringliteral}{"Added new paragraph"});
+295         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
+296             log.severe(\textcolor{stringliteral}{"Error adding odd paragraph: "} + e.getMessage());
+297             e.printStackTrace();
+298         \}
+299     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -269,26 +285,25 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_af1f9a21f995c47a9e1a5a6f276c97852}
 This method gets font for pdf. 
 \begin{DoxyCode}
-173                               \{     
-174         \textcolor{keywordflow}{try} \{
-175             BaseFont bf = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae256fb15c0845470ad900c876a15fabf}{getFont}();
-176             \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae24c4a1666a5d601e16f3c3cb7a81fdb}{parLine} = \textcolor{keyword}{new} Font(bf, 10, Font.NORMAL);
-177             \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_a3f130f576b5be4a3a82d7c59347c0869}{parTitle} = \textcolor{keyword}{new} Font(bf, 14, Font.BOLD);
-178             \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae31536bac40b23df15fbb252e60c03bb}{parSubTitle} = \textcolor{keyword}{new} Font(bf, 13, Font.BOLD);
-179             \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_aa954332a7d987f1b6b8957fa25ee6190}{elementTitle} = \textcolor{keyword}{new} Font(bf, 12, Font.ITALIC);
-180         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
-181             log.severe(\textcolor{stringliteral}{"Error getting font: "} + e.getMessage());
-182             e.printStackTrace();
-183         \} \textcolor{keywordflow}{catch} (IOException e) \{
-184             log.severe(\textcolor{stringliteral}{"IOExcpetion getting font: "} + e.getMessage());
-185             e.printStackTrace();
-186         \}           
-187     \}
+169                               \{     
+170         \textcolor{keywordflow}{try} \{
+171             BaseFont bf = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae256fb15c0845470ad900c876a15fabf}{getFont}();
+172             \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae24c4a1666a5d601e16f3c3cb7a81fdb}{parLine} = \textcolor{keyword}{new} Font(bf, 10, Font.NORMAL);
+173             \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_a3f130f576b5be4a3a82d7c59347c0869}{parTitle} = \textcolor{keyword}{new} Font(bf, 14, Font.BOLD);
+174             \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae31536bac40b23df15fbb252e60c03bb}{parSubTitle} = \textcolor{keyword}{new} Font(bf, 13, Font.BOLD);
+175             \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_aa954332a7d987f1b6b8957fa25ee6190}{elementTitle} = \textcolor{keyword}{new} Font(bf, 12, Font.ITALIC);
+176         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
+177             log.severe(\textcolor{stringliteral}{"Error getting font: "} + e.getMessage());
+178             e.printStackTrace();
+179         \} \textcolor{keywordflow}{catch} (IOException e) \{
+180             log.severe(\textcolor{stringliteral}{"IOExcpetion getting font: "} + e.getMessage());
+181             e.printStackTrace();
+182         \}           
+183     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -299,8 +314,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -328,39 +342,38 @@ String message
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-59                                              \{
-60         \textcolor{comment}{// setup PdfWriter}
-61         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_af1f9a21f995c47a9e1a5a6f276c97852}{createFont}();
-62         Document document = \textcolor{keyword}{new} Document();
-63         File pdfFile = null;
-64         \textcolor{keywordflow}{try} \{
-65             pdfFile = \textcolor{keyword}{new} File(filename);
-66             \textcolor{keywordflow}{if} (!pdfFile.exists())
-67                 pdfFile.createNewFile();
-68             PdfWriter.getInstance(document, \textcolor{keyword}{new} FileOutputStream(pdfFile, \textcolor{keyword}{false}));
-69         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
-70             log.severe(\textcolor{stringliteral}{"File "} + filename + \textcolor{stringliteral}{" not found!"});
-71             JOptionPane.showMessageDialog(null, \textcolor{stringliteral}{"File open in other program!"});
+55                                              \{
+56         \textcolor{comment}{// setup PdfWriter}
+57         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_af1f9a21f995c47a9e1a5a6f276c97852}{createFont}();
+58         Document document = \textcolor{keyword}{new} Document();
+59         File pdfFile = null;
+60         \textcolor{keywordflow}{try} \{
+61             pdfFile = \textcolor{keyword}{new} File(filename);
+62             \textcolor{keywordflow}{if} (!pdfFile.exists())
+63                 pdfFile.createNewFile();
+64             PdfWriter.getInstance(document, \textcolor{keyword}{new} FileOutputStream(pdfFile, \textcolor{keyword}{false}));
+65         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
+66             log.severe(\textcolor{stringliteral}{"File "} + filename + \textcolor{stringliteral}{" not found!"});
+67             JOptionPane.showMessageDialog(null, \textcolor{stringliteral}{"File open in other program!"});
+68             e.printStackTrace();
+69             \textcolor{keywordflow}{return} e.getMessage();
+70         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
+71             log.severe(\textcolor{stringliteral}{"DocumentException: "} + e.getMessage());
 72             e.printStackTrace();
 73             \textcolor{keywordflow}{return} e.getMessage();
-74         \} \textcolor{keywordflow}{catch} (DocumentException e) \{
-75             log.severe(\textcolor{stringliteral}{"DocumentException: "} + e.getMessage());
+74         \} \textcolor{keywordflow}{catch} (IOException e) \{
+75             log.severe(\textcolor{stringliteral}{"Error creating new file :"} + e.getMessage());
 76             e.printStackTrace();
 77             \textcolor{keywordflow}{return} e.getMessage();
-78         \} \textcolor{keywordflow}{catch} (IOException e) \{
-79             log.severe(\textcolor{stringliteral}{"Error creating new file :"} + e.getMessage());
-80             e.printStackTrace();
-81             \textcolor{keywordflow}{return} e.getMessage();
-82         \}
-83         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_add23c0e308cdf54a3c1e3a8128ea29ed}{createDocument}(document);
-84         log.info(\textcolor{stringliteral}{"pdf generated"});
-85         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"done"};
-86     \}
+78         \}
+79         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_add23c0e308cdf54a3c1e3a8128ea29ed}{createDocument}(document);
+80         log.info(\textcolor{stringliteral}{"pdf generated"});
+81         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"done"};
+82     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -388,34 +401,33 @@ String message
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-95                                              \{
-96         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_af1f9a21f995c47a9e1a5a6f276c97852}{createFont}();
-97         Document document = \textcolor{keyword}{new} Document();
-98         File rtfFile = null;
-99         \textcolor{keywordflow}{try} \{
-100             rtfFile = \textcolor{keyword}{new} File(filename);
-101             \textcolor{keywordflow}{if} (!rtfFile.exists())
-102                 rtfFile.createNewFile();
-103             RtfWriter2.getInstance(document, \textcolor{keyword}{new} FileOutputStream(rtfFile));
-104         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
-105             log.severe(\textcolor{stringliteral}{"File "} + filename + \textcolor{stringliteral}{" not found!"});
-106             JOptionPane.showMessageDialog(null, \textcolor{stringliteral}{"File open in other program!"});
+91                                              \{
+92         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_af1f9a21f995c47a9e1a5a6f276c97852}{createFont}();
+93         Document document = \textcolor{keyword}{new} Document();
+94         File rtfFile = null;
+95         \textcolor{keywordflow}{try} \{
+96             rtfFile = \textcolor{keyword}{new} File(filename);
+97             \textcolor{keywordflow}{if} (!rtfFile.exists())
+98                 rtfFile.createNewFile();
+99             RtfWriter2.getInstance(document, \textcolor{keyword}{new} FileOutputStream(rtfFile));
+100         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
+101             log.severe(\textcolor{stringliteral}{"File "} + filename + \textcolor{stringliteral}{" not found!"});
+102             JOptionPane.showMessageDialog(null, \textcolor{stringliteral}{"File open in other program!"});
+103             e.printStackTrace();
+104             \textcolor{keywordflow}{return} e.getMessage();
+105         \} \textcolor{keywordflow}{catch} (IOException e) \{
+106             log.severe(\textcolor{stringliteral}{"Error creating new file :"} + e.getMessage());
 107             e.printStackTrace();
 108             \textcolor{keywordflow}{return} e.getMessage();
-109         \} \textcolor{keywordflow}{catch} (IOException e) \{
-110             log.severe(\textcolor{stringliteral}{"Error creating new file :"} + e.getMessage());
-111             e.printStackTrace();
-112             \textcolor{keywordflow}{return} e.getMessage();
-113         \}
-114         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_add23c0e308cdf54a3c1e3a8128ea29ed}{createDocument}(document);
-115         log.info(\textcolor{stringliteral}{"rtf generated"});
-116         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"done"};
-117     \}
+109         \}
+110         \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_add23c0e308cdf54a3c1e3a8128ea29ed}{createDocument}(document);
+111         log.info(\textcolor{stringliteral}{"rtf generated"});
+112         \textcolor{keywordflow}{return} \textcolor{stringliteral}{"done"};
+113     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -433,16 +445,15 @@ Here is the call graph for this function\-:
 ) throws Document\-Exception, I\-O\-Exception\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae256fb15c0845470ad900c876a15fabf}
 
 \begin{DoxyCode}
-189                                                                      \{
-190         String fontPath = this.getClass().getResource(\textcolor{stringliteral}{"/font/Concrete/CALIBRI.TTF"}).getPath();  
-191         BaseFont bf = BaseFont.createFont(fontPath, BaseFont.WINANSI, \textcolor{keyword}{false});
-192         \textcolor{keywordflow}{return} bf;
-193     \}
+185                                                                      \{
+186         String fontPath = this.getClass().getResource(\textcolor{stringliteral}{"/font/Concrete/CALIBRI.TTF"}).getPath();  
+187         BaseFont bf = BaseFont.createFont(fontPath, BaseFont.WINANSI, \textcolor{keyword}{false});
+188         \textcolor{keywordflow}{return} bf;
+189     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -460,25 +471,24 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ac64a0fecc25dd00c58f569e111c06fe6}
 
 \begin{DoxyCode}
-222                                                          \{
-223         File folder = \textcolor{keyword}{new} File(path);
-224         File[] listOfFiles = folder.listFiles();
-225         ArrayList<String> toReturn = \textcolor{keyword}{new} ArrayList<String>();
-226         \textcolor{keywordflow}{if} (listOfFiles != null)\{
-227             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < listOfFiles.length; i++) \{
-228               \textcolor{keywordflow}{if} (listOfFiles[i].isFile()) \{
-229                 toReturn.add(listOfFiles[i].getAbsolutePath());
-230               \}
-231             \}
-232             \textcolor{keywordflow}{return} toReturn;
-233         \}
-234         \textcolor{keywordflow}{return} null;
-235     \}
+218                                                          \{
+219         File folder = \textcolor{keyword}{new} File(path);
+220         File[] listOfFiles = folder.listFiles();
+221         ArrayList<String> toReturn = \textcolor{keyword}{new} ArrayList<String>();
+222         \textcolor{keywordflow}{if} (listOfFiles != null)\{
+223             \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = 0; i < listOfFiles.length; i++) \{
+224               \textcolor{keywordflow}{if} (listOfFiles[i].isFile()) \{
+225                 toReturn.add(listOfFiles[i].getAbsolutePath());
+226               \}
+227             \}
+228             \textcolor{keywordflow}{return} toReturn;
+229         \}
+230         \textcolor{keywordflow}{return} null;
+231     \}
 \end{DoxyCode}
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -496,32 +506,31 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_add96cb1e39ece24ace1e42aae99082a0}
 
 \begin{DoxyCode}
-149                                                        \{
-150         \textcolor{comment}{// headers and footers must be added before the document is opened}
-151         HeaderFooter footer;
-152         \textcolor{keywordflow}{try} \{
-153             footer = \textcolor{keyword}{new} HeaderFooter(
-154                         \textcolor{keyword}{new} Phrase(\textcolor{stringliteral}{""}, \textcolor{keyword}{new} Font(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae256fb15c0845470ad900c876a15fabf}{getFont}(), 7, Font.NORMAL)), \textcolor{keyword}{true});
-155             footer.setBorder(Rectangle.NO\_BORDER);
-156                         footer.setAlignment(Element.ALIGN\_CENTER);
-157                         document.setFooter(footer);
-158 
-159                         HeaderFooter header = \textcolor{keyword}{new} HeaderFooter(
-160                                     \textcolor{keyword}{new} Phrase(\textcolor{stringliteral}{"Document has been generated by MAD(Mason assisted
-       documentation), built by Simone Romano in ISISLab."}, \textcolor{keyword}{new} Font(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae256fb15c0845470ad900c876a15fabf}{getFont}(), 7, Font.NORMAL)), \textcolor{keyword}{false});
-161                         header.setAlignment(Element.ALIGN\_CENTER);
-162                         document.setHeader(header);
-163         \} \textcolor{keywordflow}{catch} (DocumentException | IOException e) \{
-164             log.severe(\textcolor{stringliteral}{"Exception adding header/footer: "} + e.getMessage());
-165             e.printStackTrace();
-166         \}
-167         
-168     \}
+145                                                        \{
+146         \textcolor{comment}{// headers and footers must be added before the document is opened}
+147         HeaderFooter footer;
+148         \textcolor{keywordflow}{try} \{
+149             footer = \textcolor{keyword}{new} HeaderFooter(
+150                         \textcolor{keyword}{new} Phrase(\textcolor{stringliteral}{""}, \textcolor{keyword}{new} Font(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae256fb15c0845470ad900c876a15fabf}{getFont}(), 7, Font.NORMAL)), \textcolor{keyword}{true});
+151             footer.setBorder(Rectangle.NO\_BORDER);
+152                         footer.setAlignment(Element.ALIGN\_CENTER);
+153                         document.setFooter(footer);
+154 
+155                         HeaderFooter header = \textcolor{keyword}{new} HeaderFooter(
+156                                     \textcolor{keyword}{new} Phrase(GlobalUtility.MAD\_SIGNATURE, \textcolor{keyword}{new} Font(
+      \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_pdf_rtf_generator_ae256fb15c0845470ad900c876a15fabf}{getFont}(), 7, Font.NORMAL)), \textcolor{keyword}{false});
+157                         header.setAlignment(Element.ALIGN\_CENTER);
+158                         document.setHeader(header);
+159         \} \textcolor{keywordflow}{catch} (DocumentException | IOException e) \{
+160             log.severe(\textcolor{stringliteral}{"Exception adding header/footer: "} + e.getMessage());
+161             e.printStackTrace();
+162         \}
+163         
+164     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -532,8 +541,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

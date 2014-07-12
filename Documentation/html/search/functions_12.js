@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['savesourcebackupcopy',['saveSourceBackupCopy',['../classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_global_utility.html#ad66b212a55587ad049d2034a26c0080b',1,'it::isislab::masonassisteddocumentation::mason::analizer::GlobalUtility']]],
   ['serialize',['serialize',['../classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_o_d_d.html#a41952d7bf650c3a85cb79058cb7c9ce8',1,'it::isislab::masonassisteddocumentation::ODD::ODD']]],
   ['serializeobj',['serializeObj',['../classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_o_d_d.html#ad5d017db56b0de89cc188dae97686520',1,'it::isislab::masonassisteddocumentation::ODD::ODD']]],
   ['setalltonull',['setAllToNull',['../classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_global_utility.html#aebc7c44f38977c31459b826f96edde2d',1,'it::isislab::masonassisteddocumentation::mason::analizer::GlobalUtility']]],

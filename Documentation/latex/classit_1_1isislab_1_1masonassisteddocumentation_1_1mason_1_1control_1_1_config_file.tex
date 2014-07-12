@@ -3,8 +3,7 @@
 }
 
 
-Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-control.\-Config\-File\-:
-\nopagebreak
+Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-control.\-Config\-File\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,6 +16,8 @@ Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-mason.\-co
 static String \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_add444e913763f18b80005e5ad477c59d}{get\-Project\-\_\-s\-Dir\-Path} ()
 \item 
 static String \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a67bf373e54fb3ce5144d6f4fcbb48bfd}{get\-Project\-Dir} ()
+\item 
+static String \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a0bc9608fcc97bf301d3529c9ee9ae5f8}{get\-Source\-Backup\-Dir} ()
 \item 
 static void \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_ae68816366df216e1d9525047c91e77fc}{set\-Property} (String key, String value)
 \item 
@@ -60,24 +61,23 @@ Romano Simone 0512101343
 )\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_af791ff01652e95f6385641909b805e20}
 
 \begin{DoxyCode}
-51                                         \{
-52         String dirPath = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a67bf373e54fb3ce5144d6f4fcbb48bfd}{getProjectDir}();
-53         String configFilePath = dirPath + File.separator + \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_abcfdfd0e472ce37556509fbe6ec06a10}{configFileName};
-54         File configFile = \textcolor{keyword}{new} File(configFilePath);
-55         \textcolor{keywordflow}{try} \{
-56             configFile.createNewFile();
-57         \} \textcolor{keywordflow}{catch} (IOException e) \{
-58             log.severe(\textcolor{stringliteral}{"Error getting ConfigFile: "} + e.getMessage());
-59             e.printStackTrace();
-60         \}
-61         log.info(\textcolor{stringliteral}{"Got config file: "} + configFilePath);
-62         \textcolor{keywordflow}{return} configFile;
-63     \}
+65                                         \{
+66         String dirPath = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a67bf373e54fb3ce5144d6f4fcbb48bfd}{getProjectDir}();
+67         String configFilePath = dirPath + File.separator + \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_abcfdfd0e472ce37556509fbe6ec06a10}{configFileName};
+68         File configFile = \textcolor{keyword}{new} File(configFilePath);
+69         \textcolor{keywordflow}{try} \{
+70             configFile.createNewFile();
+71         \} \textcolor{keywordflow}{catch} (IOException e) \{
+72             log.severe(\textcolor{stringliteral}{"Error getting ConfigFile: "} + e.getMessage());
+73             e.printStackTrace();
+74         \}
+75         log.info(\textcolor{stringliteral}{"Got config file: "} + configFilePath);
+76         \textcolor{keywordflow}{return} configFile;
+77     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -135,25 +135,24 @@ Here is the caller graph for this function\-:
 {}
 \end{DoxyParamCaption}
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a67bf373e54fb3ce5144d6f4fcbb48bfd}
-Return directory path; directory will be create (if does not exist) in disk root.
+Return directory path for project that we are analyzing; directory will be create (if does not exist) in disk root.
 
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-44                                          \{
-45         String dirPath = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_add444e913763f18b80005e5ad477c59d}{getProject\_sDirPath}() + File.separator + 
+45                                          \{
+46         String dirPath = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_add444e913763f18b80005e5ad477c59d}{getProject\_sDirPath}() + File.separator + 
       \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a221de037cd407ebbe144ef1dd91b82d2}{baseDirName} + GlobalUtility.getProjectAnalizer().getProjectName();
-46         \textcolor{keyword}{new} File(dirPath).mkdir();
-47         log.info(\textcolor{stringliteral}{"create/get dir: "} + dirPath);
-48         \textcolor{keywordflow}{return} dirPath;
-49     \}
+47         \textcolor{keyword}{new} File(dirPath).mkdir();
+48         log.info(\textcolor{stringliteral}{"create/get dir: "} + dirPath);
+49         \textcolor{keywordflow}{return} dirPath;
+50     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -174,6 +173,39 @@ Here is the caller graph for this function\-:
 \end{figure}
 
 
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a0bc9608fcc97bf301d3529c9ee9ae5f8}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::control\-::\-Config\-File@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::control\-::\-Config\-File}!get\-Source\-Backup\-Dir@{get\-Source\-Backup\-Dir}}
+\index{get\-Source\-Backup\-Dir@{get\-Source\-Backup\-Dir}!it::isislab::masonassisteddocumentation::mason::control::ConfigFile@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::control\-::\-Config\-File}}
+\subsubsection[{get\-Source\-Backup\-Dir}]{\setlength{\rightskip}{0pt plus 5cm}static String it.\-isislab.\-masonassisteddocumentation.\-mason.\-control.\-Config\-File.\-get\-Source\-Backup\-Dir (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a0bc9608fcc97bf301d3529c9ee9ae5f8}
+Return path of directory for code backup. In this directory will insert commented code first to remove doxygen comments. \begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+58                                              \{
+59         String dirPath = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_add444e913763f18b80005e5ad477c59d}{getProject\_sDirPath}() + File.separator + 
+      \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a221de037cd407ebbe144ef1dd91b82d2}{baseDirName} + GlobalUtility.getProjectAnalizer().getProjectName() + File.separator + \textcolor{stringliteral}{"
+      BackupCodeWithComments"};
+60         \textcolor{keyword}{new} File(dirPath).mkdir();
+61         log.info(\textcolor{stringliteral}{"create/get dir: "} + dirPath);
+62         \textcolor{keywordflow}{return} dirPath;
+63     \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a0bc9608fcc97bf301d3529c9ee9ae5f8_cgraph}
+\end{center}
+\end{figure}
+
+
 \hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a69e02ec967d2a3c44d590d146036d816}{\index{it\-::isislab\-::masonassisteddocumentation\-::mason\-::control\-::\-Config\-File@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::control\-::\-Config\-File}!gett\-O\-D\-D\-Path@{gett\-O\-D\-D\-Path}}
 \index{gett\-O\-D\-D\-Path@{gett\-O\-D\-D\-Path}!it::isislab::masonassisteddocumentation::mason::control::ConfigFile@{it\-::isislab\-::masonassisteddocumentation\-::mason\-::control\-::\-Config\-File}}
 \subsubsection[{gett\-O\-D\-D\-Path}]{\setlength{\rightskip}{0pt plus 5cm}static String it.\-isislab.\-masonassisteddocumentation.\-mason.\-control.\-Config\-File.\-gett\-O\-D\-D\-Path (
@@ -183,14 +215,13 @@ Here is the caller graph for this function\-:
 )\hspace{0.3cm}{\ttfamily [static]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a69e02ec967d2a3c44d590d146036d816}
 
 \begin{DoxyCode}
-147                                        \{
-148         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a67bf373e54fb3ce5144d6f4fcbb48bfd}{getProjectDir}() + File.separator;
-149     \}
+161                                        \{
+162         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_a67bf373e54fb3ce5144d6f4fcbb48bfd}{getProjectDir}() + File.separator;
+163     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -201,8 +232,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -230,35 +260,34 @@ Return the value associated to input key
 \end{DoxyReturn}
 
 \begin{DoxyCode}
-122                                               \{
-123         FileInputStream fstream = null;
-124         DataInputStream in = null;
-125 
-126         \textcolor{keywordflow}{try} \{
-127             fstream = \textcolor{keyword}{new} FileInputStream(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_af791ff01652e95f6385641909b805e20}{getConfigFile}());
-128             in = \textcolor{keyword}{new} DataInputStream(fstream);
-129             BufferedReader br = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(in));
-130             String strLine;
-131             \textcolor{keywordflow}{while} ((strLine = br.readLine()) != null) \{
-132                 \textcolor{keywordflow}{if} (strLine.startsWith(key)) \{
-133                     log.info(\textcolor{stringliteral}{"Get key: "} + key + \textcolor{stringliteral}{"; returned value: "} + strLine.split(\textcolor{stringliteral}{"="})[1]);
-134                     \textcolor{keywordflow}{return} strLine.split(\textcolor{stringliteral}{"="})[1];
-135                 \}
-136             \}
-137         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
-138             log.severe(\textcolor{stringliteral}{"File not found: '"} + \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_af791ff01652e95f6385641909b805e20}{getConfigFile}() + \textcolor{stringliteral}{"' "}
-139                     + e.getMessage());
-140         \} \textcolor{keywordflow}{catch} (IOException e) \{
-141             log.severe(\textcolor{stringliteral}{"Error reading file: '"} + \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_af791ff01652e95f6385641909b805e20}{getConfigFile}() + \textcolor{stringliteral}{"' "}
-142                     + e.getMessage());
-143         \}
-144         \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
-145     \}
+136                                               \{
+137         FileInputStream fstream = null;
+138         DataInputStream in = null;
+139 
+140         \textcolor{keywordflow}{try} \{
+141             fstream = \textcolor{keyword}{new} FileInputStream(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_af791ff01652e95f6385641909b805e20}{getConfigFile}());
+142             in = \textcolor{keyword}{new} DataInputStream(fstream);
+143             BufferedReader br = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(in));
+144             String strLine;
+145             \textcolor{keywordflow}{while} ((strLine = br.readLine()) != null) \{
+146                 \textcolor{keywordflow}{if} (strLine.startsWith(key)) \{
+147                     log.info(\textcolor{stringliteral}{"Get key: "} + key + \textcolor{stringliteral}{"; returned value: "} + strLine.split(\textcolor{stringliteral}{"="})[1]);
+148                     \textcolor{keywordflow}{return} strLine.split(\textcolor{stringliteral}{"="})[1];
+149                 \}
+150             \}
+151         \} \textcolor{keywordflow}{catch} (FileNotFoundException e) \{
+152             log.severe(\textcolor{stringliteral}{"File not found: '"} + \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_af791ff01652e95f6385641909b805e20}{getConfigFile}() + \textcolor{stringliteral}{"' "}
+153                     + e.getMessage());
+154         \} \textcolor{keywordflow}{catch} (IOException e) \{
+155             log.severe(\textcolor{stringliteral}{"Error reading file: '"} + \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_af791ff01652e95f6385641909b805e20}{getConfigFile}() + \textcolor{stringliteral}{"' "}
+156                     + e.getMessage());
+157         \}
+158         \textcolor{keywordflow}{return} \textcolor{stringliteral}{""};
+159     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -298,55 +327,54 @@ Set the key to value in \hyperlink{classit_1_1isislab_1_1masonassisteddocumentat
 \end{DoxyParams}
 
 \begin{DoxyCode}
-71                                                              \{
-72         FileInputStream fstream = null;
-73         DataInputStream in = null;
-74         BufferedWriter out = null;
-75         \textcolor{keywordtype}{boolean} propertySet = \textcolor{keyword}{false};
-76 
-77         \textcolor{keywordflow}{try} \{
-78             fstream = \textcolor{keyword}{new} FileInputStream(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_af791ff01652e95f6385641909b805e20}{getConfigFile}());
-79             in = \textcolor{keyword}{new} DataInputStream(fstream);
-80             BufferedReader br = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(in));
-81             String strLine;
-82             StringBuilder fileContent = \textcolor{keyword}{new} StringBuilder();
-83 
-84             \textcolor{keywordflow}{while} ((strLine = br.readLine()) != null) \{
-85                 \textcolor{keywordflow}{if} (strLine.startsWith(key)) \{
-86                     fileContent.append(key + \textcolor{stringliteral}{"="} + value
-87                             + System.getProperty(\textcolor{stringliteral}{"line.separator"}));
-88                     propertySet = \textcolor{keyword}{true};
-89                 \} \textcolor{keywordflow}{else} \{
-90                     fileContent.append(strLine);
-91                     fileContent.append(System.getProperty(\textcolor{stringliteral}{"line.separator"}));
-92                 \}
-93             \}
-94             \textcolor{keywordflow}{if} (!propertySet) \{
-95                 fileContent.append(key + \textcolor{stringliteral}{"="} + value);
-96             \}
+85                                                              \{
+86         FileInputStream fstream = null;
+87         DataInputStream in = null;
+88         BufferedWriter out = null;
+89         \textcolor{keywordtype}{boolean} propertySet = \textcolor{keyword}{false};
+90 
+91         \textcolor{keywordflow}{try} \{
+92             fstream = \textcolor{keyword}{new} FileInputStream(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_af791ff01652e95f6385641909b805e20}{getConfigFile}());
+93             in = \textcolor{keyword}{new} DataInputStream(fstream);
+94             BufferedReader br = \textcolor{keyword}{new} BufferedReader(\textcolor{keyword}{new} InputStreamReader(in));
+95             String strLine;
+96             StringBuilder fileContent = \textcolor{keyword}{new} StringBuilder();
 97 
-98             FileWriter fstreamWrite = \textcolor{keyword}{new} FileWriter(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_af791ff01652e95f6385641909b805e20}{getConfigFile}());
-99             out = \textcolor{keyword}{new} BufferedWriter(fstreamWrite);
-100             out.write(fileContent.toString());
-101         \} \textcolor{keywordflow}{catch} (Exception e) \{
-102             e.printStackTrace();
-103         \} \textcolor{keywordflow}{finally} \{
-104             \textcolor{keywordflow}{try} \{
-105                 fstream.close();
-106                 out.flush();
-107                 out.close();
-108                 in.close();
-109             \} \textcolor{keywordflow}{catch} (IOException e) \{
-110                 e.printStackTrace();
-111             \}
-112         \}
-113         log.info(\textcolor{stringliteral}{"Set key: "} + key + \textcolor{stringliteral}{" to value: "} + value);
-114     \}
+98             \textcolor{keywordflow}{while} ((strLine = br.readLine()) != null) \{
+99                 \textcolor{keywordflow}{if} (strLine.startsWith(key)) \{
+100                     fileContent.append(key + \textcolor{stringliteral}{"="} + value
+101                             + System.getProperty(\textcolor{stringliteral}{"line.separator"}));
+102                     propertySet = \textcolor{keyword}{true};
+103                 \} \textcolor{keywordflow}{else} \{
+104                     fileContent.append(strLine);
+105                     fileContent.append(System.getProperty(\textcolor{stringliteral}{"line.separator"}));
+106                 \}
+107             \}
+108             \textcolor{keywordflow}{if} (!propertySet) \{
+109                 fileContent.append(key + \textcolor{stringliteral}{"="} + value);
+110             \}
+111 
+112             FileWriter fstreamWrite = \textcolor{keyword}{new} FileWriter(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file_af791ff01652e95f6385641909b805e20}{getConfigFile}());
+113             out = \textcolor{keyword}{new} BufferedWriter(fstreamWrite);
+114             out.write(fileContent.toString());
+115         \} \textcolor{keywordflow}{catch} (Exception e) \{
+116             e.printStackTrace();
+117         \} \textcolor{keywordflow}{finally} \{
+118             \textcolor{keywordflow}{try} \{
+119                 fstream.close();
+120                 out.flush();
+121                 out.close();
+122                 in.close();
+123             \} \textcolor{keywordflow}{catch} (IOException e) \{
+124                 e.printStackTrace();
+125             \}
+126         \}
+127         log.info(\textcolor{stringliteral}{"Set key: "} + key + \textcolor{stringliteral}{" to value: "} + value);
+128     \}
 \end{DoxyCode}
 
 
-Here is the call graph for this function\-:
-\nopagebreak
+Here is the call graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -357,8 +385,7 @@ Here is the call graph for this function\-:
 
 
 
-Here is the caller graph for this function\-:
-\nopagebreak
+Here is the caller graph for this function\-:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode

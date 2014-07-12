@@ -89,6 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pac-attribs">Package Attributes</a> &#124;
 <a href="#pri-methods">Private Member Functions</a> &#124;
 <a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="#pri-static-attribs">Static Private Attributes</a> &#124;
@@ -101,8 +102,6 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 Inheritance diagram for it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard:</div>
 <div class="dyncontent">
 <div class="center"><img src="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard__inherit__graph.png" border="0" usemap="#it_8isislab_8masonassisteddocumentation_8mason_8wizards_8_q___end_wizard_inherit__map" alt="Inheritance graph"/></div>
-<map name="it_8isislab_8masonassisteddocumentation_8mason_8wizards_8_q___end_wizard_inherit__map" id="it_8isislab_8masonassisteddocumentation_8mason_8wizards_8_q___end_wizard_inherit__map">
-</map>
 <center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <div class="dynheader">
 Collaboration diagram for it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard:</div>
@@ -118,6 +117,11 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:abc279fa31f6236a1af58d99df0eda1b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a0591b1e30644840d9828f5c67f8510"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a3a0591b1e30644840d9828f5c67f8510">createControl</a> (Composite parent)</td></tr>
 <tr class="separator:a3a0591b1e30644840d9828f5c67f8510"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pac-attribs"></a>
+Package Attributes</h2></td></tr>
+<tr class="memitem:a94ab1b59917837c6b2708a44f2d5e2c7"><td class="memItemLeft" align="right" valign="top">Button&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a94ab1b59917837c6b2708a44f2d5e2c7">btnSaveBackup</a></td></tr>
+<tr class="separator:a94ab1b59917837c6b2708a44f2d5e2c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-methods"></a>
 Private Member Functions</h2></td></tr>
@@ -284,10 +288,20 @@ Static Private Attributes</h2></td></tr>
 <div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160;        <a class="code" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#ae2da7cbfbfd8b618427f5d7fa356a8a5">btnShowOutput</a> = <span class="keyword">new</span> Button(container, SWT.CHECK);</div>
 <div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;        btnShowOutput.setBounds(103, 9, 93, 16);</div>
 <div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;        btnShowOutput.setText(<span class="stringliteral">&quot;Show Output&quot;</span>);</div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    }</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;        </div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;        <a class="code" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a94ab1b59917837c6b2708a44f2d5e2c7">btnSaveBackup</a> = <span class="keyword">new</span> Button(container, SWT.CHECK);</div>
+<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;        btnSaveBackup.setText(<span class="stringliteral">&quot;Save backup of commented code&quot;</span>);</div>
+<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        btnSaveBackup.setBounds(212, 9, 206, 16);</div>
+<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        btnSaveBackup.setEnabled(<span class="keyword">false</span>);</div>
+<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        </div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        <span class="keywordflow">if</span> (ConfigFile.getValue(<span class="stringliteral">&quot;typeOutput&quot;</span>).equals(<span class="stringliteral">&quot;Doxygen&quot;</span>) ||</div>
+<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                ConfigFile.getValue(<span class="stringliteral">&quot;typeOutput&quot;</span>).equals(<span class="stringliteral">&quot;all&quot;</span>))</div>
+<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;            btnSaveBackup.setEnabled(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    }</div>
 <div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_ae2da7cbfbfd8b618427f5d7fa356a8a5"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#ae2da7cbfbfd8b618427f5d7fa356a8a5">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.btnShowOutput</a></div><div class="ttdeci">Button btnShowOutput</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:34</div></div>
-<div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_a4564b1098ec942795cbd022ccbe338e0"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a4564b1098ec942795cbd022ccbe338e0">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.showOutput</a></div><div class="ttdeci">void showOutput()</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:185</div></div>
-<div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_a42fd32637b3ac46154ab9c5ae720af05"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a42fd32637b3ac46154ab9c5ae720af05">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.doxygenRun</a></div><div class="ttdeci">void doxygenRun()</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:148</div></div>
+<div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_a4564b1098ec942795cbd022ccbe338e0"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a4564b1098ec942795cbd022ccbe338e0">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.showOutput</a></div><div class="ttdeci">void showOutput()</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:195</div></div>
+<div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_a94ab1b59917837c6b2708a44f2d5e2c7"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a94ab1b59917837c6b2708a44f2d5e2c7">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.btnSaveBackup</a></div><div class="ttdeci">Button btnSaveBackup</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:34</div></div>
+<div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_a42fd32637b3ac46154ab9c5ae720af05"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a42fd32637b3ac46154ab9c5ae720af05">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.doxygenRun</a></div><div class="ttdeci">void doxygenRun()</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:157</div></div>
 <div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_afe3af585753c6f0c523146360faa433c"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#afe3af585753c6f0c523146360faa433c">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.progressBar</a></div><div class="ttdeci">ProgressBar progressBar</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:33</div></div>
 <div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_ac5e6042df131960cc6061862b2a7b8ce"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#ac5e6042df131960cc6061862b2a7b8ce">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.shelltext</a></div><div class="ttdeci">Text shelltext</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:31</div></div>
 </div><!-- fragment -->
@@ -296,7 +310,7 @@ Here is the call graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a3a0591b1e30644840d9828f5c67f8510_cgraph.png" border="0" usemap="#classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a3a0591b1e30644840d9828f5c67f8510_cgraph" alt=""/></div>
 <map name="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a3a0591b1e30644840d9828f5c67f8510_cgraph" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_a3a0591b1e30644840d9828f5c67f8510_cgraph">
-<area shape="rect" id="node2" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a4564b1098ec942795cbd022ccbe338e0" title="it.isislab.masonassisteddocumentation.mason.wizards.\lQ_EndWizard.showOutput" alt="" coords="787,5,1129,47"/><area shape="rect" id="node3" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a42fd32637b3ac46154ab9c5ae720af05" title="it.isislab.masonassisteddocumentation.mason.wizards.\lQ_EndWizard.doxygenRun" alt="" coords="396,67,739,108"/><area shape="rect" id="node5" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_global_utility.html#a78cbdc6022c558d1375a01095ad95659" title="it.isislab.masonassisteddocumentation.mason.analizer.\lGlobalUtility.getProjectAnalizer" alt="" coords="396,133,739,175"/><area shape="rect" id="node4" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a89adac239da36e67abac1ec9c416bba4" title="it.isislab.masonassisteddocumentation.mason.wizards.\lQ_EndWizard.splitWithNewLine" alt="" coords="787,71,1129,112"/><area shape="rect" id="node6" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_global_utility.html#ab1fa2a5ac258d0119ca7d486261c01fb" title="it.isislab.masonassisteddocumentation.mason.analizer.\lGlobalUtility.getJavaProject" alt="" coords="787,136,1129,177"/></map>
+<area shape="rect" id="node2" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a4564b1098ec942795cbd022ccbe338e0" title="it.isislab.masonassisteddocumentation.mason.wizards.\lQ_EndWizard.showOutput" alt="" coords="787,5,1129,47"/><area shape="rect" id="node3" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a42fd32637b3ac46154ab9c5ae720af05" title="it.isislab.masonassisteddocumentation.mason.wizards.\lQ_EndWizard.doxygenRun" alt="" coords="396,71,739,112"/><area shape="rect" id="node5" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_global_utility.html#a78cbdc6022c558d1375a01095ad95659" title="it.isislab.masonassisteddocumentation.mason.analizer.\lGlobalUtility.getProjectAnalizer" alt="" coords="396,136,739,177"/><area shape="rect" id="node7" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file.html#abb43073f42616e4349b2fcb4e964c648" title="it.isislab.masonassisteddocumentation.mason.control.\lConfigFile.getValue" alt="" coords="399,201,736,243"/><area shape="rect" id="node4" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a89adac239da36e67abac1ec9c416bba4" title="it.isislab.masonassisteddocumentation.mason.wizards.\lQ_EndWizard.splitWithNewLine" alt="" coords="787,71,1129,112"/><area shape="rect" id="node6" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_global_utility.html#ab1fa2a5ac258d0119ca7d486261c01fb" title="it.isislab.masonassisteddocumentation.mason.analizer.\lGlobalUtility.getJavaProject" alt="" coords="787,136,1129,177"/><area shape="rect" id="node8" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file.html#af791ff01652e95f6385641909b805e20" title="it.isislab.masonassisteddocumentation.mason.control.\lConfigFile.getConfigFile" alt="" coords="789,201,1127,243"/><area shape="rect" id="node9" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file.html#a67bf373e54fb3ce5144d6f4fcbb48bfd" title="it.isislab.masonassisteddocumentation.mason.control.\lConfigFile.getProjectDir" alt="" coords="1177,201,1515,243"/><area shape="rect" id="node10" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1control_1_1_config_file.html#add444e913763f18b80005e5ad477c59d" title="it.isislab.masonassisteddocumentation.mason.control.\lConfigFile.getProject_sDirPath" alt="" coords="1563,201,1900,243"/></map>
 </div>
 </p>
 
@@ -322,44 +336,45 @@ Here is the call graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;                              {</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160;        <span class="keywordtype">int</span> progressValue = 0;</div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;        shelltext.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;        progressBar.setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;        shelltext.setVisible(<span class="keyword">true</span>);</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;        Process doxygenProcess = GlobalUtility.doxygenRun();</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;        <span class="keywordflow">if</span> (doxygenProcess != null){</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            BufferedReader stdInput = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(doxygenProcess.getInputStream()));</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            BufferedReader stdError = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(doxygenProcess.getErrorStream()));</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;            <span class="comment">// read the output from the command</span></div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;            String s = null;</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;                <span class="keywordflow">while</span> ((s = stdInput.readLine()) != null) {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;                    s = <a class="code" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a89adac239da36e67abac1ec9c416bba4">splitWithNewLine</a>(s);</div>
-<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;                    shelltext.setText(shelltext.getText() + <span class="stringliteral">&quot;\n&quot;</span> + s);</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;                    progressBar.setSelection(progressValue);</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;                    <span class="keywordflow">if</span> (progressValue &lt;80)</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;                        progressValue++;</div>
-<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;                }</div>
-<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;                GlobalUtility.removeMADComment();</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;                progressBar.setSelection(100);</div>
-<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;            } <span class="keywordflow">catch</span> (IOException e) {</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                e.printStackTrace();</div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;            }</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;            <span class="comment">// read any errors from the attempted command</span></div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                <span class="keywordflow">while</span> ((s = stdError.readLine()) != null) {                 </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                    log.severe(<span class="stringliteral">&quot;doxygenError: &quot;</span> + s);</div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                }</div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            } <span class="keywordflow">catch</span> (IOException e) {</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                e.printStackTrace();</div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            }</div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;        }</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;        <a class="code" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a4564b1098ec942795cbd022ccbe338e0">showOutput</a>();</div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;    }</div>
-<div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_a4564b1098ec942795cbd022ccbe338e0"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a4564b1098ec942795cbd022ccbe338e0">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.showOutput</a></div><div class="ttdeci">void showOutput()</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:185</div></div>
-<div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_a89adac239da36e67abac1ec9c416bba4"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a89adac239da36e67abac1ec9c416bba4">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.splitWithNewLine</a></div><div class="ttdeci">String splitWithNewLine(String s)</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:197</div></div>
+<div class="fragment"><div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;                              {</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordtype">int</span> progressValue = 0;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;        shelltext.setText(<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;        progressBar.setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        shelltext.setVisible(<span class="keyword">true</span>);</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        Process doxygenProcess = GlobalUtility.doxygenRun();</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;        <span class="keywordflow">if</span> (doxygenProcess != null){</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;            BufferedReader stdInput = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(doxygenProcess.getInputStream()));</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;            BufferedReader stdError = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(doxygenProcess.getErrorStream()));</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;</div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;            <span class="comment">// read the output from the command</span></div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;            String s = null;</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;                <span class="keywordflow">while</span> ((s = stdInput.readLine()) != null) {</div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;                    s = <a class="code" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a89adac239da36e67abac1ec9c416bba4">splitWithNewLine</a>(s);</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;                    shelltext.setText(shelltext.getText() + <span class="stringliteral">&quot;\n&quot;</span> + s);</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;                    progressBar.setSelection(progressValue);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;                    <span class="keywordflow">if</span> (progressValue &lt;80)</div>
+<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;                        progressValue++;</div>
+<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;                }</div>
+<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;                <span class="keywordtype">boolean</span> saveCommentCodeBackup = btnSaveBackup.getSelection();</div>
+<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;                GlobalUtility.removeMADComment(saveCommentCodeBackup);</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;                progressBar.setSelection(100);</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;                e.printStackTrace();</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;            }</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;            <span class="comment">// read any errors from the attempted command</span></div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                <span class="keywordflow">while</span> ((s = stdError.readLine()) != null) {                 </div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                    log.severe(<span class="stringliteral">&quot;doxygenError: &quot;</span> + s);</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                }</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                e.printStackTrace();</div>
+<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            }</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;        }</div>
+<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;        <a class="code" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a4564b1098ec942795cbd022ccbe338e0">showOutput</a>();</div>
+<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;    }</div>
+<div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_a4564b1098ec942795cbd022ccbe338e0"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a4564b1098ec942795cbd022ccbe338e0">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.showOutput</a></div><div class="ttdeci">void showOutput()</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:195</div></div>
+<div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_a89adac239da36e67abac1ec9c416bba4"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#a89adac239da36e67abac1ec9c416bba4">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.splitWithNewLine</a></div><div class="ttdeci">String splitWithNewLine(String s)</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:207</div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the call graph for this function:</div>
@@ -401,17 +416,17 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                              {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#ae2da7cbfbfd8b618427f5d7fa356a8a5">btnShowOutput</a>.getSelection()){</div>
-<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;            String outputPath = ConfigFile.getValue(<span class="stringliteral">&quot;output&quot;</span>) + File.separator;</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;            <span class="keywordflow">try</span> {</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                Desktop.getDesktop().open(<span class="keyword">new</span> File(outputPath));</div>
-<div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;            } <span class="keywordflow">catch</span> (IOException e) {</div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                log.severe(<span class="stringliteral">&quot;Failure opening output directory: &quot;</span> + outputPath); </div>
-<div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                e.printStackTrace();</div>
-<div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;            }</div>
-<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;        }</div>
-<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160;                              {</div>
+<div class="line"><a name="l00196"></a><span class="lineno">  196</span>&#160;        <span class="keywordflow">if</span> (<a class="code" href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#ae2da7cbfbfd8b618427f5d7fa356a8a5">btnShowOutput</a>.getSelection()){</div>
+<div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;            String outputPath = ConfigFile.getValue(<span class="stringliteral">&quot;output&quot;</span>) + File.separator;</div>
+<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;            <span class="keywordflow">try</span> {</div>
+<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                Desktop.getDesktop().open(<span class="keyword">new</span> File(outputPath));</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            } <span class="keywordflow">catch</span> (IOException e) {</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                log.severe(<span class="stringliteral">&quot;Failure opening output directory: &quot;</span> + outputPath); </div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                e.printStackTrace();</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;            }</div>
+<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;        }</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;    }</div>
 <div class="ttc" id="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard_html_ae2da7cbfbfd8b618427f5d7fa356a8a5"><div class="ttname"><a href="classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1wizards_1_1_q___end_wizard.html#ae2da7cbfbfd8b618427f5d7fa356a8a5">it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.btnShowOutput</a></div><div class="ttdeci">Button btnShowOutput</div><div class="ttdef"><b>Definition:</b> Q_EndWizard.java:34</div></div>
 </div><!-- fragment -->
 <p><div class="dynheader">
@@ -446,14 +461,14 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="fragment"><div class="line"><a name="l00197"></a><span class="lineno">  197</span>&#160;                                              {</div>
-<div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;        String toReturn = <span class="stringliteral">&quot;&quot;</span>;</div>
-<div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;        <span class="keywordflow">while</span>(s.length()&gt;100){</div>
-<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;            toReturn = toReturn + s.substring(0, 100) + <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;            s = s.substring(100, s.length());</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;        }</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;        <span class="keywordflow">return</span> toReturn + s + <span class="stringliteral">&quot;\n&quot;</span>;</div>
-<div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;    }</div>
+<div class="fragment"><div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                                              {</div>
+<div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;        String toReturn = <span class="stringliteral">&quot;&quot;</span>;</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160;        <span class="keywordflow">while</span>(s.length()&gt;100){</div>
+<div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            toReturn = toReturn + s.substring(0, 100) + <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            s = s.substring(100, s.length());</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        }</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        <span class="keywordflow">return</span> toReturn + s + <span class="stringliteral">&quot;\n&quot;</span>;</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;    }</div>
 </div><!-- fragment -->
 <p><div class="dynheader">
 Here is the caller graph for this function:</div>
@@ -467,6 +482,26 @@ Here is the caller graph for this function:</div>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a class="anchor" id="a94ab1b59917837c6b2708a44f2d5e2c7"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Button it.isislab.masonassisteddocumentation.mason.wizards.Q_EndWizard.btnSaveBackup</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">package</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="ae2da7cbfbfd8b618427f5d7fa356a8a5"></a>
 <div class="memitem">
 <div class="memproto">
@@ -573,7 +608,7 @@ Here is the caller graph for this function:</div>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Jul 11 2014 14:55:29 for MASONHelperDocumentation by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Jul 12 2014 14:27:16 for MASONHelperDocumentation by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.6
 </small></address>

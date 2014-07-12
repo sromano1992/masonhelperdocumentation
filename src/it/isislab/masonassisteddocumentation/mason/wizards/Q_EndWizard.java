@@ -149,7 +149,8 @@ public class Q_EndWizard extends WizardPage {
 		btnSaveBackup.setBounds(212, 9, 206, 16);
 		btnSaveBackup.setEnabled(false);
 		
-		if (ConfigFile.getValue("typeOutput").equals("Doxygen"))
+		if (ConfigFile.getValue("typeOutput").equals("Doxygen") ||
+				ConfigFile.getValue("typeOutput").equals("all"))
 			btnSaveBackup.setEnabled(true);
 	}
 
