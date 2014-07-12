@@ -31,7 +31,7 @@ public class Q_EndWizard extends WizardPage {
 	private Text shelltext;
 	private String pageDescription = "Click Generate button to generate documentation.";
 	private ProgressBar progressBar;
-	private Button btnShowOutput;
+	private Button btnShowOutput, btnSaveBackup;
 	private static Logger log = Logger.getLogger("global");
 	
 	/**
@@ -143,6 +143,14 @@ public class Q_EndWizard extends WizardPage {
 		btnShowOutput = new Button(container, SWT.CHECK);
 		btnShowOutput.setBounds(103, 9, 93, 16);
 		btnShowOutput.setText("Show Output");
+		
+		btnSaveBackup = new Button(container, SWT.CHECK);
+		btnSaveBackup.setText("Save backup of commented code");
+		btnSaveBackup.setBounds(212, 9, 206, 16);
+		btnSaveBackup.setEnabled(false);
+		
+		if (ConfigFile.getValue("typeOutput").equals("Doxygen"))
+			btnSaveBackup.setEnabled(true);
 	}
 
 	private void doxygenRun() {
@@ -165,7 +173,8 @@ public class Q_EndWizard extends WizardPage {
 					if (progressValue <80)
 						progressValue++;
 				}
-				GlobalUtility.removeMADComment();
+				boolean saveCommentCodeBackup = btnSaveBackup.getSelection();
+				GlobalUtility.removeMADComment(saveCommentCodeBackup);
 				progressBar.setSelection(100);
 			} catch (IOException e) {
 				e.printStackTrace();

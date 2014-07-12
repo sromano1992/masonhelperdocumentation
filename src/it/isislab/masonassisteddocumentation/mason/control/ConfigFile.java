@@ -36,13 +36,27 @@ public class ConfigFile {
 	}
 	
 	/**
-	 * Return directory path; directory will be create (if does not exist) in
+	 * Return directory path for project that we are analyzing;
+	 * directory will be create (if does not exist) in
 	 * disk root.
 	 * 
 	 * @return
 	 */
 	public static String getProjectDir() {
 		String dirPath = getProject_sDirPath() + File.separator + baseDirName + GlobalUtility.getProjectAnalizer().getProjectName();
+		new File(dirPath).mkdir();
+		log.info("create/get dir: " + dirPath);
+		return dirPath;
+	}
+	
+	/**
+	 * Return path of directory for code backup.
+	 * In this directory will insert commented code
+	 * first to remove doxygen comments.
+	 * @return
+	 */
+	public static String getSourceBackupDir(){
+		String dirPath = getProject_sDirPath() + File.separator + baseDirName + GlobalUtility.getProjectAnalizer().getProjectName() + File.separator + "BackupCodeWithComments";
 		new File(dirPath).mkdir();
 		log.info("create/get dir: " + dirPath);
 		return dirPath;

@@ -1,0 +1,157 @@
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor}{\section{it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor Class Reference}
+\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor}\index{it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor@{it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor}}
+}
+
+
+Inheritance diagram for it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_acca71efb4c53b8e1e57cd90e0b67b8ec}{Field\-Initializer\-Visitor} (\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_parameter}{Parameter} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a2eee2343f9012365b49aebbebe61d79d}{parameter})
+\item 
+boolean \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_acb95069b68c5f22706789201cd5645b6}{visit} (Assignment node)
+\item 
+String \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_ad3d228ab01a76c32c2cc871109ba2bf8}{get\-Information\-\_\-s} ()
+\item 
+\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_parameter}{Parameter} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a06f228e398c0238cfe85a5d41bb06ace}{get\-Parameter} ()
+\item 
+List$<$ Expression $>$ \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a8ecc25c4593215c6f721f1cf552bcc53}{get\-Constructor\-Parameter\-\_\-s} ()
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_aee70f4a93ab159d0895d6d37b0028144}{information\-\_\-s}
+\item 
+\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_parameter}{Parameter} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a2eee2343f9012365b49aebbebe61d79d}{parameter}
+\item 
+List$<$ Expression $>$ \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_abeb9a316d533f971cc30bfe5af74f3ad}{constructor\-Parameter\-\_\-s}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This visitor will get information about variables constructor. Implicit parameter is the compilation unit of class that contains the variable. Explicit parameter is the parameter that we search in compilation Unit. E\-S. sim\-State\-C\-U.\-accept(new Field\-Initializer\-Visitor(my\-Parameter)) will search all parameters in sim\-State\-C\-U and when my\-Parameter is found will extract a list of constructor arguments. \begin{DoxyAuthor}{Author}
+Romano Simone 0512101343 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_acca71efb4c53b8e1e57cd90e0b67b8ec}{\index{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}!Field\-Initializer\-Visitor@{Field\-Initializer\-Visitor}}
+\index{Field\-Initializer\-Visitor@{Field\-Initializer\-Visitor}!it::isislab::masonassisteddocumentation::visitor::FieldInitializerVisitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}}
+\subsubsection[{Field\-Initializer\-Visitor}]{\setlength{\rightskip}{0pt plus 5cm}it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor.\-Field\-Initializer\-Visitor (
+\begin{DoxyParamCaption}
+\item[{{\bf Parameter}}]{parameter}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_acca71efb4c53b8e1e57cd90e0b67b8ec}
+
+\begin{DoxyCode}
+29                                                        \{
+30         this.parameter = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a2eee2343f9012365b49aebbebe61d79d}{parameter};
+31     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a8ecc25c4593215c6f721f1cf552bcc53}{\index{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}!get\-Constructor\-Parameter\-\_\-s@{get\-Constructor\-Parameter\-\_\-s}}
+\index{get\-Constructor\-Parameter\-\_\-s@{get\-Constructor\-Parameter\-\_\-s}!it::isislab::masonassisteddocumentation::visitor::FieldInitializerVisitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}}
+\subsubsection[{get\-Constructor\-Parameter\-\_\-s}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Expression$>$ it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor.\-get\-Constructor\-Parameter\-\_\-s (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a8ecc25c4593215c6f721f1cf552bcc53}
+
+\begin{DoxyCode}
+55                                                         \{
+56         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_abeb9a316d533f971cc30bfe5af74f3ad}{constructorParameter\_s};
+57     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_ad3d228ab01a76c32c2cc871109ba2bf8}{\index{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}!get\-Information\-\_\-s@{get\-Information\-\_\-s}}
+\index{get\-Information\-\_\-s@{get\-Information\-\_\-s}!it::isislab::masonassisteddocumentation::visitor::FieldInitializerVisitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}}
+\subsubsection[{get\-Information\-\_\-s}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor.\-get\-Information\-\_\-s (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_ad3d228ab01a76c32c2cc871109ba2bf8}
+
+\begin{DoxyCode}
+47                                      \{
+48         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_aee70f4a93ab159d0895d6d37b0028144}{information\_s};
+49     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a06f228e398c0238cfe85a5d41bb06ace}{\index{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}!get\-Parameter@{get\-Parameter}}
+\index{get\-Parameter@{get\-Parameter}!it::isislab::masonassisteddocumentation::visitor::FieldInitializerVisitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}}
+\subsubsection[{get\-Parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Parameter} it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor.\-get\-Parameter (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a06f228e398c0238cfe85a5d41bb06ace}
+
+\begin{DoxyCode}
+51                                     \{
+52         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a2eee2343f9012365b49aebbebe61d79d}{parameter};
+53     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_acb95069b68c5f22706789201cd5645b6}{\index{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}!visit@{visit}}
+\index{visit@{visit}!it::isislab::masonassisteddocumentation::visitor::FieldInitializerVisitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}boolean it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor.\-visit (
+\begin{DoxyParamCaption}
+\item[{Assignment}]{node}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_acb95069b68c5f22706789201cd5645b6}
+Here we will extract parameters of field constructors. (Ex\-: new Grid(width,length...)-\/$>$extract width,length,...). 
+\begin{DoxyCode}
+38                                          \{
+39         \textcolor{keywordflow}{if} (node.getRightHandSide() instanceof ClassInstanceCreation)\{
+40             ClassInstanceCreation constructor = (ClassInstanceCreation) node.getRightHandSide();
+41             \textcolor{keywordflow}{if} (node.getLeftHandSide().toString().equals(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a2eee2343f9012365b49aebbebe61d79d}{parameter}.
+      \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_parameter_aeb5c13b8a5bb75063046297b440da70b}{getVariableName}()))
+42                 \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_abeb9a316d533f971cc30bfe5af74f3ad}{constructorParameter\_s} = constructor.arguments();
+43         \}
+44         \textcolor{keywordflow}{return} super.visit(node);
+45     \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_acb95069b68c5f22706789201cd5645b6_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_abeb9a316d533f971cc30bfe5af74f3ad}{\index{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}!constructor\-Parameter\-\_\-s@{constructor\-Parameter\-\_\-s}}
+\index{constructor\-Parameter\-\_\-s@{constructor\-Parameter\-\_\-s}!it::isislab::masonassisteddocumentation::visitor::FieldInitializerVisitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}}
+\subsubsection[{constructor\-Parameter\-\_\-s}]{\setlength{\rightskip}{0pt plus 5cm}List$<$Expression$>$ it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor.\-constructor\-Parameter\-\_\-s\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_abeb9a316d533f971cc30bfe5af74f3ad}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_aee70f4a93ab159d0895d6d37b0028144}{\index{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}!information\-\_\-s@{information\-\_\-s}}
+\index{information\-\_\-s@{information\-\_\-s}!it::isislab::masonassisteddocumentation::visitor::FieldInitializerVisitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}}
+\subsubsection[{information\-\_\-s}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor.\-information\-\_\-s\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_aee70f4a93ab159d0895d6d37b0028144}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a2eee2343f9012365b49aebbebe61d79d}{\index{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}!parameter@{parameter}}
+\index{parameter@{parameter}!it::isislab::masonassisteddocumentation::visitor::FieldInitializerVisitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Field\-Initializer\-Visitor}}
+\subsubsection[{parameter}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Parameter} it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Field\-Initializer\-Visitor.\-parameter\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor_a2eee2343f9012365b49aebbebe61d79d}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/it/isislab/masonassisteddocumentation/visitor/\hyperlink{_field_initializer_visitor_8java}{Field\-Initializer\-Visitor.\-java}\end{DoxyCompactItemize}

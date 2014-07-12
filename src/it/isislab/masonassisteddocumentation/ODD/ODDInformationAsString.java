@@ -31,7 +31,7 @@ public class ODDInformationAsString {
 		ODD_description.put("ODD Description\n", documentDescription_0 + documentDescription_1) ;
 		ODD_description.put("Purpose\n", "What is the purpose of the model?\n");
 		ODD_description.put("Entities, state variables and scales\n",
-						"What kinds of entities are in the model?bBy what state variables, or attributes, are these entities characterized?\n");
+						"What kinds of entities are in the model? By what state variables, or attributes, are these entities characterized?\n");
 		ODD_description.put("Process overview and scheduling\n",
 				"Who (i.e., what entity) does what, and in what order?\n");
 		ODD_description.put("Design concepts\n",

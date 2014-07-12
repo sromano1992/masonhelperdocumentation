@@ -1,0 +1,203 @@
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization}{\section{it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization Class Reference}
+\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization}\index{it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization@{it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization}}
+}
+
+
+Inheritance diagram for it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a40775f92907ca6b60402e0aa7336ac42}{get\-Auto\-Initialization} ()
+\item 
+void \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a95c25405be57859cfb4a2dfced2d3402}{set\-Auto\-Initialization} (String auto\-Initialization)
+\item 
+String \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a541e2f93c4d0fe625d8884bf3d33bebc}{get\-User\-Initialization} ()
+\item 
+void \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_ad9c50dcf5467b063895ebb418190eeee}{set\-User\-Initialization} (String \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a6b1893c7cd50b5b053020df213f7ec4e}{user\-Initialization})
+\item 
+String \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a161826a9181c7d87cbfcb7a9bc8bdc96}{to\-String} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static String \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a68d6d76d36ac88da6784e304eb0c449d}{serialized\-Name} = \char`\"{}initialization.\-ser\char`\"{}
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+String \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a6b1893c7cd50b5b053020df213f7ec4e}{user\-Initialization}
+\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static final long \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_aa3e836da7dca6c23b732dbdd3557478d}{serial\-Version\-U\-I\-D} = 1
+\item 
+static boolean \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a1db87b1c90cde4dc9bd028895fb3b6ca}{differents\-Color} = true
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a40775f92907ca6b60402e0aa7336ac42}{\index{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}!get\-Auto\-Initialization@{get\-Auto\-Initialization}}
+\index{get\-Auto\-Initialization@{get\-Auto\-Initialization}!it::isislab::masonassisteddocumentation::ODD::Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}}
+\subsubsection[{get\-Auto\-Initialization}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization.\-get\-Auto\-Initialization (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a40775f92907ca6b60402e0aa7336ac42}
+
+\begin{DoxyCode}
+18                                           \{
+19         String autoInitialization = \textcolor{stringliteral}{"<h1>At time t=0:</h1>\(\backslash\)n"};
+20         Entitie\_s entitie\_s = ODD.getEntitie\_s();
+21         \textcolor{keywordflow}{for} (Entity e: entitie\_s.getEntitie\_s())\{
+22             ArrayList<Variable> variable\_s = e.getVariable\_s();     
+23             \textcolor{keywordflow}{if} (variable\_s.size() != 0)\{
+24                 autoInitialization += \textcolor{stringliteral}{"<h2>Entity "} + e.getName() + \textcolor{stringliteral}{"</h2>\(\backslash\)n"};
+25                 \textcolor{keywordflow}{for} (Variable v :variable\_s)
+26                     autoInitialization += \textcolor{stringliteral}{"variable '"} + v.getName() + \textcolor{stringliteral}{"' has initial value = "} + v.
+      getInitialValue() + \textcolor{stringliteral}{";\(\backslash\)n<br>"};
+27                 \}
+28         \}
+29         \textcolor{keywordflow}{return} autoInitialization;
+30     \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a40775f92907ca6b60402e0aa7336ac42_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a40775f92907ca6b60402e0aa7336ac42_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a541e2f93c4d0fe625d8884bf3d33bebc}{\index{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}!get\-User\-Initialization@{get\-User\-Initialization}}
+\index{get\-User\-Initialization@{get\-User\-Initialization}!it::isislab::masonassisteddocumentation::ODD::Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}}
+\subsubsection[{get\-User\-Initialization}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization.\-get\-User\-Initialization (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a541e2f93c4d0fe625d8884bf3d33bebc}
+
+\begin{DoxyCode}
+35                                           \{
+36         \textcolor{keywordflow}{return} \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a6b1893c7cd50b5b053020df213f7ec4e}{userInitialization};
+37     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a95c25405be57859cfb4a2dfced2d3402}{\index{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}!set\-Auto\-Initialization@{set\-Auto\-Initialization}}
+\index{set\-Auto\-Initialization@{set\-Auto\-Initialization}!it::isislab::masonassisteddocumentation::ODD::Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}}
+\subsubsection[{set\-Auto\-Initialization}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization.\-set\-Auto\-Initialization (
+\begin{DoxyParamCaption}
+\item[{String}]{auto\-Initialization}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a95c25405be57859cfb4a2dfced2d3402}
+
+\begin{DoxyCode}
+32                                                                  \{
+33     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_ad9c50dcf5467b063895ebb418190eeee}{\index{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}!set\-User\-Initialization@{set\-User\-Initialization}}
+\index{set\-User\-Initialization@{set\-User\-Initialization}!it::isislab::masonassisteddocumentation::ODD::Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}}
+\subsubsection[{set\-User\-Initialization}]{\setlength{\rightskip}{0pt plus 5cm}void it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization.\-set\-User\-Initialization (
+\begin{DoxyParamCaption}
+\item[{String}]{user\-Initialization}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_ad9c50dcf5467b063895ebb418190eeee}
+
+\begin{DoxyCode}
+39                                                                  \{
+40         this.userInitialization = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a6b1893c7cd50b5b053020df213f7ec4e}{userInitialization};
+41     \}
+\end{DoxyCode}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a161826a9181c7d87cbfcb7a9bc8bdc96}{\index{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}!to\-String@{to\-String}}
+\index{to\-String@{to\-String}!it::isislab::masonassisteddocumentation::ODD::Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}}
+\subsubsection[{to\-String}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization.\-to\-String (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a161826a9181c7d87cbfcb7a9bc8bdc96}
+
+\begin{DoxyCode}
+43                             \{
+44         \textcolor{keywordflow}{if} (\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a1db87b1c90cde4dc9bd028895fb3b6ca}{differentsColor})\{
+45             String toReturn = GlobalUtility.surroundWithSpan(
+      \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_global_utility_a2e086c8a2d8edf16b2eaf90408832adc}{GlobalUtility.autoOutputColor}, 
+      \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a40775f92907ca6b60402e0aa7336ac42}{getAutoInitialization}()) + \textcolor{stringliteral}{"\(\backslash\)n"};
+46             \textcolor{keywordflow}{if} (\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a6b1893c7cd50b5b053020df213f7ec4e}{userInitialization} != null || !
+      \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a6b1893c7cd50b5b053020df213f7ec4e}{userInitialization}.equals(\textcolor{stringliteral}{""}))
+47                 \textcolor{keywordflow}{return} toReturn + \textcolor{stringliteral}{"<h2>Other</h2><br>"} + GlobalUtility.surroundWithSpan(GlobalUtility.
+      userOutputColor, \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a6b1893c7cd50b5b053020df213f7ec4e}{userInitialization});
+48             \textcolor{keywordflow}{return} toReturn;
+49         \}
+50         \textcolor{keywordflow}{else}\{
+51             String toReturn = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a40775f92907ca6b60402e0aa7336ac42}{getAutoInitialization}() + \textcolor{stringliteral}{"\(\backslash\)n"};
+52             \textcolor{keywordflow}{if} (\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a6b1893c7cd50b5b053020df213f7ec4e}{userInitialization} != null || !
+      \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a6b1893c7cd50b5b053020df213f7ec4e}{userInitialization}.equals(\textcolor{stringliteral}{""}))
+53                 \textcolor{keywordflow}{return} toReturn + \textcolor{stringliteral}{"<h2>Other</h2><br>"} + \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a6b1893c7cd50b5b053020df213f7ec4e}{userInitialization};
+54             \textcolor{keywordflow}{return} toReturn;
+55         \}
+56     \}
+\end{DoxyCode}
+
+
+Here is the call graph for this function\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a161826a9181c7d87cbfcb7a9bc8bdc96_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a1db87b1c90cde4dc9bd028895fb3b6ca}{\index{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}!differents\-Color@{differents\-Color}}
+\index{differents\-Color@{differents\-Color}!it::isislab::masonassisteddocumentation::ODD::Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}}
+\subsubsection[{differents\-Color}]{\setlength{\rightskip}{0pt plus 5cm}boolean it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization.\-differents\-Color = true\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a1db87b1c90cde4dc9bd028895fb3b6ca}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a68d6d76d36ac88da6784e304eb0c449d}{\index{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}!serialized\-Name@{serialized\-Name}}
+\index{serialized\-Name@{serialized\-Name}!it::isislab::masonassisteddocumentation::ODD::Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}}
+\subsubsection[{serialized\-Name}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization.\-serialized\-Name = \char`\"{}initialization.\-ser\char`\"{}\hspace{0.3cm}{\ttfamily [static]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a68d6d76d36ac88da6784e304eb0c449d}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_aa3e836da7dca6c23b732dbdd3557478d}{\index{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}!serial\-Version\-U\-I\-D@{serial\-Version\-U\-I\-D}}
+\index{serial\-Version\-U\-I\-D@{serial\-Version\-U\-I\-D}!it::isislab::masonassisteddocumentation::ODD::Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}}
+\subsubsection[{serial\-Version\-U\-I\-D}]{\setlength{\rightskip}{0pt plus 5cm}final long it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization.\-serial\-Version\-U\-I\-D = 1\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_aa3e836da7dca6c23b732dbdd3557478d}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a6b1893c7cd50b5b053020df213f7ec4e}{\index{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}!user\-Initialization@{user\-Initialization}}
+\index{user\-Initialization@{user\-Initialization}!it::isislab::masonassisteddocumentation::ODD::Initialization@{it\-::isislab\-::masonassisteddocumentation\-::\-O\-D\-D\-::\-Initialization}}
+\subsubsection[{user\-Initialization}]{\setlength{\rightskip}{0pt plus 5cm}String it.\-isislab.\-masonassisteddocumentation.\-O\-D\-D.\-Initialization.\-user\-Initialization\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1_o_d_d_1_1_initialization_a6b1893c7cd50b5b053020df213f7ec4e}
+Auto\-Initialization is generated from Entities's variables. Will be return a concatenation of variables initial value. 
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/it/isislab/masonassisteddocumentation/\-O\-D\-D/\hyperlink{_initialization_8java}{Initialization.\-java}\end{DoxyCompactItemize}

@@ -52,6 +52,23 @@ public class AgentAnalizer implements Analizer{
 			e.printStackTrace();
 		}		
 	}
+	
+	public void rewrite(String pathName){
+		File sourceFile = new File(pathName);
+		FileOutputStream fooStream;
+		try {
+			fooStream = new FileOutputStream(sourceFile, false);
+			String code = compilationUnit.toString();
+			byte[] myBytes = code.getBytes();
+			fooStream.write(myBytes);
+			fooStream.close();
+		} catch (FileNotFoundException e) {
+			log.severe("Agent file not found to: " + pathName + ".");
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}	
+	}
 
 
 	/**

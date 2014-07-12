@@ -1,6 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_code_visitor.html" title="it.isislab.masonhelperdocumentation.visitor.\lCodeVisitor" alt="" coords="137,5,412,47"/>
-<area shape="rect" id="node3" href="$classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_field_initializer_visitor.html" title="it.isislab.masonhelperdocumentation.visitor.\lFieldInitializerVisitor" alt="" coords="137,71,412,112"/>
-<area shape="rect" id="node4" href="$classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_start_method_visitor.html" title="it.isislab.masonhelperdocumentation.visitor.\lStartMethodVisitor" alt="" coords="137,136,412,177"/>
-<area shape="rect" id="node5" href="$classit_1_1isislab_1_1masonhelperdocumentation_1_1visitor_1_1_step_method_visitor.html" title="it.isislab.masonhelperdocumentation.visitor.\lStepMethodVisitor" alt="" coords="137,201,412,243"/>
+<area shape="rect" id="node2" href="$classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_code_visitor.html" title="it.isislab.masonassisteddocumentation.visitor.\lCodeVisitor" alt="" coords="137,37,425,79"/>
+<area shape="rect" id="node5" href="$classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_field_initializer_visitor.html" title="it.isislab.masonassisteddocumentation.visitor.\lFieldInitializerVisitor" alt="" coords="137,103,425,144"/>
+<area shape="rect" id="node6" href="$classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor.html" title="it.isislab.masonassisteddocumentation.visitor.\lJavaDocVisitor" alt="" coords="137,168,425,209"/>
+<area shape="rect" id="node3" href="$classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_recursive_code_visitor.html" title="it.isislab.masonassisteddocumentation.visitor.\lRecursiveCodeVisitor" alt="" coords="473,5,761,47"/>
+<area shape="rect" id="node4" href="$classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_start_step_method_visitor.html" title="it.isislab.masonassisteddocumentation.visitor.\lStartStepMethodVisitor" alt="" coords="473,71,761,112"/>
 </map>

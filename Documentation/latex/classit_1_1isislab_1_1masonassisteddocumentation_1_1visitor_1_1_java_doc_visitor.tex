@@ -1,0 +1,87 @@
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor}{\section{it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Java\-Doc\-Visitor Class Reference}
+\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor}\index{it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Java\-Doc\-Visitor@{it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Java\-Doc\-Visitor}}
+}
+
+
+Inheritance diagram for it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Java\-Doc\-Visitor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Java\-Doc\-Visitor\-:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor_acf45885f464485899c06f1572a018325}{Java\-Doc\-Visitor} (Compilation\-Unit \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor_a89fac3d92c14e8f684fe42515dcd2088}{cu})
+\item 
+boolean \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor_af7caf7cfb43e5000513f6f5a3431c9c8}{visit} (Javadoc node)
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+Compilation\-Unit \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor_a89fac3d92c14e8f684fe42515dcd2088}{cu}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+This class visits a Java\-Doc node of a compilation unit and delete it if contains default M\-A\-D message. This to clear code from comment add by M\-A\-D. \begin{DoxyAuthor}{Author}
+Simone 
+\end{DoxyAuthor}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor_acf45885f464485899c06f1572a018325}{\index{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Java\-Doc\-Visitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Java\-Doc\-Visitor}!Java\-Doc\-Visitor@{Java\-Doc\-Visitor}}
+\index{Java\-Doc\-Visitor@{Java\-Doc\-Visitor}!it::isislab::masonassisteddocumentation::visitor::JavaDocVisitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Java\-Doc\-Visitor}}
+\subsubsection[{Java\-Doc\-Visitor}]{\setlength{\rightskip}{0pt plus 5cm}it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Java\-Doc\-Visitor.\-Java\-Doc\-Visitor (
+\begin{DoxyParamCaption}
+\item[{Compilation\-Unit}]{cu}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor_acf45885f464485899c06f1572a018325}
+
+\begin{DoxyCode}
+19                                               \{
+20         this.cu = \hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor_a89fac3d92c14e8f684fe42515dcd2088}{cu};
+21     \}
+\end{DoxyCode}
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor_af7caf7cfb43e5000513f6f5a3431c9c8}{\index{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Java\-Doc\-Visitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Java\-Doc\-Visitor}!visit@{visit}}
+\index{visit@{visit}!it::isislab::masonassisteddocumentation::visitor::JavaDocVisitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Java\-Doc\-Visitor}}
+\subsubsection[{visit}]{\setlength{\rightskip}{0pt plus 5cm}boolean it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Java\-Doc\-Visitor.\-visit (
+\begin{DoxyParamCaption}
+\item[{Javadoc}]{node}
+\end{DoxyParamCaption}
+)}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor_af7caf7cfb43e5000513f6f5a3431c9c8}
+
+\begin{DoxyCode}
+23                                        \{
+24         \textcolor{keywordflow}{if} (node.toString().contains(\hyperlink{classit_1_1isislab_1_1masonassisteddocumentation_1_1mason_1_1analizer_1_1_global_utility_a9191677742da30af21771374343da817}{GlobalUtility.COMMENT\_SIGNATURE}))\{
+25             node.delete();
+26         \}   
+27         \textcolor{keywordflow}{return} super.visit(node);
+28     \}
+\end{DoxyCode}
+
+
+\subsection{Member Data Documentation}
+\hypertarget{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor_a89fac3d92c14e8f684fe42515dcd2088}{\index{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Java\-Doc\-Visitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Java\-Doc\-Visitor}!cu@{cu}}
+\index{cu@{cu}!it::isislab::masonassisteddocumentation::visitor::JavaDocVisitor@{it\-::isislab\-::masonassisteddocumentation\-::visitor\-::\-Java\-Doc\-Visitor}}
+\subsubsection[{cu}]{\setlength{\rightskip}{0pt plus 5cm}Compilation\-Unit it.\-isislab.\-masonassisteddocumentation.\-visitor.\-Java\-Doc\-Visitor.\-cu\hspace{0.3cm}{\ttfamily [private]}}}\label{classit_1_1isislab_1_1masonassisteddocumentation_1_1visitor_1_1_java_doc_visitor_a89fac3d92c14e8f684fe42515dcd2088}
+
+
+The documentation for this class was generated from the following file\-:\begin{DoxyCompactItemize}
+\item 
+src/it/isislab/masonassisteddocumentation/visitor/\hyperlink{_java_doc_visitor_8java}{Java\-Doc\-Visitor.\-java}\end{DoxyCompactItemize}

@@ -159,6 +159,24 @@ public class SimStateAnalizer implements Analizer{
 			e.printStackTrace();
 		}
 	}
+	
+	public void writeSoruceFile(String pathName){
+		File sourceFile = new File(pathName);
+		FileOutputStream fileStream;
+		try {
+			fileStream = new FileOutputStream(sourceFile, false);
+			String code = compilationUnit.toString();
+			byte[] myBytes = code.getBytes();
+			fileStream.write(myBytes);
+			fileStream.close();
+			log.info("SimState rewrite");
+		} catch (FileNotFoundException e) {
+			log.severe("SimState file not found to: " + pathName + ".");
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 
 	private void addGroupsDefinitions() {
 		String group_sDefinition_s = generateGroupsDefinitions();
@@ -167,7 +185,7 @@ public class SimStateAnalizer implements Analizer{
 
 	private String generateGroupsDefinitions() {
 		String imageImport = getImage_s();
-		String group_sDefinition_s = GlobalUtility.COMMENT_SIGNATURE + "@defgroup SimulationModel Simulation Model \n *" + ODD.getStandardDefinition +"<br>\n" + GlobalUtility.documentDescription + "<br>\n" + imageImport + "\n"
+		String group_sDefinition_s = GlobalUtility.COMMENT_SIGNATURE + "@defgroup SimulationModel Simulation Model \n *" + GlobalUtility.MAD_SIGNATURE + ODD.getStandardDefinition +"<br>\n" + GlobalUtility.documentDescription + "<br>\n" + imageImport + "\n"
 				+ "@defgroup purpose Purpose \n *" + GlobalUtility.surroundWithSpan(GlobalUtility.userOutputColor, ODD.getPurpose().getModelPurpose()) + "\n@ingroup SimulationModel\n"
 				+ "@defgroup entities Entities, state variables, and scales\n@ingroup SimulationModel\n"
 				+ "@defgroup process Process, overview and schedule\n@ingroup SimulationModel\n"
