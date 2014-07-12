@@ -373,7 +373,7 @@ public class B_ProjectInformationPage extends WizardPage{
 		else{
 			JOptionPane.showMessageDialog(null, "Project doesn't contain SimState Class!");
 			log.severe("Select project doesn't contain SimState Class!");
-			System.exit(1);;
+			label_Message.setText("Please select a project with SimState class!");
 		}			
 		if (projectAnalizer.getAgentsNum()!=0){
 			lblAgent = new Label(composite, SWT.NONE);
@@ -384,7 +384,7 @@ public class B_ProjectInformationPage extends WizardPage{
 
 	@Override
 	public boolean canFlipToNextPage() {
-		return isDoxygenPathSet() && projectAnalizer.isMasonProject();
+		return isDoxygenPathSet() && projectAnalizer.isMasonProject() && projectAnalizer.getSimStateCU() != null;
 	}
 
 	@Override
