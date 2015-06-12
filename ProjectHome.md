@@ -1,0 +1,3 @@
+This project will realize an eclipse-plugin to auto-generate documentation about simulation model write with MASON java library. Output's structur follow ODD(Overview, Design concepts and Details) standard(https://www.google.it/url?sa=t&rct=j&q=&esrc=s&source=web&cd=1&cad=rja&uact=8&ved=0CCcQFjAA&url=http%3A%2F%2Fbio.uib.no%2Fte%2Fpapers%2FGrimm_2010_The_ODD_protocol_.pdf&ei=txW9U9moCIH00gWujYDQDw&usg=AFQjCNG11nBDb7mvOLsw16-jZIaCOybQmA&sig2=8dMDntS3Up3_yRzdtkdHTg).
+It may generete documentation by using Doxygen(http://www.stack.nl/~dimitri/doxygen/) to generate latex-html or my produce pdf-rtf and txt without external tool.
+Project is product of my thesis work that may be found here:http://isis.dia.unisa.it/author/simrom/.
